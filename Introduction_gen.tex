@@ -2,16 +2,16 @@
 \paragraph{}
 Depuis la création du web il y a vingt-cinq ans déjà, ce monde virtuel a vécu une évolution constante pour nous rendre une multitude de services et pour s’adapter à notre quotidien. Au fil des années, plusieurs versions du web sont apparues : le web documentaire, le web applicatif, le web social, le web mobile, etc...
 \subparagraph{}
-Dans le contexte de l’évolution du web une nouvelle version dite le web 3.0 ou encore le web sémantique et sociale qui vise à propager nos modèles et leurs logiques; s’apprête à avoir le jour. Il y a plusieurs facettes du web, et la web sémantique oﬀre un élément de réponse à l’intégration de chacune de ces facettes : il propose d’utiliser des métadonnées pour annoter les ressources du web, et d’exploiter la sémantique des schémas de ces annotations pour les traiter avec intelligence.
+Dans le contexte de l’évolution du web une nouvelle version dite le web 3.0 ou encore le web sémantique et sociale qui vise à propager nos modèles et leurs logiques; s’apprête à avoir le jour. Il y a plusieurs facettes du web, et la web sémantique offre un élément de réponse à l’intégration de chacune de ces facettes : il propose d’utiliser des métadonnées pour annoter les ressources du web, et d’exploiter la sémantique des schémas de ces annotations pour les traiter avec intelligence.
 \subparagraph{}
-Le domaine du web sémantique compte plusieurs travaux de recherches sur les métadonnées du web aﬁn d’avoir une nouvelle version bien structurée qui soit capable d’en assurer le contrôle eﬃcace. Dans ce contexte, DBpedia est une base de donnée structurée qui contient des informations extraites de wikipedia et rend ces informations disponibles sur le web.
+Le domaine du web sémantique compte plusieurs travaux de recherches sur les métadonnées du web afin d’avoir une nouvelle version bien structurée qui soit capable d’en assurer le contrôle efficace. Dans ce contexte, DBpedia est une base de donnée structurée qui contient des informations extraites de wikipedia et rend ces informations disponibles sur le web.
 \subparagraph{}
 Aussi, Resource Description Framework (RDF) est le premier des standards de la web sémantique et se trouve être un modèle à plusieurs syntaxes, dans une est  “Turtle” pour publier des données à thèmes variés sur le web.
 \subparagraph{}
 Ce langage de modélisation permet à quiconque de décrire des ressources sur le web et aussi des ressources du web. Dans ce modèle connu comme étant la “lingua franca” du web, tout est exprimé sous forme de triplets (subject, predicate, object) où chaque triplet contribue à une description du monde.
 \paragraph{}
 Néanmoins, des faits tels que ceux donnés dans DBpedia sont en mesure d’être adaptés au changement constant du monde.
-RDF n’est pas bien équipé pour exprimer d’une manière cohérente la validité temporelle des états, tels que “Obama est le président des États-Unis depuis 2008”. 
+RDF n’est pas bien équipé pour exprimer d’une manière cohérente la validité temporelle des états, tels que “Obama est le président des états-Unis depuis 2008”. 
 \subparagraph{}
 Pour surmonter ce gap avec une modélisation RDF adéquate, plusieurs anciens travaux de recherches ont proposé d’attacher à ces triplets des annotations temporelles, ceci revient à une formalisation de ces états avec des contraintes temporelles comme des quadruplets de la manière suivante $(subject, perdicate, object, time)$ à la place du formalisme de triplet habituel.
 \subparagraph{}
@@ -19,8 +19,8 @@ La théorie derrière un modèle de données basé sur des quadruplets évolue a
 \subparagraph{}
 Qui ou comment génère-t-on ces annotations ?
 \newline
-Dans le cadre de DBpedia, on veut extraire les informations temporelles automatiquement. On veut aussi utiliser les informations temporelles explicites de wikipedia et les informations temporelles déduites à partir de l’historique de modiﬁcation des pages web.
+Dans le cadre de DBpedia, on veut extraire les informations temporelles automatiquement. On veut aussi utiliser les informations temporelles explicites de wikipedia et les informations temporelles déduites à partir de l’historique de modification des pages web.
 \subparagraph{}
 De plus wikidata de “wikimedia foundation” donne des informations sur les articles wikipedia, dont une partie contient des indicateurs temporels qu’on veut extraire par la même occasion.
 \paragraph{}
-L’objectif de ce stage est d’une part, l’extraction des informations temporelles depuis les diﬀérents documents en utilisant les techniques de fouille de données. D’autre part, d’annoter ces documents selon leurs contextes. Enﬁn mettre ces informations sous forme de quadruplets structurés dans BDpedia.
+L’objectif de ce stage est d’une part, l’extraction des informations temporelles depuis les différents documents en utilisant les techniques de fouille de données. D’autre part, d’annoter ces documents selon leurs contextes. Enfin mettre ces informations sous forme de quadruplets structurés dans BDpedia.
