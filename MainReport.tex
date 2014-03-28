@@ -1,4 +1,5 @@
-\documentclass[12pt,a4paper,oneside]{book}
+\documentclass[12pt,a4	]{report}
+\usepackage[french]{babel}
 \usepackage[usenames,dvipsnames]{color}
 \usepackage[utf8]{inputenc}
 \usepackage{textcomp}
@@ -14,11 +15,12 @@
 \usepackage{subcaption}
 \begin{document} 
 \author{Moncef BEN RAJEB} 
-\title{Temporal Annotation Of DBpedia Data} 
+\title{Annotation Temporelle Des Données DBpedia} 
 \date{Mars 2014} 
-\frontmatter 
+\maketitle
 \include{Introduction_gen}
 \include{Etat}
+\include{pointdedepart}
 \bibliographystyle{alpha}
-\bibliography{Biblio.bib}
+\bibliography{Biblio.bib,w3c.bib}
 \end{document}

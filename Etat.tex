@@ -6,45 +6,40 @@ Notre étude a la particulatrité de s'étandre sur le domaine de la fouille de 
 En effet, on va utiliser les téchniques de la fouille pour l'extraction des données dans les différents documents, et le web sémantique pour avoir une structure plus lisible par la machine.
 \subsection*{Différentes approches d'annotation temporelle}			
 \paragraph{}
-La nécessité de l’annotation temporelle sur les documents web ou l’adressage des changements d’une ontologie au meilleur de notre connaissance a été évoqué dans des nombreux travaux de recherche. La première approche formelle au problème de modélisation et d’interrogation temporelle en RDF a été introduite par Gutierrez et al~\cite{gutierrez2005}.
+Dans le domaine du web sémantique, il y a plusieurs extensions de RDF qui ont été proposé pour : la vérité, la confiance, la certitude, le temps ect…
 \subparagraph{}
-Udrea et al~\cite{udrea2006} étaient les premiers qui ont mis en question la notion d'annoter temporellement les graphes RDF. 
-Ces derniers définissent le triplet annoté par un token de la forme suivante $(s,p:t,o)$, $t$ est un token, où la propriété est annotée plutôt que le triplet.
-De plus ils ont donné des algorithmes pour interroger les données RDF annotées.
-\subparagraph{}
-Par ailleurs la modélisation du temps est présente presque dans toutes les applications web, Abiteboul et al~\cite{abiteboul1997}, cela implique l'apparition de plusieurs extensions de  RDF qui soutiennent le raisonnement temporel, le raisonnement de l’incertitude.   
+Par exemple pour la verité de certaines triplets où le degré de la vérité est entre $0$ et $1$
+pour l’instance “Rome is a big city to degree 0.8” peut être représentée par $(Rome, type,big{\_}city) : 0.8$.
 \newline
+De même pour la certitude un autre forme a été proposé :
 $(Max,hasSupervisor : (0.9,2003),William)$ à la forme générale suivante $(s, p : (x,t),o)$
 \newline 
 La certitude $x$ est représentée sous forme d'un pourcentage, 90\% pour cet exemple.
-\subparagraph{}
-D'après Zimmermann et al~\cite{zimmermann2012}, dans le domaine du web sémantique, il y a plusieurs extensions de RDF qui ont été proposé pour : la vérité, la confiance, le temps ect…
-\newline
-Par exemple pour la verité de certaines triplets où le degré de la vérité est entre $0$ et $1$
-pour l’instance “Rome is a big city to degree 0.8” peut être représentée par $(Rome, type,big{\_}city) : 0.8$.
-\subsection*{Puissance de RDF}
 \paragraph{}
-Les graphes RDF sont représentés comme une base de connaissance à partir de laquelle on peut générer d’autres nouvelles connaissances, d’autres graphes.
+La nécessité de l’annotation temporelle sur les documents web ou l’adressage des changements d’une ontologie au meilleur de notre connaissance a été évoqué dans des nombreux travaux de recherche. La première approche formelle au problème de modélisation et d’interrogation temporelle en RDF a été introduite par Gutierrez et al~\cite{gutierrez2005}.
 \subparagraph{}
-Cela peut poser des problèmes parce qu'une implication dans le cadre temporel est un peu complexe dans RDF que dans le cas des bases de données standards. Par ailleurs il présente un véritable défi dans ce domaine.
+Ensuite, Udrea et al~\cite{udrea2006} ont remis en question la notion d'annoter temporellement les graphes RDF et depuis plusieurs travaux de recherche ont évoqué cette problèmatique. 
+Ces derniers définissent le triplet annoté de la forme suivante $(s,p:t,o)$, $t$ est une étiquette temporelle.
+De plus ils ont donné des algorithmes pour interroger les données RDF annotées.
+
 \subsection*{Contexte des DB temporelles}
 \paragraph{}
-Une base de données temporelle est une base de données avec des acpects de temps intégrés(temps-valide, temps-transaction), c'est à dire un modèle de données temporelles et une version temporelle du langage structuré de requête(Structured Query Language - SQL).
+Une base de données temporelle est une base de données avec des acpects de temps intégrés(temps-valide, temps-transaction), c'est à dire un modèle de données temporelles et une version temporelle du langage structuré de requête(SQL).
 \subparagraph{}
 En effet, le temps valide dénote la période du temps durant laquelle un fait est vrai par rapport à la réalité.
 Le temps-transaction est la période de temps pendant laquelle un fait est stocké dans une base de données.
 \paragraph{}
-*Objectifs de l'annotation temporelle des graphes RDF :
+Dans le contexte de l'annotation temporelle des graphes RDF, les besoins se résume comme suit~:
 \begin{itemize}
 \item L'accès à des différents versions d’une ontologie.
 \item Récupération des informations passées sur les sites web.
 \item La distribution des mise à jour des journaux.
 \end{itemize}
-\paragraph{}
-Antoniou et al~\cite{antoniou2004}présentent une ontologie du service web, pour monter qu'une ontologie peut passer par plusieurs états.
 \subparagraph{}
+En vertu des travaux de Antoniou et al~\cite{antoniou2004} présentent une ontologie du service web, pour monter qu'une ontologie peut passer par plusieurs états, ainsi que d'autres recherches dont l'objectif de répondre aux besoins cités auparavant. ~
+\paragraph{}
 Une base de données temporelle peut être exprimer comme un répertoire d'informations temporelles.
-Gutiérrez et al~\cite{gutierrez2007}, expliquent qu'il y aura deux manières pour ajouter des dimensions temporelles dans un graphe RDF intemporel :
+Gutiérrez et al~\cite{gutierrez2007}, montrent qu'il y aura deux manières pour ajouter des dimensions temporelles dans un graphe RDF intemporel:
 \begin{itemize}
 \item étiqueter les éléments soumis à des changements, les triplets par exemple, à chaque changement un nouveau graphe créer et l’ancien état sera stocké quelque part.
 \item versionner : capture de temps de transaction, l’étiquetage est mieux que les versions pour les raisons suivantes: 
@@ -65,35 +60,33 @@ Exemple le triplet $(s,p,o)$ est valable dans un temps $t$, $(a,b,c)[t]$, ou aut
 L'idée générale de Pugliese et al~\cite{pugliese2008} est d'annoter RDF avec un interval de temps.
 Ces derniers ont proposé un graphe temporel d'indexation "tGRIN". C'est une structure d’indexation qui construit un index spécialisé pour RDF temporels qui sont stockés dans une base de données relationnelle "RDBMS".
 \subparagraph{}
-D’autres efforts pour stocker RDF dans une base relationnelles :
+D’autres efforts pour stocker RDF dans une base relationnelles:
 \begin{itemize}
 \item Jena2 de Apache
 \item Sesame de openRDF.org
 \item 3store ou triplestore de University of Southampton
 \end{itemize}
 \paragraph{}
-D'autes index temporeaux connus comme ( R+ trees, SR-trees, ST-index, and MAP21), l'index tGRIN présentent des performances supérieures selon les expérimentations faites dans~\cite{pugliese2008}.
+D'autes index temporels sont implémentés ( R+ trees, SR-trees, ST-index, and MAP21) mais l'index tGRIN présentent des performances supérieures selon les expérimentations faites dans~\cite{pugliese2008}.
 \subsection*{RDF Temporel}
 \paragraph{}
-Pour introduire le tRDF on commence par les exemples suivants:
+Pour introduire RDF temporel ''tRDF'' on commence par les exemples suivants:
 \newline
-Il y a des triplets comme par exemple : " Mary est toujours la mère de John " qui n'ont pas une importance temporelle parce qu'ils sont toujours valable.
-Mais il y a aussi des triplets valable que dans une plage temporelle bien précise, par exemple
+Il y a des triplets comme par exemple : " Mary est toujours la mère de John " qui n'ont pas une caractéristique temporelle explicite parce qu'il est toujours valable.
+Mais il y a aussi des triplets ayant une valeur vrai que dans une plage temporelle bien précise, par exemple
 " Bill Clinton est le président de Etats Unis", est valable dans l'intervalle $[1993-2001]$.   
 \subparagraph{}
 Donc il y a des triplets qui ne peuvent être reconnus que dans des périodes temporelles précises.
 \paragraph{}
-L’annotation tRDF peut être exprimé ($n$ est un nombre entier, $T$ appartient à un interval de temps)
+L’annotation tRDF peut être exprimé ($n$ est un nombre entier, $T$ appartient à un interval de temps, $s$ le sujet, p le prédicat, v l'objet)
 \begin{enumerate}
-\item $(s, p : {T}, v)$, ce type de triplet représente une relation entre le sujet et le prédicat et l'objet dure un temps $T$ (dans n'importe quel point de $T$).
+\item $(s, p : {T}, v)$, ce type de triplet représente une relation entre le sujet et le prédicat et l'objet dure un temps $T$ (dans n'importe quel point de temps dans $T$).
 \item $(s, p : <n : T>, v)$, ce triplet présente une relation entre $s$, $p$ et $v$ qui dure au moins n point de temps différents dans $T$.
 \item $(s, p : [n : T ], v)$, ce triplet présente une relation entre $s$, $p$ et $v$ qui dure au plus $n$ points de temps différents dans $T$. 
 \end{enumerate}
-\paragraph{}
-Pugliese et al~\cite{pugliese2008} ont développé tGRIN et ils ont fait une comparaison pour montrer ça performance (tGRIN, JENA2, sesame, 3store).
 \subsection*{Une autre Approche Annotation avec des faits}
 \paragraph{}
-Linked Open Data (LOD), c'est un moyen de publier des données structurées sur le web, ce qui donne la possibilité au métadonnées d'être connectés et enrichis d'une manière solide, permet d'avoir plusieurs représentations d'un même contenu et fait des rapprochements entre des ressources connexes. 
+Linked Open Data (LOD)\footnote{http://linkeddata.org/}, c'est un moyen de publier des données structurées sur le web, ce qui donne la possibilité au métadonnées d'être connectés et enrichis d'une manière solide, permet d'avoir plusieurs représentations d'un même contenu et fait des rapprochements entre des ressources connexes. 
 \subparagraph{}
 Au cours des dernières années, le LOD a développé dans une grande fusion de divers ensemble de données provenant de plusieurs domaines.
 \subparagraph{}
@@ -105,33 +98,29 @@ Les informations sur un interval temporel de validité pour les évènements dé
 Un grand nombre de triplets dans LOD ne sont valides et valables que dans un certain intervalle de temps qu'ils l'appellent la protée de leurs temps.
 Par exemple dans DBpedia ils indiquent que " Mario Balotelli joue pour les équipes AC Lumezzane et le Milan AC ". On veut modéliser les connaissances du monde réel donc cela n'est pas possible.
 \subparagraph{}
-C'est à dire les logiques temporelles d'informations ont besoin d'avoir de la protée temporelle des faits tels que “ Mario Balotelli joue pour l'équipe AC Milan ”.
-Une approche a été proposée pour détecter la portée des évènements visés par des triplets RDF "Article non publié".
-\newline
-L'algorithme se compose de quatre étapes principales :
+Les logiques temporelles d'informations ont besoin d'avoir de la protée temporelle des faits tels que “ Mario Balotelli joue pour l'équipe AC Milan ”.
+Une approche a été proposée pour détecter la portée des évènements visés par des triplets RDF par Rule et al~\cite{rula2013}, elle se compose de quatre étapes principales~:
 \begin{itemize}
 \item Les données du document web sont normalisées pour tenir compte de l’importance des dates figurants dans les documents.
 \item La sortie de la phrase est comparée avec un ensemble d’intervalles de temps pertinents pour obtenir des notes de significations pour chaque intervalle.
 \item Un ensemble d’intervalles plus importants est sélectionné.
 \item Les intervalles sélectionnés sont fusionnés lorsque c’est possible.
 \end{itemize}
-Un ensemble d'intervalles déconnectés sont retournées par l’algorithme.   
 \subparagraph{}
-L'évaluation était faite à partir des données extraites de DBpedia et la base de connaissances de YAGO.
-L’algorithme DeFacto est utilisé pour l’extraction des données.
+La plateforme DeFacto(Deep Fact Validation)~\cite{lehmann2012} a été utilisée pour la validation des états on cherchant des sources qu'elle confirme sur le web.
 \subparagraph{}
 Les triplets sont représentés par des faits et peuvent être associé à un contexte temporelle.
-Par exemple , $<Balotelli, team, AC Milan>$ se réfère à un événement de $2003-2009$. 
+Par exemple, $<Balotelli, team, AC Milan>$ se réfère à un événement de $2003-2009$. 
 Ils définissent une annotation temporelle avec des faits comme suit $<f, [ti,tj]>$.
 \subparagraph{}
-Cette approche combine deux types d'informations : les informations temporelles recuiellies dans des documents web et les informations temporelles contenues dans les bases de connaissances, pour associer des intervalles de temps au triplets RDF.
+Cette approche combine deux types d'informations~: les informations temporelles recuiellies dans des documents web et les informations temporelles contenues dans les bases de connaissances, pour associer des intervalles de temps au triplets RDF.
 \subsection*{Temps valide des triplets dans les données géospatiales liées}
 \paragraph{}
 Bereta et al~\cite{bereta2013} introduisent la composante temporelle des données du modèle stRDF et le langage de requêtes stSPARQL, récemment proposés pour la présentation et l’interrogation des données géospatiales liées qui changement dans le temps.
 \subparagraph{}
 L’introduction du temps dans les modèles de données et les langages de requêtes, a été l’objet de recherches approfondies dans le champs de base de données relationnelles.
 \subparagraph{}
-Les trois types distincts de temps qui ont été  étudiées :
+Les trois types distincts de temps qui ont été  étudiées~:
 \begin{itemize}
 \item L'action temporelle indépendante, par exemple ($01/12/1954$ c’est l’anniversaire de John).
 \item Le temps d’évènement ou un fait vrai dans l’application (entre $2001-2012$ John a été un professeur).
@@ -150,13 +139,13 @@ Plusieurs travaux de recherches on été mis au point pour résoudre ce problèm
 \paragraph{}
 L'extraction, la fouille de données, ou encore la fouille des connaissance à partir de données, à pour  objet l'extraction d'un savoir, d'une connaissaince, ou dans notre cas une connaissance mise en relation temporelle à partir de grande quantité de données par des méthodes automatiques.
 \subparagraph{}
-Une approche proposée par Zweigenbaum et al%~\cite{zweigenbaum2013}% 
-[?] consiste à détecter les relations temporelles entre les évènements et les expressions temporelles à partir des comptes rendu hospitaliers.
+Une approche proposée par Zweigenbaum et Tannier~\cite{zweigenbaum2013} consiste à détecter les relations temporelles entre les évènements et les expressions temporelles à partir des comptes rendu hospitaliers.
 \subparagraph{}
 La détection des relations temporelles entre les évènements dans un texte fournit des bonnes informations pour l’extraction.
 \newline
-C’était les défis de TempEval qui ont abordé cette problématique en “domaine ouvert”, ont cherchant à détecter en TempEval2 cinq types de relations temporelles 
-$(Before, After, Overlap, Before_or_Overlap, Overlap_or_Before)$
+C’était les défis de TempEval évoqué par Verhagen et al~\cite{verhagen2010} qui ont abordé cette problématique en “domaine ouvert”, ont cherchant à détecter en TempEval2 cinq types de relations temporelles :
+\newline
+$(Before, After, Overlap, Before\_or\_Overlap, Overlap\_or\_Before)$
 et Identifier les relations temporelle décrivant la chronologie du séjour hospitalier.
 \newline
 Les relation à trouver dans des différentes situations :
@@ -170,7 +159,7 @@ Identifier les informations temporelles décrivant la chronologie entre ces év�
 Ces derniers utilisent des différents classifieurs (table de décision, arbre de décision, JRip, classifieurs bayésien naif) et le classifieur à arbre de décision J48 implémenté dans weka.
 \subparagraph{}
 La question c’est d’identifier les situations les plus importantes à traiter et les méthodes à utiliser.
-Zweigenbaum et al~\cite{zweigenbaum2013}utilisent une méthode d’apprentissage supervisé avec un ensemble de données et des classifieurs entrainés pour chaque situation. 
+Zweigenbaum et Tannier~\cite{zweigenbaum2013}utilisent une méthode d’apprentissage supervisé avec un ensemble de données et des classifieurs entrainés pour chaque situation. 
 L'évaluation a été appliquée sur un corpus d’apprentissage qui contient 190 échantillons, dont 120 échantillons de test.
 \subparagraph{}
 On peut utiliser cette méthode pour nos documents DBpedia à la place des ces comptes rendus hospitaliers.
