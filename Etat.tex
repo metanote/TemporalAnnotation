@@ -5,24 +5,26 @@ Notre étude a la particulatrité de s'étandre sur le domaine de la fouille de 
 \subparagraph{}
 En effet, on va utiliser les téchniques de la fouille pour l'extraction des données dans les différents documents, et le web sémantique pour avoir une structure plus lisible par la machine.
 \subsection*{Différentes approches d'annotation temporelle}			
+\subsubsection{Introduction}
 \paragraph{}
 Dans le domaine du web sémantique, il y a plusieurs extensions de RDF qui ont été proposé pour : la vérité, la confiance, la certitude, le temps ect…
 \subparagraph{}
 Par exemple pour la verité de certaines triplets où le degré de la vérité est entre $0$ et $1$
 pour l’instance “Rome is a big city to degree 0.8” peut être représentée par $(Rome, type,big{\_}city) : 0.8$.
-\newline
+\subparagraph{}
 De même pour la certitude un autre forme a été proposé :
 $(Max,hasSupervisor : (0.9,2003),William)$ à la forme générale suivante $(s, p : (x,t),o)$
 \newline 
 La certitude $x$ est représentée sous forme d'un pourcentage, 90\% pour cet exemple.
+\subsubsection{L'annotation temporelle}
 \paragraph{}
-La nécessité de l’annotation temporelle sur les documents web ou l’adressage des changements d’une ontologie au meilleur de notre connaissance a été évoqué dans des nombreux travaux de recherche. La première approche formelle au problème de modélisation et d’interrogation temporelle en RDF a été introduite par Gutierrez et al~\cite{gutierrez2005}.
+La nécessité de l’annotation temporelle sur les documents web a été évoqué dans des nombreux travaux de recherche. La première approche formelle au problème de modélisation et d’interrogation temporelle en RDF a été introduite par Gutierrez et al~\cite{gutierrez2005}.
 \subparagraph{}
 Ensuite, Udrea et al~\cite{udrea2006} ont remis en question la notion d'annoter temporellement les graphes RDF et depuis plusieurs travaux de recherche ont évoqué cette problèmatique. 
 Ces derniers définissent le triplet annoté de la forme suivante $(s,p:t,o)$, $t$ est une étiquette temporelle.
 De plus ils ont donné des algorithmes pour interroger les données RDF annotées.
 
-\subsection*{Contexte des DB temporelles}
+\subsection*{DB temporelles}
 \paragraph{}
 Une base de données temporelle est une base de données avec des acpects de temps intégrés(temps-valide, temps-transaction), c'est à dire un modèle de données temporelles et une version temporelle du langage structuré de requête(SQL).
 \subparagraph{}
@@ -96,9 +98,9 @@ L'ensemble des données fournit des connaissances du monde réel.
 Les informations sur un interval temporel de validité pour les évènements décrits par des triplets RDF jouent un rôle important dans un grand nombre d'applications.
 \subparagraph{}
 Un grand nombre de triplets dans LOD ne sont valides et valables que dans un certain intervalle de temps qu'ils l'appellent la protée de leurs temps.
-Par exemple dans DBpedia ils indiquent que " Mario Balotelli joue pour les équipes AC Lumezzane et le Milan AC ". On veut modéliser les connaissances du monde réel donc cela n'est pas possible.
+Par exemple dans DBpedia ils indiquent que "Mario Balotelli joue pour les équipes AC Lumezzane et le Milan AC". On veut modéliser les connaissances du monde réel, Mario Balotelli ne peut pas jouer au même temps avec AC Lumezzane et le Milan AC.
 \subparagraph{}
-Les logiques temporelles d'informations ont besoin d'avoir de la protée temporelle des faits tels que “ Mario Balotelli joue pour l'équipe AC Milan ”.
+Les logiques temporelles d'informations ont besoin d'avoir de la protée temporelle des faits tels que “Mario Balotelli joue pour l'équipe AC Milan”.
 Une approche a été proposée pour détecter la portée des évènements visés par des triplets RDF par Rule et al~\cite{rula2013}, elle se compose de quatre étapes principales~:
 \begin{itemize}
 \item Les données du document web sont normalisées pour tenir compte de l’importance des dates figurants dans les documents.
@@ -123,27 +125,25 @@ L’introduction du temps dans les modèles de données et les langages de requ�
 Les trois types distincts de temps qui ont été  étudiées~:
 \begin{itemize}
 \item L'action temporelle indépendante, par exemple ($01/12/1954$ c’est l’anniversaire de John).
-\item Le temps d’évènement ou un fait vrai dans l’application (entre $2001-2012$ John a été un professeur).
+\item Le temps d’évènement ou un fait vrai dans l’application (entre $2001-2012$ John a été professeur).
 \item Le délail de transaction qui est le moment où un fait est en cours dans la base de données (l’heure système qui présente l’heure exact quand John est un professeur "$2001-2012$" est en cours dans la base de données).
 \end{itemize}
 \paragraph{}
 Bereta et al~\cite{bereta2013} introduisent également le concept de horodatages anonymes dans les graphes RDF, par exemple quads de la forme $(s, p, o)[t]$, où $t$ est une horloge ou un timestamp $x$ anonyme déclarant que le triplet est valable dans un certain point de temps inconnue $x$.
 \subparagraph{}
-L’idée principale est d’intégrer les informations géospatiale pour le modèle de graphe RDF temporelle. Le langage d’interrogation stSPARQL, ajoute deux nouveaux types de variables spaciales et temporelles, aux variables SPARQL standards.
-\subparagraph{}
-Bereta et al~\cite{bereta2013} décrivent les motifs des triplets temporelles qui est une expression de la forme suivante $(s, p, o, t)$, une forme qu'on souhaite utiliser dans notre cas d'étude, où $(s, p, o)$ est le triplet motif et $t$ c’est une période temporelle ou une variable.
+L’idée principale est d’intégrer les informations géospatiale pour le modèle de graphe RDF temporel. Le langage d’interrogation stSPARQL, ajoute deux nouveaux types de variables spaciales et temporelles, aux variables SPARQL standards.
 \subsection*{Synthèse}
 \paragraph{}
-Plusieurs travaux de recherches on été mis au point pour résoudre ce problème des données qui présentent un sémantique temporel dans les graphes RDF. On s'inspire de ces travaux pour proposer une nouvelle approche qui peut être satisfaisante pour résoudre ce gap.
+Plusieurs travaux de recherches on été mis au point pour résoudre le problème des données qui présentent un sémantique temporel dans les graphes RDF. On s'inspire de ces travaux pour proposer une nouvelle approche qui peut être satisfaisante pour annoter temporellement les métadonnées de Wikipedia.
 \subsection*{Extraction des données}
 \paragraph{}
-L'extraction, la fouille de données, ou encore la fouille des connaissance à partir de données, à pour  objet l'extraction d'un savoir, d'une connaissaince, ou dans notre cas une connaissance mise en relation temporelle à partir de grande quantité de données par des méthodes automatiques.
+L'extraction, la fouille de données, ou encore la fouille des connaissance à partir de données, ont pour  objet l'extraction d'un savoir, d'une connaissaince, ou dans notre cas une connaissance mise en relation temporelle à partir de grande quantité de données par des méthodes automatiques.
 \subparagraph{}
 Une approche proposée par Zweigenbaum et Tannier~\cite{zweigenbaum2013} consiste à détecter les relations temporelles entre les évènements et les expressions temporelles à partir des comptes rendu hospitaliers.
 \subparagraph{}
 La détection des relations temporelles entre les évènements dans un texte fournit des bonnes informations pour l’extraction.
 \newline
-C’était les défis de TempEval évoqué par Verhagen et al~\cite{verhagen2010} qui ont abordé cette problématique en “domaine ouvert”, ont cherchant à détecter en TempEval2 cinq types de relations temporelles :
+C’était les défis de TempEval Verhagen et al~\cite{verhagen2010} qui ont abordé en “domaine ouvert”, ont cherchant à détecter en TempEval2 cinq types de relations temporelles :
 \newline
 $(Before, After, Overlap, Before\_or\_Overlap, Overlap\_or\_Before)$
 et Identifier les relations temporelle décrivant la chronologie du séjour hospitalier.
@@ -159,20 +159,20 @@ Identifier les informations temporelles décrivant la chronologie entre ces év�
 Ces derniers utilisent des différents classifieurs (table de décision, arbre de décision, JRip, classifieurs bayésien naif) et le classifieur à arbre de décision J48 implémenté dans weka.
 \subparagraph{}
 La question c’est d’identifier les situations les plus importantes à traiter et les méthodes à utiliser.
-Zweigenbaum et Tannier~\cite{zweigenbaum2013}utilisent une méthode d’apprentissage supervisé avec un ensemble de données et des classifieurs entrainés pour chaque situation. 
+Zweigenbaum et Tannier~\cite{zweigenbaum2013} utilisent une méthode d’apprentissage supervisé avec un ensemble de données et des classifieurs entrainés pour chaque situation. 
 L'évaluation a été appliquée sur un corpus d’apprentissage qui contient 190 échantillons, dont 120 échantillons de test.
 \subparagraph{}
 On peut utiliser cette méthode pour nos documents DBpedia à la place des ces comptes rendus hospitaliers.
 Au lieu d’une procédure de décision gloutonne ou aléatoire, une relation de décision globale pourrait être implémentée pour étudier toutes les relations temporelles prédites. 
 \paragraph{}
-Le but de Kessler et al~\cite{kessler2013}est d'extraire les dates saillantes (importantes) qui méritent de figurer dans une chronologie événementielle.
+Le but de Kessler et al~\cite{kessler2013} est d'extraire les dates saillantes (importantes) qui méritent de figurer dans une chronologie événementielle.
 Ces derniers ont utilisé une approche d’apprentissage pour extraire les dates saillantes pour un thème donné.
 \subparagraph{}
 La méthode consiste d'annoter automatiquement les informations événementielles. 
-C’est à dire repérer et baliser (Event) les occurrences d’événements au sens TimeML et de les classifier selon l’ontologie définie par le schéma d’annotation. 
+C’est à dire repérer et baliser (Event) les occurrences d’événements au sens TimeML\footnote{http://timeml.org/site/index.html} et de les classifier selon l’ontologie définie par le schéma d’annotation. 
 \newline
 "Event" c’est un tag pour les éléments dans un texte indique que c’est un événement sémantique.
 \subsection*{Synthèse}
 \paragraph{}
-Dans cette étude l'extraction des informations temporelle est une étape essentielle. On pourrait s'inspirer des méthodes présentées ci-dessous pour répondre aux objectifs fixés au démarrage du projet.
+L'extraction des informations temporelles est une étape primordial. On pourrait s'inspirer des méthodes présentées précédemment pour répondre aux objectifs fixés au démarrage de cette étude.
 
