@@ -1,9 +1,9 @@
 \section*{État de l'art}
 \subsection*{Apperçu du domaine}
 \paragraph{}
-Notre étude a la particulatrité de s'étandre sur le domaine de la fouille de donnée et du web sémantique.
+Notre étude a la particulatrité de s'étendre sur le domaine de la fouille de donnée et du web sémantique.
 \subparagraph{}
-En effet, on va utiliser les téchniques de la fouille pour l'extraction des données dans les différents documents, et le web sémantique pour avoir une structure plus lisible par la machine.
+En effet, on va utiliser les techniques de la fouille pour l'extraction des données dans les différents documents, et le web sémantique pour avoir une structure plus lisible par la machine.
 \subsection*{Différentes approches d'annotation temporelle}			
 \subsubsection{Introduction}
 \paragraph{}
@@ -16,7 +16,7 @@ De même pour la certitude un autre forme a été proposé :
 $(Max,hasSupervisor : (0.9,2003),William)$ à la forme générale suivante $(s, p : (x,t),o)$
 \newline 
 La certitude $x$ est représentée sous forme d'un pourcentage, 90\% pour cet exemple.
-\subsubsection{L'annotation temporelle}
+\subsubsection*{L'annotation temporelle}
 \paragraph{}
 La nécessité de l’annotation temporelle sur les documents web a été évoqué dans des nombreux travaux de recherche. La première approche formelle au problème de modélisation et d’interrogation temporelle en RDF a été introduite par Gutierrez et al~\cite{gutierrez2005}.
 \subparagraph{}
@@ -24,9 +24,9 @@ Ensuite, Udrea et al~\cite{udrea2006} ont remis en question la notion d'annoter 
 Ces derniers définissent le triplet annoté de la forme suivante $(s,p:t,o)$, $t$ est une étiquette temporelle.
 De plus ils ont donné des algorithmes pour interroger les données RDF annotées.
 
-\subsection*{DB temporelles}
+\subsection*{Base de données temporelles}
 \paragraph{}
-Une base de données temporelle est une base de données avec des acpects de temps intégrés(temps-valide, temps-transaction), c'est à dire un modèle de données temporelles et une version temporelle du langage structuré de requête(SQL).
+Une base de données temporelle est une base de données avec des acpects de temps intégrés(temps-valide, temps-transaction), c'est à dire un modèle de données temporelles et une version temporelle du langage structuré de requête(SPARQL, SQL).
 \subparagraph{}
 En effet, le temps valide dénote la période du temps durant laquelle un fait est vrai par rapport à la réalité.
 Le temps-transaction est la période de temps pendant laquelle un fait est stocké dans une base de données.
@@ -38,13 +38,13 @@ Dans le contexte de l'annotation temporelle des graphes RDF, les besoins se rés
 \item La distribution des mise à jour des journaux.
 \end{itemize}
 \subparagraph{}
-En vertu des travaux de Antoniou et al~\cite{antoniou2004} présentent une ontologie du service web, pour monter qu'une ontologie peut passer par plusieurs états, ainsi que d'autres recherches dont l'objectif de répondre aux besoins cités auparavant. ~
+En vertu des travaux de Antoniou et al~\cite{antoniou2004} présentent une ontologie du service web, pour monter qu'une ontologie peut passer par plusieurs états, ainsi que d'autres recherches dont l'objectif d'analyser et justifier les besoins cités auparavant.
 \paragraph{}
-Une base de données temporelle peut être exprimer comme un répertoire d'informations temporelles.
+Une base de données temporelle peut être exprimé comme un répertoire d'informations temporelles.
 Gutiérrez et al~\cite{gutierrez2007}, montrent qu'il y aura deux manières pour ajouter des dimensions temporelles dans un graphe RDF intemporel:
 \begin{itemize}
-\item étiqueter les éléments soumis à des changements, les triplets par exemple, à chaque changement un nouveau graphe créer et l’ancien état sera stocké quelque part.
-\item versionner : capture de temps de transaction, l’étiquetage est mieux que les versions pour les raisons suivantes: 
+\item Étiqueter les éléments soumis à des changements, les triplets par exemple, à chaque changement un nouveau graphe créer et l’ancien état sera stocké quelque part.
+\item Versionner : capture de temps de transaction, l’étiquetage est mieux que les versions pour les raisons suivantes: 
  \begin{itemize}
 \item Il conserve le principe de la nature distribuée et extensible de RDF.
 \item Si la nouvelle version n’affecte que quelques éléments cela implique la création d’un nouveau graphe, de ce fait on aura des contraites de mémoire.
@@ -70,34 +70,34 @@ D’autres efforts pour stocker RDF dans une base relationnelles:
 \end{itemize}
 \paragraph{}
 D'autes index temporels sont implémentés ( R+ trees, SR-trees, ST-index, and MAP21) mais l'index tGRIN présentent des performances supérieures selon les expérimentations faites dans~\cite{pugliese2008}.
-\subsection*{RDF Temporel}
+\subsection*{tRDF ou RDF Temporel}
 \paragraph{}
 Pour introduire RDF temporel ''tRDF'' on commence par les exemples suivants:
 \newline
-Il y a des triplets comme par exemple : " Mary est toujours la mère de John " qui n'ont pas une caractéristique temporelle explicite parce qu'il est toujours valable.
+Il y a des triplets comme par exemple : " Mary est toujours la mère de John " qui n'ont pas une caractéristique temporelle explicite parce qu'il est toujours valide.
 Mais il y a aussi des triplets ayant une valeur vrai que dans une plage temporelle bien précise, par exemple
-" Bill Clinton est le président de Etats Unis", est valable dans l'intervalle $[1993-2001]$.   
+" Bill Clinton est le président de Etats Unis", n'est valide que dans l'intervalle $[1993-2001]$.   
 \subparagraph{}
 Donc il y a des triplets qui ne peuvent être reconnus que dans des périodes temporelles précises.
 \paragraph{}
-L’annotation tRDF peut être exprimé ($n$ est un nombre entier, $T$ appartient à un interval de temps, $s$ le sujet, p le prédicat, v l'objet)
+D'après Andrea et al~\cite{pugliese2008} l’annotation tRDF peut être exprimé de la manière suivante ($n$ est un nombre entier, $T$ appartient à un interval de temps, $s$ le sujet, $p$ le prédicat, $v$ l'objet) :
 \begin{enumerate}
-\item $(s, p : {T}, v)$, ce type de triplet représente une relation entre le sujet et le prédicat et l'objet dure un temps $T$ (dans n'importe quel point de temps dans $T$).
-\item $(s, p : <n : T>, v)$, ce triplet présente une relation entre $s$, $p$ et $v$ qui dure au moins n point de temps différents dans $T$.
-\item $(s, p : [n : T ], v)$, ce triplet présente une relation entre $s$, $p$ et $v$ qui dure au plus $n$ points de temps différents dans $T$. 
+\item ($s$, $p$ : {$T$}, $v$), ce type de triplet représente une relation entre le sujet et le prédicat et l'objet dure un temps $T$ (dans n'importe quel point de temps dans $T$).
+\item $($s$, $p$ : <$n$ : $T$>, $v$)$, ce triplet présente une relation entre $s$, $p$ et $v$ qui dure au moins n point de temps différents dans $T$.
+\item ($s$, $p$ : [$n$ : $T$], $v$), ce triplet présente une relation entre $s$, $p$ et $v$ qui dure au plus $n$ points de temps différents dans $T$. 
 \end{enumerate}
 \subsection*{Une autre Approche Annotation avec des faits}
 \paragraph{}
-Linked Open Data (LOD)\footnote{http://linkeddata.org/}, c'est un moyen de publier des données structurées sur le web, ce qui donne la possibilité au métadonnées d'être connectés et enrichis d'une manière solide, permet d'avoir plusieurs représentations d'un même contenu et fait des rapprochements entre des ressources connexes. 
+Linked Open Data (LOD)\footnote{http://linkeddata.org/}, c'est un moyen de publier des données structurées sur le web, ce qui donne la possibilité au métadonnées d'être connectées et enrichies d'une manière solide, permet d'avoir plusieurs représentations d'un même contenu et fait des rapprochements entre des ressources connexes. 
 \subparagraph{}
 Au cours des dernières années, le LOD a développé dans une grande fusion de divers ensemble de données provenant de plusieurs domaines.
 \subparagraph{}
 Linked Open Data décrit les ressources identifiées par des URI en représentant leurs propriétés et des liens vers d’autres ressources.
 L'ensemble des données fournit des connaissances du monde réel.
 \subparagraph{}
-Les informations sur un interval temporel de validité pour les évènements décrits par des triplets RDF jouent un rôle important dans un grand nombre d'applications.
+Les informations sur un intervalle temporel de validité pour les évènements décrits par des triplets RDF jouent un rôle important dans un grand nombre d'applications.
 \subparagraph{}
-Un grand nombre de triplets dans LOD ne sont valides et valables que dans un certain intervalle de temps qu'ils l'appellent la protée de leurs temps.
+Un grand nombre de triplets dans LOD ne sont valides que dans un certain intervalle de temps qu'ils l'appellent la protée de leurs temps.
 Par exemple dans DBpedia ils indiquent que "Mario Balotelli joue pour les équipes AC Lumezzane et le Milan AC". On veut modéliser les connaissances du monde réel, Mario Balotelli ne peut pas jouer au même temps avec AC Lumezzane et le Milan AC.
 \subparagraph{}
 Les logiques temporelles d'informations ont besoin d'avoir de la protée temporelle des faits tels que “Mario Balotelli joue pour l'équipe AC Milan”.
@@ -115,12 +115,12 @@ Les triplets sont représentés par des faits et peuvent être associé à un co
 Par exemple, $<Balotelli, team, AC Milan>$ se réfère à un événement de $2003-2009$. 
 Ils définissent une annotation temporelle avec des faits comme suit $<f, [ti,tj]>$.
 \subparagraph{}
-Cette approche combine deux types d'informations~: les informations temporelles recuiellies dans des documents web et les informations temporelles contenues dans les bases de connaissances, pour associer des intervalles de temps au triplets RDF.
+Cette approche combine deux types d'informations~: les informations temporelles recueillies dans des documents web et les informations temporelles contenues dans les bases de connaissances, pour associer des intervalles de temps au triplets RDF.
 \subsection*{Temps valide des triplets dans les données géospatiales liées}
 \paragraph{}
 Bereta et al~\cite{bereta2013} introduisent la composante temporelle des données du modèle stRDF et le langage de requêtes stSPARQL, récemment proposés pour la présentation et l’interrogation des données géospatiales liées qui changement dans le temps.
 \subparagraph{}
-L’introduction du temps dans les modèles de données et les langages de requêtes, a été l’objet de recherches approfondies dans le champs de base de données relationnelles.
+L’introduction du temps dans les modèles de données et les langages de requêtes, a été l’objet de recherches approfondies dans le champs des bases de données relationnelles.
 \subparagraph{}
 Les trois types distincts de temps qui ont été  étudiées~:
 \begin{itemize}
@@ -131,19 +131,19 @@ Les trois types distincts de temps qui ont été  étudiées~:
 \paragraph{}
 Bereta et al~\cite{bereta2013} introduisent également le concept de horodatages anonymes dans les graphes RDF, par exemple quads de la forme $(s, p, o)[t]$, où $t$ est une horloge ou un timestamp $x$ anonyme déclarant que le triplet est valable dans un certain point de temps inconnue $x$.
 \subparagraph{}
-L’idée principale est d’intégrer les informations géospatiale pour le modèle de graphe RDF temporel. Le langage d’interrogation stSPARQL, ajoute deux nouveaux types de variables spaciales et temporelles, aux variables SPARQL standards.
+L’idée principale est d’intégrer les informations géospatiales pour le modèle de graphe RDF temporel. Le langage d’interrogation stSPARQL, ajoute deux nouveaux types de variables spatiales et temporelles, aux variables SPARQL standards.
 \subsection*{Synthèse}
 \paragraph{}
-Plusieurs travaux de recherches on été mis au point pour résoudre le problème des données qui présentent un sémantique temporel dans les graphes RDF. On s'inspire de ces travaux pour proposer une nouvelle approche qui peut être satisfaisante pour annoter temporellement les métadonnées de Wikipedia.
+Plusieurs travaux de recherches on été mis au point pour résoudre le problème des données qui présentent un sémantique temporel dans les graphes RDF. On s'inspire de ces travaux pour proposer une nouvelle approche qui soit satisfaisante pour annoter temporellement les métadonnées de Wikipedia.
 \subsection*{Extraction des données}
 \paragraph{}
-L'extraction, la fouille de données, ou encore la fouille des connaissance à partir de données, ont pour  objet l'extraction d'un savoir, d'une connaissaince, ou dans notre cas une connaissance mise en relation temporelle à partir de grande quantité de données par des méthodes automatiques.
+L'extraction, la fouille de données, ou encore la fouille des connaissance à partir de données, ont pour  objet l'extraction d'un savoir, d'une connaissaince, ou dans notre cas une connaissance mise en relation temporelle à partir de grandes quantité de données par des méthodes automatiques.
 \subparagraph{}
 Une approche proposée par Zweigenbaum et Tannier~\cite{zweigenbaum2013} consiste à détecter les relations temporelles entre les évènements et les expressions temporelles à partir des comptes rendu hospitaliers.
 \subparagraph{}
-La détection des relations temporelles entre les évènements dans un texte fournit des bonnes informations pour l’extraction.
+La détection des relations temporelles entre les évènements dans un texte, fournit de bonnes informations pour l’extraction.
 \newline
-C’était les défis de TempEval Verhagen et al~\cite{verhagen2010} qui ont abordé en “domaine ouvert”, ont cherchant à détecter en TempEval2 cinq types de relations temporelles :
+C’était les défis de TempEval Verhagen et al~\cite{verhagen2010} qui ont abordé en “domaine ouvert”, en cherchant à détecter en TempEval2 cinq types de relations temporelles :
 \newline
 $(Before, After, Overlap, Before\_or\_Overlap, Overlap\_or\_Before)$
 et Identifier les relations temporelle décrivant la chronologie du séjour hospitalier.

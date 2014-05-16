@@ -12,7 +12,7 @@ Dans RDF ~:
 \item Le cadre standardise la syntaxe de ces descriptions, les modèles et les langages.  
 \end{itemize}
 \subparagraph{}
-La plus petite structure de description en RDF est le triplet (fig).
+La plus petite structure de description en RDF est le triplet.
 \begin{figure}[H]
         \centering
                 \centering
@@ -21,26 +21,28 @@ La plus petite structure de description en RDF est le triplet (fig).
 
 \end{figure}
 \subparagraph{}
-Un triplet décrit une ressource, l’associe à une propriété et une valeur de cette propriété qui peut être une nouvelle ressource liée. Par exemple “Moncef a écrit une page QuadsRDF.html à propos des quadruplets RDF” peut être décomposée en deux triplets ayant comme sujet “QuadsRDF.html”:
+Un triplet décrit une ressource, l’associe à une propriété et une valeur de cette propriété qui peut être une nouvelle ressource liée.
+\newline
+Par exemple “Moncef a écrit une page QuadsRDF.html à propos des quadruplets RDF” peut être décomposée en deux triplets ayant comme sujet “QuadsRDF.html”:
 <QuadsRDF.html, auteur, Moncef>(figure2) et <QuadsRDF.html, thème, quadruplets RDF>(figure3).
 On peut schématiser cela de la manière suivante:
 \begin{figure}[H]
         \centering
                 \centering
                 \includegraphics[width=10cm]{moncef.png}
-               \caption{Exemple 1}
+               \caption{Triplet 1}
 
 \end{figure}
 \begin{figure}[H]
         \centering
                 \centering
                 \includegraphics[width=10cm]{quads.png}
-               \caption{Exemple2}
+               \caption{Triplet 2}
 
 \end{figure}
 \subsection*{DBpedia}
 \paragraph{}
-C'est un projet universitaire et communautaire d’extraction et d’exploitation automatique des données de wikipedia. C’est un ensemble de données structurées et normalisées au format du web sémantique.
+C'est un projet universitaire et communautaire d’extraction et d’exploitation automatique des données de wikipedia. C’est également un ensemble de données structurées et normalisées au format du web sémantique.
 DBpedia 3.9 est la dernière version de DBpedia datant de Juin 2013. DBpedia est écrite en Scala et Java.
 Elle adopte les normes du web sémantique et du réseau Linked Open Data. Pour chaque document encyclopédique, il existe une page de ressources contenant toutes les données sous forme de triplets RDF.
 \begin{figure}[H]
@@ -51,13 +53,29 @@ Elle adopte les normes du web sémantique et du réseau Linked Open Data. Pour c
 
 \end{figure}
 \newpage
-\section*{Proposition}
+\section*{Analyse des besoins}
+\subsection*{Introduction}
+\paragraph{}
+Le large succès de Wikipedia(qui est le 2éme site le plus visité sur internet) et le progrès des techniques d’extraction des données ont abouti à la naissance de la construction automatique  de larges base de connaissances comme DBpedia, YAGO, etc...
+\subparagraph{}
+Beaucoup de connaissances sont construites en se basant sur l’extraction automatique des faits relationnels dans un texte.
+Malheureusement, les bases de connaissances convergent sur les faits statiques et ne donnent pas une grande importance à la dimension temporelle.
+Malgré le fait que la majorité des faits évoluent avec le temps, ou n'est valide que dans une période temporelle précise.
+Ainsi, nous remarquons que le temps a une dimension significatif dans ces bases de connaissances.
+\subparagraph{}
+Dans cette étude on veut extraire des faits temporels et des évènements depuis des information semi-structurées de Wikipedia et Wikidata ; et textuelles de Wikipedia.
+\paragraph{}
+La dimension temporelle est particulièrement importante dans les relations binaires comme isPresidentOf, isCEOof, isMarriedTo, on peut être mariée à plusieurs épouses mais dans des différents intervalles de temps mais “On ne prend pas compte des exceptions de mariage polygames ”.
+\subparagraph{}
+Une base de connaissances contenant plusieurs présidents des États-Unis ne peut être consistante que lorsqu’on ajoute une dimension temporelle à ces faits. De plus l’annotation temporelle aide à faire la distinction entre les faits courants et et les faits dépassés.
+Par exemple le fait “Kennedy est le président des États-Unis” est correct, mais n'est plus valide.
+Lorsqu’on attache une annotation temporelle à un fait comme celui là, il devient universellement valide.
 \subsection*{Problématique}
 \paragraph{}
-Lorsqu’on parcours un document “Wikipedia” on trouve beaucoup d’informations temporelles qui sont généralement liées à un contexte précis.
+Lorsqu’on parcourt un document “Wikipedia” on trouve beaucoup d’informations temporelles qui sont généralement liées à un contexte précis.
 Il est plus difficile d’exploiter ces informations si elles ne possèdent pas une structure claire et lisible par la machine.
 \newline
-Il se trouve que des informations temporelles dans DBpedia sont exprimées de la manière suivante: 
+Il se trouve que des informations liées au même contexte temporel dans DBpedia sont exprimées de la manière suivante: 
 \begin{figure}[H]
         \centering
                 \centering
@@ -66,7 +84,7 @@ Il se trouve que des informations temporelles dans DBpedia sont exprimées de la
 
 \end{figure}
 \subparagraph{}
-Il est toujours possible d’exprimer le temps dans sous forme de un triplet comme l’exemple ci-dessous: 
+Le premier triplet n'a pas une sémantique valide que en tenant compte du triplet suivant~: 
 \begin{figure}[H]
         \centering
                 \centering
@@ -75,10 +93,10 @@ Il est toujours possible d’exprimer le temps dans sous forme de un triplet com
 
 \end{figure}
 \subparagraph{}
-Dans notre sujet de recherche on vise plutôt à annoter les triplets (s,p,o) avec une étiquette temporelle qui précise la validité de ce terme dans un cadre logique qui appartient au monde réel où en dehors de ce cadre, on peut dire que ce triplet RDF n’est pas valide et qu’on ne peut pas l’utiliser.
+On vise plutôt à annoter les triplets (s,p,o) avec une étiquette temporelle qui précise la validité de ce terme dans un cadre logique qui appartient au monde réel où en dehors de ce cadre, on peut dire que ce triplet RDF n’est pas valide et qu’on ne peut pas l’utiliser.
 \subsection*{Sources de données}
 \paragraph{}
-Les données brutes proviennent de sources distinctes~:
+Les faits temporels extraites de Wikipedia consiste en deux phases principales : extractions des données semi-structurées(tableaux, infoboxes) et l’extraction depuis le texte wikipédia.
 \subsubsection*{Texte Wikipedia}
 \paragraph{}
 On cherche à extraire les informations temporelles qui ont un contexte de validité lié à un fait à partir des données textuelles des pages de Wikipedia. 
@@ -87,9 +105,11 @@ Par exemple sur la page de John Fitzgerald Kennedy, on retrouve~:
 Kennedy a visité Berlin Ouest le 23 Juin 1963.
 \subparagraph{}
 On veut extraire les ressources en donnant une nouvelle structure pour mieux présenter leur contexte de validité temporelle.
-\subsubsection*{Info box Wikipedia}
+\subsubsection*{Infobox Wikipedia}
 \paragraph{}
-On remarque sur la section droite de la page wikipedia des informations temporelles plus structurées indiquant généralement des intervalles de temps pour des évènements importants sur la personne ou le sujet de la page (fig):
+Les infoboxes : Contiennent généralement les informations les plus importantes des entités décrites dans l’article. Par exemple dans l’infobox de “Kennedy” l’ancien président des États-Unis sur wikipédia on trouve la date d’élection, le prédécesseur du président, la durée du mandat, etc…
+\newline
+Chaque infoBox a un type particulier comme: évènement historique, élection, compétition ect…
 \begin{figure}[H]
         \centering
                 \centering
@@ -127,6 +147,25 @@ On souhaite, si c’est possible, extraire des informations temporelles relative
 Il s'avère que beaucoup de points du temps dont liées à plusieurs sources d’information évènementielle; on cherche à extraire ces informations afin de les mettre sous une forme plus adéquate.
 \subsection*{Notre modélisation}
 \paragraph{}
+Modèle quaternaire : un modèle qui capte la base du fait avec un indice temporel.
+\newline
+<politician> served as <politician office> from <date> to <date>
+\newline
+f1: Kennedy holdsPoliticalPosition PresidentOfUSA 
+\newline
+f2:f1 startedOnDate 
+\newline
+f3:f1 endedOnDate
+\newline
+HappenedDate est utilisée pour dire que le fait est valide que dans ce point du temps.
+\begin{figure}[H]
+        \centering
+                \centering
+                \includegraphics[width=10cm]{timeline.png}
+               \caption{Event Time Line}
+
+\end{figure}
+\subparagraph{}
 Pour surmonter ce problème et exprimer la validité temporelle d’un triplet RDF d’une manière à la fois intelligente et lisible par la machine; on souhaite rattacher au triplets valides que dans une plage temporelle bien précise une étiquette temporelle adéquate.
 \newline
 Exemple~:
@@ -144,27 +183,13 @@ Les quadruplets vont être formalisés de la manière suivante~:
 $<s,p,o,[t1,t2]>$, un sujet, prédicat, objet avec une intervalle de temps.
 \newline
 $<s,p,o,t>$, de même avec un point de temps $t$.
-\subsubsection*{Schéma de modélisation}
-\paragraph{}
-Tout d’abord, et à partir des différents sources d’informations on veut récupérer les informations temporelles dans leurs contextes sémantiques à l’aide de nos différents extracteurs implémentés. 
-Ensuite, les mettre dans un ensemble de fichiers comme le montre le schéma ci-dessous.
-Enfin, on essaye de proposer cette nouvelle structure à l’équipe DBpedia.
-\begin{figure}[H]
-        \centering
-                \centering
-                \includegraphics[width=10cm]{modelisation.png}
-               \caption{Modélisation générale}
-
-\end{figure}
 \section*{Analyse temporelle}
 \subsection*{Représentation}
 \paragraph{}
 Les informations temporelles peuvent avoir des repèsentations différentes~: 
 \begin{itemize}
-\item Un évènement `` Je vous propose un rendez-vous $demain$ pour parler de mon projet 'WeShare' ``. \item Une connaissance `` Jacques Chirac est le président de la république Française `` \textbf{ mais quand ?}.
-
+\item Un évènement `` Je vous propose un rendez-vous $demain$ pour parler de mon projet 'PiSharing' ``. \item Une connaissance `` Jacques Chirac est le président de la république Française `` \textbf{ mais quand ?}.
 \end{itemize}
- 
 \subsection*{Ambiguïtés temporelles}
 Le présent par exemple peut avoir plusieurs sens ou contextes : présent de narration, présent de généralité, présent qui réfère au futur proche, etc...
 \subparagraph{}
@@ -185,12 +210,4 @@ De même pour les dates qui peuvent être~: Date absolue ``le 18 mars, c'est mon
 On trouve aussi~: Expression de fréquence `` tous les ans, le vendredi 13 ``, Expression plus complexe `` après la Révolution Tunisienne ``.
 \subsection*{Résumé}
 \paragraph{}
-Dans l'encyclopédia libre Wikipedia, il se trouve qu’on a beaucoup d’informations temporelles. Dans cette étude on va plutôt essayer d’extraire des dates saillantes en fonction de leurs sémantiques évènementiels.
-
-
-
-
-
-
-
-
+Dans l'encyclopédia libre Wikipedia, il se trouve qu’il y a beaucoup d’informations temporelles. Dans cette étude on va plutôt essayer d’extraire des dates saillantes en fonction de leurs sémantiques évènementiels.
