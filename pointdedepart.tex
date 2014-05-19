@@ -29,22 +29,16 @@ On peut schématiser cela de la manière suivante:
 \begin{figure}[H]
         \centering
                 \centering
-                \includegraphics[width=10cm]{moncef.png}
-               \caption{Triplet 1}
+                \includegraphics[width=10cm]{Diag.png}
+               \caption{Deux Triplets liés à la même ressource}
 
 \end{figure}
-\begin{figure}[H]
-        \centering
-                \centering
-                \includegraphics[width=10cm]{quads.png}
-               \caption{Triplet 2}
 
-\end{figure}
 \subsection*{DBpedia}
 \paragraph{}
 C'est un projet universitaire et communautaire d’extraction et d’exploitation automatique des données de wikipedia. C’est également un ensemble de données structurées et normalisées au format du web sémantique.
 DBpedia 3.9 est la dernière version de DBpedia datant de Juin 2013. DBpedia est écrite en Scala et Java.
-Elle adopte les normes du web sémantique et du réseau Linked Open Data. Pour chaque document encyclopédique, il existe une page de ressources contenant toutes les données sous forme de triplets RDF.
+Elle adopte les normes du web sémantique et du réseau Linked Open Data(le web de données). Pour chaque document encyclopédique, il existe une page de ressources contenant toutes les données sous forme de triplets RDF.
 \begin{figure}[H]
         \centering
                 \centering
@@ -72,7 +66,8 @@ Par exemple le fait “Kennedy est le président des États-Unis” est correct,
 Lorsqu’on attache une annotation temporelle à un fait comme celui là, il devient universellement valide.
 \subsection*{Problématique}
 \paragraph{}
-Lorsqu’on parcourt un document “Wikipedia” on trouve beaucoup d’informations temporelles qui sont généralement liées à un contexte précis.
+Lorsqu’on parcourt DBpedia on trouve beaucoup de triplets qui décrivent des informations temporelles. Ces derniers sont généralement liées à un contexte événementiel précis.
+\subparagraph{}
 Il est plus difficile d’exploiter ces informations si elles ne possèdent pas une structure claire et lisible par la machine.
 \newline
 Il se trouve que des informations liées au même contexte temporel dans DBpedia sont exprimées de la manière suivante: 
@@ -94,7 +89,7 @@ Le premier triplet n'a pas une sémantique valide que en tenant compte du triple
 \end{figure}
 \subparagraph{}
 On vise plutôt à annoter les triplets (s,p,o) avec une étiquette temporelle qui précise la validité de ce terme dans un cadre logique qui appartient au monde réel où en dehors de ce cadre, on peut dire que ce triplet RDF n’est pas valide et qu’on ne peut pas l’utiliser.
-\subsection*{Sources de données}
+\subsection*{Sources des données DBpedia}
 \paragraph{}
 Les faits temporels extraites de Wikipedia consiste en deux phases principales : extractions des données semi-structurées(tableaux, infoboxes) et l’extraction depuis le texte wikipédia.
 \subsubsection*{Texte Wikipedia}
@@ -131,7 +126,7 @@ Vous trouverez ci-dessous des informations sur les anciens précidents des État
 \end{figure}
 \subsubsection*{Wikidata}
 \paragraph{}
-Sur la page wikidata, liée au contenu de la page wikipedia de Kennedy, on a intérêt à extraire les informations temporelles (fig).
+Sur la page wikidata, liée au contenu de la page wikipedia de Kennedy, on a intérêt à extraire les informations temporelles.
 \begin{figure}[H]
         \centering
                 \centering
@@ -210,4 +205,4 @@ De même pour les dates qui peuvent être~: Date absolue ``le 18 mars, c'est mon
 On trouve aussi~: Expression de fréquence `` tous les ans, le vendredi 13 ``, Expression plus complexe `` après la Révolution Tunisienne ``.
 \subsection*{Résumé}
 \paragraph{}
-Dans l'encyclopédia libre Wikipedia, il se trouve qu’il y a beaucoup d’informations temporelles. Dans cette étude on va plutôt essayer d’extraire des dates saillantes en fonction de leurs sémantiques évènementiels.
+Dans l'encyclopédia libre Wikipedia, il se trouve qu’il y a beaucoup d’informations temporelles; qu'on risque de retrouver par la même occasion dans DBpedia. Dans cette étude on va plutôt essayer d’extraire des dates saillantes en fonction de leurs sémantiques évènementiels.
