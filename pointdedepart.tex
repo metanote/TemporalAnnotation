@@ -1,54 +1,7 @@
 \section*{Points de départ}
-\subsection*{RDF}
-\paragraph{}
-RDF est l’abréviation de “Resource Description Framework” qui se base sur un modèle de graphe. Il s’agit d’un cadre de description de ressources, d’une façon formelle sur le web.
-C’est la première brique de standard du web sémantique qui recouvre à la fois un modèle et plusieurs syntaxe pour publier des données variées sur le web.
-\subparagraph{}
-Dans RDF ~: 
-\newline 
-\begin{itemize}
-\item Les ressources sont un concept de base du web sémantique. D’où:  “tout ce qui peut être référencé est une ressource”. Et dans un contexte plus technique: On déduit que tout ce qui peut être identifié par un URI/IRI peut être considéré comme ressource.
-\item  Un ensemble d’attributs décrivent la ressource, qui possèdent des caractéristiques et des relations avec d’autres ressources.
-\item Le cadre standardise la syntaxe de ces descriptions, les modèles et les langages.  
-\end{itemize}
-\subparagraph{}
-La plus petite structure de description en RDF est le triplet.
-\begin{figure}[H]
-        \centering
-                \centering
-                \includegraphics[width=10cm]{tripletrdf.png}
-               \caption{triplet RDF}
 
-\end{figure}
-\subparagraph{}
-Un triplet décrit une ressource, l’associe à une propriété et une valeur de cette propriété qui peut être une nouvelle ressource liée.
-\newline
-Par exemple “Moncef a écrit une page QuadsRDF.html à propos des quadruplets RDF” peut être décomposée en deux triplets ayant comme sujet “QuadsRDF.html”:
-<QuadsRDF.html, auteur, Moncef>(figure2) et <QuadsRDF.html, thème, quadruplets RDF>(figure3).
-On peut schématiser cela de la manière suivante:
-\begin{figure}[H]
-        \centering
-                \centering
-                \includegraphics[width=10cm]{Diag.png}
-               \caption{Deux Triplets liés à la même ressource}
-
-\end{figure}
-
-\subsection*{DBpedia}
-\paragraph{}
-C'est un projet universitaire et communautaire d’extraction et d’exploitation automatique des données de wikipedia. C’est également un ensemble de données structurées et normalisées au format du web sémantique.
-DBpedia 3.9 est la dernière version de DBpedia datant de Juin 2013. DBpedia est écrite en Scala et Java.
-Elle adopte les normes du web sémantique et du réseau Linked Open Data(le web de données). Pour chaque document encyclopédique, il existe une page de ressources contenant toutes les données sous forme de triplets RDF.
-\begin{figure}[H]
-        \centering
-                \centering
-                \includegraphics[width=10cm]{dbpedia.png}
-               \caption{DBpedia}
-
-\end{figure}
-\newpage
-\section*{Analyse des besoins}
-\subsection*{Introduction}
+\subsection*{Analyse des besoins}
+\subsubsection*{Introduction}
 \paragraph{}
 Le large succès de Wikipedia(qui est le 2éme site le plus visité sur internet) et le progrès des techniques d’extraction des données ont abouti à la naissance de la construction automatique  de larges base de connaissances comme DBpedia, YAGO, etc...
 \subparagraph{}
@@ -64,7 +17,7 @@ La dimension temporelle est particulièrement importante dans les relations bina
 Une base de connaissances contenant plusieurs présidents des États-Unis ne peut être consistante que lorsqu’on ajoute une dimension temporelle à ces faits. De plus l’annotation temporelle aide à faire la distinction entre les faits courants et et les faits dépassés.
 Par exemple le fait “Kennedy est le président des États-Unis” est correct, mais n'est plus valide.
 Lorsqu’on attache une annotation temporelle à un fait comme celui là, il devient universellement valide.
-\subsection*{Problématique}
+\subsubsection*{Problématique}
 \paragraph{}
 Lorsqu’on parcourt DBpedia on trouve beaucoup de triplets qui décrivent des informations temporelles. Ces derniers sont généralement liées à un contexte événementiel précis.
 \subparagraph{}

@@ -1,9 +1,103 @@
+\documentclass[12pt,a4	]{report}
+\usepackage[french]{babel}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}	
+\usepackage{bibunits} 
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{cite}
+\usepackage{caption}
+\usepackage{amsmath,mathtools}
+\usepackage{subcaption}
+\begin{document} 
 \section*{État de l'art}
 \subsection*{Apperçu du domaine}
 \paragraph{}
 Notre étude a la particulatrité de s'étendre sur le domaine de la fouille de donnée et du web sémantique.
 \subparagraph{}
-En effet, on va utiliser les techniques de la fouille pour l'extraction des données dans les différents documents, et le web sémantique pour avoir une structure plus lisible par la machine.
+En effet, on utilise les techniques de la fouille pour l'extraction des données depuis les différentes sources d'informations, et le web sémantique pour les structurer dans une nouvelle forme plus lisible par la machine.
+\subparagraph{}
+Dans ce chapitre nous effectuons une étude préliminère autour des travaux de recherche qui précède notre étude toute en introduisant les concepts et la problèmatique de notre sujet.
+\subsection*{Technologies du Web sémantique}
+\subsubsection*{Intérêt du Web sémantique}
+\paragraph{}
+Le Web sémantique est un domaine de recherche né des travaux de Teem Berners-Lee l'un des pionniers dans ce secteur~\cite{Berners-lee2001}, dont le but d'ajouter du sens aux contenus du Web. Ce n'est pas une question d'ajouter une autre alternative du Web mais c'est plustôt d'étendre le Web actuel dans le but d'utiliser et manipuler le maximum de son contenu informatiquement. En clair, c'est de permettre à des programmes informatiques de traiter un ensemble étendu de données issues du Web.
+\subsubsection*{Modèle RDF}
+\paragraph{}
+Au centre du Web sémantique, comme la brique d’argile qui permet d’ériger les plus grands édifices, se trouve le modèle Resource Description Framework (RDF\footnote{http://www.w3.org/RDF/}). RDF est un standard de W3C, il se base sur un modèle de graphe sous forme de triplets (sujet, prédicat, objet) qui permettent d'exprimer tous types d'assertions. Il s’agit d’un cadre de description de ressources, d’une façon formelle sur le Web.
+C’est la première brique de standard du web sémantique qui recouvre à la fois un modèle et plusieurs syntaxe pour publier des données variées sur le Web.
+\subparagraph{}
+Dans RDF ~: 
+\newline 
+\begin{itemize}
+\item Les ressources sont un concept de base du Web sémantique. D’où:  “tout ce qui peut être référencé est une ressource”. Et dans un contexte plus technique: On déduit que tout ce qui peut être identifié par un URI/IRI peut être considéré comme ressource.
+\item  Un ensemble d’attributs décrivent la ressource, qui possèdent des caractéristiques et des relations avec d’autres ressources.
+\item Le cadre standardise la syntaxe de ces descriptions, les modèles et les langages.  
+\end{itemize}
+\subparagraph{}
+La plus petite structure de description en RDF est le triplet.
+\begin{figure}[H]
+        \centering
+                \centering
+                \includegraphics[width=10cm]{tripletrdf.png}
+               \caption{triplet RDF}
+
+\end{figure}
+\subparagraph{}
+Un triplet décrit une ressource, l’associe à une propriété et une valeur de cette propriété qui peut être une nouvelle ressource liée.
+\newline
+Par exemple “Moncef a écrit une page QuadsRDF.html à propos des quadruplets RDF” peut être décomposée en deux triplets ayant comme sujet “QuadsRDF.html”: <QuadsRDF.html, auteur, Moncef> et <QuadsRDF.html, thème, quadruplets RDF>.
+\newline
+On peut schématiser cela de la manière suivante:
+\begin{figure}[H]
+        \centering
+                \centering
+                \includegraphics[width=10cm]{Diag.png}
+               \caption{Deux Triplets liés à la même ressource}
+
+\end{figure}
+\subsubsection*{SPARQL}
+\paragraph{}
+Si RDF fournit un modèle universel de représentation de métadonnées. D'autres niveaux de traitements ont été standariser au dessus de lui  et notament l'interrogation de ces métadonnées.
+SPARQL est l'acronyme de Simple Protocol and RDF Query Language. Ce protocole fournit le langage d'interrogation du Web sémantique, et en cela il est à RDF ce que SQL est au bases de données relationnelles. SPARQL est un langage d'interrogation de graphe RDF dont l'énoncé de base est lui aussi un triplet (ressource, propriété, valeur).Il est une recommandation du W3C depuis juillet 2008.
+Poser une question en SPARQL consiste à écrire un graphe requête pour lequel on cherche des occurences dans le graphe cible.
+\subsection*{Base de Connaissances}
+\subsubsection*{Introduction}
+\paragraph{}
+Une base de connaissance regroupe des informations spécifiques à un domaine donné, sous un format exploitable par un ordinateur. Elle peut contenir des régles, des faits ou d'autres représentations. Les base de connaissances regroupent des informations structurées et nous particulièrement on cherche à exploiter ces informations pour les mettres dans une nouvelle structure plus facilement exploitable par la machine.
+
+\subsubsection*{DBpedia}
+\paragraph{}
+C'est un projet universitaire et communautaire d’extraction et d’exploitation automatique des données de wikipedia. C’est également un ensemble de données structurées et normalisées au format du web sémantique.
+DBpedia 3.9 est la dernière version de DBpedia datant de Juin 2013. DBpedia est écrite en Scala et Java.
+Elle adopte les normes du web sémantique et du réseau Linked Open Data(le web de données). Pour chaque document encyclopédique, il existe une page de ressources contenant toutes les données sous forme de triplets RDF.
+\begin{figure}[H]
+        \centering
+                \centering
+                \includegraphics[width=15cm]{dbpedia.png}
+               \caption{DBpedia}
+
+\end{figure}
+\subsubsection*{YAGO}
+YAGO\footnote{http://www.mpi-inf.mpg.de/yago-naga/yago/} est une large base de connaissance sémantique, délivré de Wikipedia, WordNet et GeoNames. Actuellement elle contient plus de 10 million entités (personnes, organisations, villes, etc..) et plus de 120 million faits de ces entités.
+\newline
+Les caractéristiques principales de YAGO :
+\begin{itemize}
+\item Une précision de 95\%, chaque relation est annoté avec sa valeur de confiance.
+\item YAGO combine la taxonomie propre de WordNet avec la richesse du système de catégorie Wikipedia, l'attribution des entités à plus de 350 000 catégories.
+\item YAGO est une une ontologie qui attache une dimension temporelle et spacial pour plusieurs de ces faits et entités.
+\end{itemize}
+\begin{figure}[H]
+        \centering
+                \centering
+                \includegraphics[width=11cm]{yago.png}
+               \caption{YAGO}
+
+\end{figure}
 \subsection*{Différentes approches d'annotation temporelle}			
 \subsubsection{Introduction}
 \paragraph{}
@@ -168,36 +262,6 @@ La méthode consiste d'annoter automatiquement les informations événementielle
 \subsubsection*{Synthèse}
 \paragraph{}
 L'extraction des informations temporelles est une étape primordial. On pourrait s'inspirer des méthodes présentées précédemment pour répondre aux objectifs fixés au démarrage de cette étude.
-\subsection*{Base de Connaissances}
-\subsubsection*{Introduction}
-\paragraph{}
-Une base de connaissance regroupe des informations spécifiques à un domaine donné, sous un format exploitable par un ordinateur. Elle peut contenir des régles, des faits ou d'autres représentations. Les base de connaissances regroupent des informations structurées et nous particulièrement on cherche à exploiter ces informations pour les mettres dans une nouvelle structure plus facilement exploitable par la machine.
-\subsubsection*{DBpedia}
-\paragraph{}
-C'est un projet universitaire et communautaire d’extraction et d’exploitation automatique des données de wikipedia. C’est également un ensemble de données structurées et normalisées au format du web sémantique.
-DBpedia 3.9 est la dernière version de DBpedia datant de Juin 2013. DBpedia est écrite en Scala et Java.
-Elle adopte les normes du web sémantique et du réseau Linked Open Data(le web de données). Pour chaque document encyclopédique, il existe une page de ressources contenant toutes les données sous forme de triplets RDF.
-\begin{figure}[H]
-        \centering
-                \centering
-                \includegraphics[width=10cm]{dbpedia.png}
-               \caption{DBpedia}
-
-\end{figure}
-\subsubsection*{YAGO}
-YAGO\footnote{http://www.mpi-inf.mpg.de/yago-naga/yago/} est une large base de connaissance sémantique, délivré de Wikipedia, WordNet et GeoNames. Actuellement elle contient plus de 10 million entités (personnes, organisations, villes, etc..) et plus de 120 million faits de ces entités.
-\newline
-Les caractéristiques principales de YAGO :
-\begin{itemize}
-\item Une précision de 95\%, chaque relation est annoté avec sa valeur de confiance.
-\item YAGO combine la taxonomie propre de WordNet avec la richesse du système de catégorie Wikipedia, l'attribution des entités à plus de 350 000 catégories.
-\item YAGO est une une ontologie qui attache une dimension temporelle et spacial pour plusieurs de ces faits et entités.
-\end{itemize}
-\begin{figure}[H]
-        \centering
-                \centering
-                \includegraphics[width=10cm]{yago.png}
-               \caption{YAGO}
-
-\end{figure}
-
+\bibliographystyle{alpha}
+\bibliography{Biblio.bib,w3c.bib}
+\end{document}
