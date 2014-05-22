@@ -8,27 +8,38 @@
 \usepackage{bibunits} 
 \usepackage{graphicx}
 \usepackage{wrapfig}
+\usepackage{glossaries}
 \usepackage{float}
 \usepackage{cite}
 \usepackage{caption}
 \usepackage{amsmath,mathtools}
 \usepackage{subcaption}
 \begin{document} 
+\makeglossaries
+\newacronym{w3c}{W3C}{World Wide Web Consortium}
+\newacronym{rdf}{RDF}{Resource Description Framework}
+\newacronym{strdf}{stRDF}{spatial and temporal Resource Description Framework}
+\newacronym{lod}{LOD}{Linked Open Data, Web de données}
+\newacronym{sparql}{SPARQL}{Protocol and RDF Query Language}
+\newacronym{stsparql}{stSPARQL}{spatial and temporal Protocol and RDF Query Language}
+\newacronym{uri}{URI}{Uniform Resource Identifier}
+\newacronym{iri}{IRI}{Internationalized Resource Identifier }
+\newacronym{sql}{SQL}{Structured Query Language}
+
 \section*{État de l'art}
 \subsection*{Apperçu du domaine}
 \paragraph{}
 Notre étude a la particulatrité de s'étendre sur le domaine de la fouille de donnée et du web sémantique.
+En effet, on utilise les techniques de la fouille pour l'extraction des données depuis les différentes sources d'informations, et le web sémantique afin de donner au métadonnées une structure plus lisible par la machine.
 \subparagraph{}
-En effet, on utilise les techniques de la fouille pour l'extraction des données depuis les différentes sources d'informations, et le web sémantique pour les structurer dans une nouvelle forme plus lisible par la machine.
-\subparagraph{}
-Dans ce chapitre nous effectuons une étude préliminère autour des travaux de recherche qui précède notre étude toute en introduisant les concepts et la problèmatique de notre sujet.
+Dans ce chapitre on présente les téchnologies du web sémantique que nous avons utilisé, puis nous effectuons une étude préliminère autour des travaux de recherche qui précède notre étude toute en introduisant les concepts et la problèmatique de notre sujet.
 \subsection*{Technologies du Web sémantique}
 \subsubsection*{Intérêt du Web sémantique}
 \paragraph{}
 Le Web sémantique est un domaine de recherche né des travaux de Teem Berners-Lee l'un des pionniers dans ce secteur~\cite{Berners-lee2001}, dont le but d'ajouter du sens aux contenus du Web. Ce n'est pas une question d'ajouter une autre alternative du Web mais c'est plustôt d'étendre le Web actuel dans le but d'utiliser et manipuler le maximum de son contenu informatiquement. En clair, c'est de permettre à des programmes informatiques de traiter un ensemble étendu de données issues du Web.
 \subsubsection*{Modèle RDF}
 \paragraph{}
-Au centre du Web sémantique, comme la brique d’argile qui permet d’ériger les plus grands édifices, se trouve le modèle Resource Description Framework (RDF\footnote{http://www.w3.org/RDF/}). RDF est un standard de W3C, il se base sur un modèle de graphe sous forme de triplets (sujet, prédicat, objet) qui permettent d'exprimer tous types d'assertions. Il s’agit d’un cadre de description de ressources, d’une façon formelle sur le Web.
+Au centre du Web sémantique, comme la brique d’argile qui permet d’ériger les plus grands édifices, se trouve le modèle \gls{rdf} . RDF\footnote{http://www.w3.org/RDF/} est un standard de \gls{w3c}, il se base sur un modèle de graphe sous forme de triplets (sujet, prédicat, objet) qui permettent d'exprimer tous types d'assertions. Il s’agit d’un cadre de description de ressources, d’une façon formelle sur le Web.
 C’est la première brique de standard du web sémantique qui recouvre à la fois un modèle et plusieurs syntaxe pour publier des données variées sur le Web.
 \subparagraph{}
 Dans RDF ~: 
@@ -63,8 +74,17 @@ On peut schématiser cela de la manière suivante:
 \subsubsection*{SPARQL}
 \paragraph{}
 Si RDF fournit un modèle universel de représentation de métadonnées. D'autres niveaux de traitements ont été standariser au dessus de lui  et notament l'interrogation de ces métadonnées.
-SPARQL est l'acronyme de Simple Protocol and RDF Query Language. Ce protocole fournit le langage d'interrogation du Web sémantique, et en cela il est à RDF ce que SQL est au bases de données relationnelles. SPARQL est un langage d'interrogation de graphe RDF dont l'énoncé de base est lui aussi un triplet (ressource, propriété, valeur).Il est une recommandation du W3C depuis juillet 2008.
+\gls{sparql} fournit le langage d'interrogation du Web sémantique, et en cela il est à RDF ce que \gls{sql} est au bases de données relationnelles.
+\subparagraph{}
+SPARQL est un langage d'interrogation de graphe RDF dont l'énoncé de base est lui aussi un triplet (ressource, propriété, valeur).Il est une recommandation du W3C depuis juillet 2008.
 Poser une question en SPARQL consiste à écrire un graphe requête pour lequel on cherche des occurences dans le graphe cible.
+\subsubsection*{N-Quads}
+\paragraph{}
+N-Triples est une simple syntaxe ligne délimitée pour les graphes RDF. N-Quads\footnote{http://sw.deri.org/2008/07/n-quads/}, un format qui s'étend N-Triples avec le contexte. Chaque triplet dans un document N-Quads peut avoir une valeur de contexte en option: 
+\newline
+<subjet> <prédicat> <objet> <contexte> .
+\subparagraph{}
+La notion de provenance est essentiel lors de l'intégration des données provenant de différentes sources ou sur le Web . Par conséquent, l'état de l'art des référentiels RDF (sujet, prédicat, objet, contexte) quadruplet, lorsque le contexte indique généralement la provenance d'une déclaration donnée.
 \subsection*{Base de Connaissances}
 \subsubsection*{Introduction}
 \paragraph{}
@@ -72,9 +92,9 @@ Une base de connaissance regroupe des informations spécifiques à un domaine do
 
 \subsubsection*{DBpedia}
 \paragraph{}
-C'est un projet universitaire et communautaire d’extraction et d’exploitation automatique des données de wikipedia. C’est également un ensemble de données structurées et normalisées au format du web sémantique.
-DBpedia 3.9 est la dernière version de DBpedia datant de Juin 2013. DBpedia est écrite en Scala et Java.
-Elle adopte les normes du web sémantique et du réseau Linked Open Data(le web de données). Pour chaque document encyclopédique, il existe une page de ressources contenant toutes les données sous forme de triplets RDF.
+C'est un projet universitaire et communautaire d’extraction et d’exploitation automatique des données de wikipedia. C’est également un ensemble de données structurées et normalisées au format du web sémantique. DBpedia 3.9 est la dernière version de DBpedia datant de Juin 2013. 
+\subparagraph{}
+DBpedia est écrite en Scala et Java. Elle adopte les normes du web sémantique et du réseau Linked Open Data(le web de données). Pour chaque document encyclopédique, il existe une page de ressources contenant toutes les données sous forme de triplets RDF.
 \begin{figure}[H]
         \centering
                 \centering
@@ -102,7 +122,6 @@ Les caractéristiques principales de YAGO :
 \subsubsection{Introduction}
 \paragraph{}
 Dans le domaine du web sémantique, il y a plusieurs extensions de RDF qui ont été proposé pour : la vérité, la confiance, la certitude, le temps ect…
-\subparagraph{}
 Par exemple : Pour la verité de certaines triplets où le degré de la vérité est entre $0$ et $1$, l’instance “Rome is a big city to degree 0.8” peut être représentée par $(Rome, type,big{\_}city) : 0.8$.
 \subparagraph{}
 De même pour la certitude un autre forme a été proposé :
@@ -116,6 +135,65 @@ La nécessité de l’annotation temporelle sur les documents web a été évoqu
 Ensuite, Udrea et al~\cite{udrea2006} ont remis en question la notion d'annoter temporellement les graphes RDF et depuis plusieurs travaux de recherche ont évoqué cette problèmatique. 
 Ces derniers définissent le triplet annoté de la forme suivante $(s,p:t,o)$, $t$ est une étiquette temporelle.
 De plus ils ont donné des algorithmes pour interroger les données RDF annotées.	
+
+\subsection*{RDF Temporel ou tRDF}
+\paragraph{}
+Pour introduire RDF temporel ''tRDF'' on commence par les exemples suivants:
+\newline
+Il y a des triplets comme par exemple : " Mary est toujours la mère de John " qui n'ont pas une caractéristique temporelle explicite parce qu'il est toujours valide. Mais il y a aussi des triplets ayant une valeur vrai que dans une plage temporelle bien précise, par exemple : " Bill Clinton est le président de Etats Unis ", n'est valide que dans l'intervalle $[1993-2001]$.   
+\subparagraph{}
+Donc il y a des triplets qui ne peuvent être reconnus que dans des périodes temporelles précises.
+\paragraph{}
+D'après Andrea et al~\cite{pugliese2008} l’annotation tRDF peut être exprimé de la manière suivante ($n$ est un nombre entier, $T$ appartient à un interval de temps, $s$ le sujet, $p$ le prédicat, $v$ l'objet) :
+\begin{enumerate}
+\item ($s$, $p$ : {$T$}, $v$), ce type de triplet représente une relation entre le sujet et le prédicat et l'objet dure un temps $T$ (dans n'importe quel point de temps dans $T$).
+\item $($s$, $p$ : <$n$ : $T$>, $v$)$, ce triplet présente une relation entre $s$, $p$ et $v$ qui dure au moins n point de temps différents dans $T$.
+\item ($s$, $p$ : [$n$ : $T$], $v$), ce triplet présente une relation entre $s$, $p$ et $v$ qui dure au plus $n$ points de temps différents dans $T$. 
+\end{enumerate}
+\subsection*{Une autre Approche Annotation avec des faits}
+\paragraph{}
+\gls{lod}\footnote{http://linkeddata.org/}, c'est un moyen de publier des données structurées sur le web où les données contenues dans des bases de données sont sont exposées sur le web avec leur sémantique, ce qui donne la possibilité au métadonnées d'être connectées et enrichies d'une manière solide, permet d'avoir plusieurs représentations d'un même contenu et fait des rapprochements entre des ressources connexes. 
+\subparagraph{}
+Au cours des dernières années, le web de donnée a développé dans une grande fusion de divers ensemble de données provenant de plusieurs domaines.
+\subparagraph{}
+Ce dernier décrit les ressources identifiées par des URI en représentant leurs propriétés et des liens vers d’autres ressources. L'ensemble des données fournit des connaissances du monde réel.
+\subparagraph{}
+Les informations sur un intervalle temporel de validité pour les évènements décrits par des triplets RDF jouent un rôle important dans un grand nombre d'applications.
+\subparagraph{}
+Un grand nombre de triplets dans LOD ne sont valides que dans un certain intervalle de temps qu'ils l'appellent la protée de leurs temps.
+Par exemple dans DBpedia ils indiquent que "Mario Balotelli joue pour les équipes AC Lumezzane et le Milan AC". Lorsqu'on modélise les connaissances du monde réel, Mario Balotelli ne peut pas jouer au même temps avec AC Lumezzane et le Milan AC.
+\subparagraph{}
+Les logiques temporelles d'informations ont besoin d'avoir de la protée temporelle des faits tels que “Mario Balotelli joue pour l'équipe AC Milan”.
+Une approche a été proposée pour détecter la portée des évènements visés par des triplets RDF par Rule et al~\cite{rula2013}, elle se compose de quatre étapes principales~:
+\begin{itemize}
+\item Les données du document web sont normalisées pour tenir compte de l’importance des dates figurants dans les documents.
+\item La sortie de la phrase est comparée avec un ensemble d’intervalles de temps pertinents pour obtenir des notes de significations pour chaque intervalle.
+\item Un ensemble d’intervalles plus importants est sélectionné.
+\item Les intervalles sélectionnés sont fusionnés lorsque c’est possible.
+\end{itemize}
+\subparagraph{}
+La plateforme DeFacto(Deep Fact Validation)~\cite{lehmann2012} a été utilisée pour la validation des états on cherchant des sources qu'elle confirme sur le web.
+\subparagraph{}
+Les triplets sont représentés par des faits et peuvent être associé à un contexte temporelle.
+Par exemple, $<Balotelli, team, AC Milan>$ se réfère à un événement de $2003-2009$, une annotation temporelle est rattachée au fait comme suit $<f, [ti,tj]>$.
+\subparagraph{}
+Cette approche combine deux types d'informations~: les informations temporelles recueillies dans des documents web et les informations temporelles contenues dans les bases de connaissances, pour associer des intervalles de temps au triplets RDF.
+\subsection*{Temps valide des triplets dans les données géospatiales liées}
+\paragraph{}
+Bereta et al~\cite{bereta2013} introduisent la composante temporelle des données du modèle stRDF et le langage de requêtes stSPARQL, récemment proposés pour la présentation et l’interrogation des données géospatiales liées qui changement dans le temps.
+\subparagraph{}
+L’introduction du temps dans les modèles de données et les langages de requêtes, a été l’objet de recherches approfondies dans le champs des bases de données relationnelles.
+\subparagraph{}
+Les trois types distincts de temps qui ont été  étudiées~:
+\begin{itemize}
+\item L'action temporelle indépendante, par exemple ($01/12/1954$ c’est l’anniversaire de John).
+\item Le temps d’évènement ou un fait vrai dans l’application (entre $2001-2012$ John a été professeur).
+\item Le délail de transaction qui est le moment où un fait est en cours dans la base de données (l’heure système qui présente l’heure exact quand John est un professeur "$2001-2012$" est en cours dans la base de données).
+\end{itemize}
+\paragraph{}
+Bereta et al~\cite{bereta2013} introduisent également le concept de horodatages anonymes dans les graphes RDF, par exemple le quads(quadruplet) de la forme $(s, p, o)[t]$, où $t$ est une horloge ou un timestamp $x$ anonyme déclarant que le triplet est valable dans un certain point de temps inconnue $t$.
+\subparagraph{}
+L’idée principale est d’intégrer les informations géospatiales pour le modèle de graphe RDF temporel. Le langage d’interrogation \gls{stsparql}\footnote{http://www.strabon.di.uoa.gr/stSPARQL}, ajoute deux nouveaux types de variables spatiales et temporelles, aux variables SPARQL standards.
 \subsection*{Base de données temporelles}
 \paragraph{}
 Une base de données temporelle est une base de données avec des acpects de temps intégrés(temps-valide, temps-transaction), c'est à dire un modèle de données temporelles et une version temporelle du langage structuré de requête(SPARQL, SQL).
@@ -162,64 +240,6 @@ D’autres efforts pour stocker RDF dans une base relationnelles:
 \end{itemize}
 \paragraph{}
 D'autes index temporels sont implémentés ( R+ trees, SR-trees, ST-index, and MAP21) mais l'index tGRIN présentent des performances supérieures selon les expérimentations faites dans~\cite{pugliese2008}.
-\subsection*{RDF Temporel ou tRDF}
-\paragraph{}
-Pour introduire RDF temporel ''tRDF'' on commence par les exemples suivants:
-\newline
-Il y a des triplets comme par exemple : " Mary est toujours la mère de John " qui n'ont pas une caractéristique temporelle explicite parce qu'il est toujours valide. Mais il y a aussi des triplets ayant une valeur vrai que dans une plage temporelle bien précise, par exemple : " Bill Clinton est le président de Etats Unis ", n'est valide que dans l'intervalle $[1993-2001]$.   
-\subparagraph{}
-Donc il y a des triplets qui ne peuvent être reconnus que dans des périodes temporelles précises.
-\paragraph{}
-D'après Andrea et al~\cite{pugliese2008} l’annotation tRDF peut être exprimé de la manière suivante ($n$ est un nombre entier, $T$ appartient à un interval de temps, $s$ le sujet, $p$ le prédicat, $v$ l'objet) :
-\begin{enumerate}
-\item ($s$, $p$ : {$T$}, $v$), ce type de triplet représente une relation entre le sujet et le prédicat et l'objet dure un temps $T$ (dans n'importe quel point de temps dans $T$).
-\item $($s$, $p$ : <$n$ : $T$>, $v$)$, ce triplet présente une relation entre $s$, $p$ et $v$ qui dure au moins n point de temps différents dans $T$.
-\item ($s$, $p$ : [$n$ : $T$], $v$), ce triplet présente une relation entre $s$, $p$ et $v$ qui dure au plus $n$ points de temps différents dans $T$. 
-\end{enumerate}
-\subsection*{Une autre Approche Annotation avec des faits}
-\paragraph{}
-Linked Open Data (LOD)\footnote{http://linkeddata.org/}, c'est un moyen de publier des données structurées sur le web, ce qui donne la possibilité au métadonnées d'être connectées et enrichies d'une manière solide, permet d'avoir plusieurs représentations d'un même contenu et fait des rapprochements entre des ressources connexes. 
-\subparagraph{}
-Au cours des dernières années, le LOD a développé dans une grande fusion de divers ensemble de données provenant de plusieurs domaines.
-\subparagraph{}
-Linked Open Data décrit les ressources identifiées par des URI en représentant leurs propriétés et des liens vers d’autres ressources. L'ensemble des données fournit des connaissances du monde réel.
-\subparagraph{}
-Les informations sur un intervalle temporel de validité pour les évènements décrits par des triplets RDF jouent un rôle important dans un grand nombre d'applications.
-\subparagraph{}
-Un grand nombre de triplets dans LOD ne sont valides que dans un certain intervalle de temps qu'ils l'appellent la protée de leurs temps.
-Par exemple dans DBpedia ils indiquent que "Mario Balotelli joue pour les équipes AC Lumezzane et le Milan AC". On veut modéliser les connaissances du monde réel, Mario Balotelli ne peut pas jouer au même temps avec AC Lumezzane et le Milan AC.
-\subparagraph{}
-Les logiques temporelles d'informations ont besoin d'avoir de la protée temporelle des faits tels que “Mario Balotelli joue pour l'équipe AC Milan”.
-Une approche a été proposée pour détecter la portée des évènements visés par des triplets RDF par Rule et al~\cite{rula2013}, elle se compose de quatre étapes principales~:
-\begin{itemize}
-\item Les données du document web sont normalisées pour tenir compte de l’importance des dates figurants dans les documents.
-\item La sortie de la phrase est comparée avec un ensemble d’intervalles de temps pertinents pour obtenir des notes de significations pour chaque intervalle.
-\item Un ensemble d’intervalles plus importants est sélectionné.
-\item Les intervalles sélectionnés sont fusionnés lorsque c’est possible.
-\end{itemize}
-\subparagraph{}
-La plateforme DeFacto(Deep Fact Validation)~\cite{lehmann2012} a été utilisée pour la validation des états on cherchant des sources qu'elle confirme sur le web.
-\subparagraph{}
-Les triplets sont représentés par des faits et peuvent être associé à un contexte temporelle.
-Par exemple, $<Balotelli, team, AC Milan>$ se réfère à un événement de $2003-2009$, une annotation temporelle est rattachée au fait comme suit $<f, [ti,tj]>$.
-\subparagraph{}
-Cette approche combine deux types d'informations~: les informations temporelles recueillies dans des documents web et les informations temporelles contenues dans les bases de connaissances, pour associer des intervalles de temps au triplets RDF.
-\subsection*{Temps valide des triplets dans les données géospatiales liées}
-\paragraph{}
-Bereta et al~\cite{bereta2013} introduisent la composante temporelle des données du modèle stRDF et le langage de requêtes stSPARQL, récemment proposés pour la présentation et l’interrogation des données géospatiales liées qui changement dans le temps.
-\subparagraph{}
-L’introduction du temps dans les modèles de données et les langages de requêtes, a été l’objet de recherches approfondies dans le champs des bases de données relationnelles.
-\subparagraph{}
-Les trois types distincts de temps qui ont été  étudiées~:
-\begin{itemize}
-\item L'action temporelle indépendante, par exemple ($01/12/1954$ c’est l’anniversaire de John).
-\item Le temps d’évènement ou un fait vrai dans l’application (entre $2001-2012$ John a été professeur).
-\item Le délail de transaction qui est le moment où un fait est en cours dans la base de données (l’heure système qui présente l’heure exact quand John est un professeur "$2001-2012$" est en cours dans la base de données).
-\end{itemize}
-\paragraph{}
-Bereta et al~\cite{bereta2013} introduisent également le concept de horodatages anonymes dans les graphes RDF, par exemple quads de la forme $(s, p, o)[t]$, où $t$ est une horloge ou un timestamp $x$ anonyme déclarant que le triplet est valable dans un certain point de temps inconnue $x$.
-\subparagraph{}
-L’idée principale est d’intégrer les informations géospatiales pour le modèle de graphe RDF temporel. Le langage d’interrogation stSPARQL, ajoute deux nouveaux types de variables spatiales et temporelles, aux variables SPARQL standards.
 \subsection*{Synthèse}
 \paragraph{}
 Plusieurs travaux de recherches on été mis au point pour résoudre le problème des données qui présentent un sémantique temporel dans les graphes RDF. Nous avons étudié ces travaux afin d'avoir une vision globale sur la problèmatique et pour voir ce qui est déjà fait dans ce domaine. On s'inspire de ces travaux pour proposer une nouvelle approche qui soit satisfaisante pour annoter temporellement les métadonnées de Wikipedia.
@@ -264,4 +284,6 @@ La méthode consiste d'annoter automatiquement les informations événementielle
 L'extraction des informations temporelles est une étape primordial. On pourrait s'inspirer des méthodes présentées précédemment pour répondre aux objectifs fixés au démarrage de cette étude.
 \bibliographystyle{alpha}
 \bibliography{Biblio.bib,w3c.bib}
+\printglossaries
+\glsaddall
 \end{document}
