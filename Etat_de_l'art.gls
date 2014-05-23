@@ -18,7 +18,8 @@
 		\setentrycounter[]{page}\glsnumberformat{9}}}\glsgroupskip
 \glsgroupheading{U}\relax \glsresetentrylist %
 \glossaryentryfield{uri}{\glsnamefont{URI}}{Uniform Resource Identifier}{\relax }{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{2}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{2}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{7}}}\glsgroupskip
 \glsgroupheading{W}\relax \glsresetentrylist %
 \glossaryentryfield{w3c}{\glsnamefont{W3C}}{World Wide Web Consortium}{\relax }{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{1}}}%

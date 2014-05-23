@@ -5,4 +5,5 @@
 \glossaryentry{SPARQL?\glossaryentryfield{sparql}{\glsnamefont{SPARQL}}{Protocol and RDF Query Language}{\relax }|setentrycounter[]{page}\glsnumberformat}{3}
 \glossaryentry{SQL?\glossaryentryfield{sql}{\glsnamefont{SQL}}{Structured Query Language}{\relax }|setentrycounter[]{page}\glsnumberformat}{3}
 \glossaryentry{LOD?\glossaryentryfield{lod}{\glsnamefont{LOD}}{Linked Open Data, Web de données}{\relax }|setentrycounter[]{page}\glsnumberformat}{7}
+\glossaryentry{URI?\glossaryentryfield{uri}{\glsnamefont{URI}}{Uniform Resource Identifier}{\relax }|setentrycounter[]{page}\glsnumberformat}{7}
 \glossaryentry{stSPARQL?\glossaryentryfield{stsparql}{\glsnamefont{stSPARQL}}{spatial and temporal Protocol and RDF Query Language}{\relax }|setentrycounter[]{page}\glsnumberformat}{9}

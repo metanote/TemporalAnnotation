@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.8.6)  23 MAY 2014 10:11
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.8.6)  23 MAY 2014 11:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1030,13 +1030,13 @@ Overfull \hbox (45.0373pt too wide) in paragraph at lines 139--143
 $\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 Max; hasSupervisor \OT1/lmr/m/n/12 :
  []
 
-[6] [7] [8] [9] [10]
-Overfull \hbox (13.19055pt too wide) in paragraph at lines 262--270
+[6] [7] [8] [9] [10] [11]
+Overfull \hbox (13.19055pt too wide) in paragraph at lines 265--273
 \OT1/lmr/m/n/12 (\OML/lmm/m/it/12 Before; After; Overlap; Before[]or[]Overlap; 
 Overlap[]or[]Before\OT1/lmr/m/n/12 )$ \T1/lmr/m/n/12 et Iden-
  []
 
-[11] [12]
+[12]
 \openout3 = `bu.aux'.
 
  (./Etat_de_l'art.bbl [13] [14
@@ -1064,7 +1064,7 @@ ype1/public/lm/lmr10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public
 /lm/lmr12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr8.pf
 b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/lo
 cal/texlive/2013/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on Etat_de_l'art.pdf (16 pages, 927715 bytes).
+Output written on Etat_de_l'art.pdf (16 pages, 927614 bytes).
 PDF statistics:
  104 PDF objects out of 1000 (max. 8388607)
  70 compressed objects within 1 object stream

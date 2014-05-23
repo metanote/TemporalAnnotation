@@ -86,7 +86,7 @@ SPARQL est un langage d'interrogation de graphe RDF dont l'énoncé de base est 
 Poser une question en SPARQL consiste à écrire un graphe requête pour lequel on cherche des occurences dans le graphe cible.
 \subsubsection*{N-Quads}
 \paragraph{}
-N-Triples est une simple syntaxe ligne délimitée pour les graphes RDF. N-Quads\footnote{http://sw.deri.org/2008/07/n-quads/}, un format qui s'étend N-Triples avec le contexte. Chaque triplet dans un document N-Quads peut avoir une valeur de contexte en option: 
+N-Triples est une simple syntaxe ligne délimitée( line-delimited) pour les graphes RDF. N-Quads\footnote{http://sw.deri.org/2008/07/n-quads/}, un format qui s'étend N-Triples avec le contexte. Chaque triplet dans un document N-Quads peut avoir une valeur de contexte en option: 
 \newline
 <subjet> <prédicat> <objet> <contexte>.
 \subparagraph{}
@@ -162,12 +162,15 @@ D'après Andrea et al~\cite{pugliese2008} l’annotation tRDF peut être exprim�
 \item $($s$, $p$ : <$n$ : $T$>, $v$)$, ce triplet présente une relation entre $s$, $p$ et $v$ qui dure au moins n point de temps différents dans $T$.
 \item ($s$, $p$ : [$n$ : $T$], $v$), ce triplet présente une relation entre $s$, $p$ et $v$ qui dure au plus $n$ points de temps différents dans $T$. 
 \end{enumerate}
-\subsection*{Une autre approche d'annotation avec des faits}
+\subsection*{L'importance de l'annotation temporelle dans LOD}
+\subsubsection*{Présentation du LOD}
 \paragraph{}
-\gls{lod}\footnote{http://linkeddata.org/}, c'est un moyen de publier des données structurées sur le Web où les données contenues dans des bases de données sont sont exposées sur le Web avec leur sémantique, ce qui donne la possibilité au métadonnées d'être connectées et enrichies d'une manière solide, permet d'avoir plusieurs représentations d'un même contenu et fait des rapprochements entre des ressources connexes. 
+\gls{lod}\footnote{http://linkeddata.org/}, c'est un moyen de publier des données structurées sur le Web où les données contenues dans des bases de données sont exposées sur le Web avec leur sémantique, ce qui donne la possibilité au métadonnées d'être connectées et enrichies d'une manière solide, permet d'avoir plusieurs représentations d'un même contenu et fait des rapprochements entre des ressources connexes. 
 \subparagraph{}
-Au cours des dernières années, le Web de donnée a développé dans une grande fusion de divers ensemble de données provenant de plusieurs domaines. Ce dernier décrit les ressources identifiées par des URI en représentant leurs propriétés et des liens vers d’autres ressources. L'ensemble des données fournit des connaissances du monde réel. Les informations sur un intervalle temporel de validité pour les évènements décrits par des triplets RDF jouent un rôle important dans un grand nombre d'applications.
-\subparagraph{}
+Au cours des dernières années, le Web de donnée a développé dans une grande fusion de divers ensemble de données provenant de plusieurs domaines. Ce dernier décrit les ressources identifiées par des \gls{uri} en représentant leurs propriétés et des liens vers d’autres ressources. L'ensemble des données fournit des connaissances du monde réel.
+\subsubsection*{Relation entre l'annotation temporelle et LOD}
+\paragraph{}
+Les informations sur un intervalle temporel de validité pour les évènements décrits par des triplets RDF jouent un rôle important dans un grand nombre d'applications.
 Un grand nombre de triplets dans LOD ne sont valides que dans un certain intervalle de temps qu'ils l'appellent la protée de leurs temps.
 Par exemple dans DBpedia ils indiquent que "Mario Balotelli joue pour les équipes AC Lumezzane et le Milan AC". Lorsqu'on modélise des connaissances du monde réel, Mario Balotelli ne peut pas jouer au même temps avec AC Lumezzane et le Milan AC.
 \subparagraph{}
