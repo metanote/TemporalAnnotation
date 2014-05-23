@@ -1,5 +1,6 @@
 \documentclass[12pt,a4	]{report}
-\usepackage[french]{babel}
+\usepackage[frenchb]{babel}
+
 \usepackage[usenames,dvipsnames]{color}
 \usepackage[utf8]{inputenc}
 \usepackage{textcomp}
@@ -9,13 +10,13 @@
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{glossaries}
+\makeglossaries
 \usepackage{float}
 \usepackage{cite}
 \usepackage{caption}
 \usepackage{amsmath,mathtools}
 \usepackage{subcaption}
-\begin{document} 
-\makeglossaries
+
 \newacronym{w3c}{W3C}{World Wide Web Consortium}
 \newacronym{rdf}{RDF}{Resource Description Framework}
 \newacronym{strdf}{stRDF}{spatial and temporal Resource Description Framework}
@@ -26,26 +27,31 @@
 \newacronym{iri}{IRI}{Internationalized Resource Identifier }
 \newacronym{sql}{SQL}{Structured Query Language}
 
+
+\begin{document} 
+
+
+
 \section*{État de l'art}
 \subsection*{Apperçu du domaine}
 \paragraph{}
-Notre étude a la particulatrité de s'étendre sur le domaine de la fouille de donnée et du web sémantique.
-En effet, on utilise les techniques de la fouille pour l'extraction des données depuis les différentes sources d'informations, et le web sémantique afin de donner au métadonnées une structure plus lisible par la machine.
+Notre étude a la particulatrité de s'étendre sur le domaine de la fouille de donnée et du Web sémantique.
+En effet, on utilise les techniques de la fouille pour l'extraction des données depuis les différentes sources d'informations, et le Web sémantique afin de donner au métadonnées une structure plus lisible par la machine.
 \subparagraph{}
-Dans ce chapitre on présente les téchnologies du web sémantique que nous avons utilisé, puis nous effectuons une étude préliminère autour des travaux de recherche qui précède notre étude toute en introduisant les concepts et la problèmatique de notre sujet.
+Dans ce chapitre on présente les téchnologies du Web sémantique que nous avons utilisé, puis nous effectuons une étude préliminère autour des travaux de recherche qui précède notre étude toute en introduisant les concepts et la problèmatique de notre sujet.
 \subsection*{Technologies du Web sémantique}
 \subsubsection*{Intérêt du Web sémantique}
 \paragraph{}
-Le Web sémantique est un domaine de recherche né des travaux de Teem Berners-Lee l'un des pionniers dans ce secteur~\cite{Berners-lee2001}, dont le but d'ajouter du sens aux contenus du Web. Ce n'est pas une question d'ajouter une autre alternative du Web mais c'est plustôt d'étendre le Web actuel dans le but d'utiliser et manipuler le maximum de son contenu informatiquement. En clair, c'est de permettre à des programmes informatiques de traiter un ensemble étendu de données issues du Web.
+Le Web sémantique est un domaine de recherche né des travaux de Tim Berners-Lee l'un des pionniers dans ce secteur~\cite{Berners-lee2001} dont le but était d'ajouter du sens aux contenus du Web. Ce n'est pas une question d'ajouter une autre alternative du Web mais c'est plustôt d'étendre le Web actuel dans le but d'utiliser et manipuler le maximum de son contenu informatiquement. En clair, c'est de permettre à des programmes informatiques de traiter un ensemble étendu de données issues du Web.
 \subsubsection*{Modèle RDF}
 \paragraph{}
 Au centre du Web sémantique, comme la brique d’argile qui permet d’ériger les plus grands édifices, se trouve le modèle \gls{rdf} . RDF\footnote{http://www.w3.org/RDF/} est un standard de \gls{w3c}, il se base sur un modèle de graphe sous forme de triplets (sujet, prédicat, objet) qui permettent d'exprimer tous types d'assertions. Il s’agit d’un cadre de description de ressources, d’une façon formelle sur le Web.
-C’est la première brique de standard du web sémantique qui recouvre à la fois un modèle et plusieurs syntaxe pour publier des données variées sur le Web.
+C’est la première brique de standard du Web sémantique qui recouvre à la fois un modèle et plusieurs syntaxe pour publier des données variées sur le Web.
 \subparagraph{}
 Dans RDF ~: 
 \newline 
 \begin{itemize}
-\item Les ressources sont un concept de base du Web sémantique. D’où:  “tout ce qui peut être référencé est une ressource”. Et dans un contexte plus technique: On déduit que tout ce qui peut être identifié par un URI/IRI peut être considéré comme ressource.
+\item Les ressources sont un concept de base du Web sémantique, tout ce qui peut être référencé est une ressource. Dans un contexte plus technique~: on déduit que tout ce qui peut être identifié par un \gls{uri} / \gls{iri} peut être considéré comme ressource.
 \item  Un ensemble d’attributs décrivent la ressource, qui possèdent des caractéristiques et des relations avec d’autres ressources.
 \item Le cadre standardise la syntaxe de ces descriptions, les modèles et les langages.  
 \end{itemize}
@@ -54,7 +60,7 @@ La plus petite structure de description en RDF est le triplet.
 \begin{figure}[H]
         \centering
                 \centering
-                \includegraphics[width=10cm]{tripletrdf.png}
+                \includegraphics[width=8cm]{tripletrdf.png}
                \caption{triplet RDF}
 
 \end{figure}
@@ -67,8 +73,8 @@ On peut schématiser cela de la manière suivante:
 \begin{figure}[H]
         \centering
                 \centering
-                \includegraphics[width=10cm]{Diag.png}
-               \caption{Deux Triplets liés à la même ressource}
+                \includegraphics[width=8cm]{Diag.png}
+               \caption{Deux Triplets liés au même sujet}
 
 \end{figure}
 \subsubsection*{SPARQL}
@@ -82,9 +88,10 @@ Poser une question en SPARQL consiste à écrire un graphe requête pour lequel 
 \paragraph{}
 N-Triples est une simple syntaxe ligne délimitée pour les graphes RDF. N-Quads\footnote{http://sw.deri.org/2008/07/n-quads/}, un format qui s'étend N-Triples avec le contexte. Chaque triplet dans un document N-Quads peut avoir une valeur de contexte en option: 
 \newline
-<subjet> <prédicat> <objet> <contexte> .
+<subjet> <prédicat> <objet> <contexte>.
 \subparagraph{}
 La notion de provenance est essentiel lors de l'intégration des données provenant de différentes sources ou sur le Web . Par conséquent, l'état de l'art des référentiels RDF (sujet, prédicat, objet, contexte) quadruplet, lorsque le contexte indique généralement la provenance d'une déclaration donnée.
+\newpage
 \subsection*{Base de Connaissances}
 \subsubsection*{Introduction}
 \paragraph{}
@@ -92,16 +99,21 @@ Une base de connaissance regroupe des informations spécifiques à un domaine do
 
 \subsubsection*{DBpedia}
 \paragraph{}
-C'est un projet universitaire et communautaire d’extraction et d’exploitation automatique des données de wikipedia. C’est également un ensemble de données structurées et normalisées au format du web sémantique. DBpedia 3.9 est la dernière version de DBpedia datant de Juin 2013. 
-\subparagraph{}
-DBpedia est écrite en Scala et Java. Elle adopte les normes du web sémantique et du réseau Linked Open Data(le web de données). Pour chaque document encyclopédique, il existe une page de ressources contenant toutes les données sous forme de triplets RDF.
-\begin{figure}[H]
-        \centering
-                \centering
-                \includegraphics[width=15cm]{dbpedia.png}
-               \caption{DBpedia}
 
-\end{figure}
+C'est un projet universitaire et communautaire d’extraction et d’exploitation automatique des données de wikipedia. C’est également un ensemble de données structurées et normalisées au format du Web sémantique.
+\begin{wrapfigure}{r}{0.7\textwidth}
+  \vspace{-10pt}
+  \begin{center}
+    \includegraphics[width=0.50\textwidth]{dbpedia.png}
+  \end{center}
+  \vspace{-15pt}
+  \caption{DBpedia}
+  \vspace{-10pt}
+\end{wrapfigure}
+DBpedia 3.9 est la dernière version de DBpedia datant de Juin 2013. 
+\subparagraph{}
+Cette base de connaissance est écrite en Scala et Java. Elle adopte les normes du Web sémantique et du réseau Linked Open Data. Pour chaque document encyclopédique, il existe une page de ressources contenant toutes les données sous forme de triplets RDF.
+\newpage
 \subsubsection*{YAGO}
 YAGO\footnote{http://www.mpi-inf.mpg.de/yago-naga/yago/} est une large base de connaissance sémantique, délivré de Wikipedia, WordNet et GeoNames. Actuellement elle contient plus de 10 million entités (personnes, organisations, villes, etc..) et plus de 120 million faits de ces entités.
 \newline
@@ -121,7 +133,7 @@ Les caractéristiques principales de YAGO :
 \subsection*{Différentes approches d'annotation temporelle}			
 \subsubsection{Introduction}
 \paragraph{}
-Dans le domaine du web sémantique, il y a plusieurs extensions de RDF qui ont été proposé pour : la vérité, la confiance, la certitude, le temps ect…
+Dans le domaine du Web sémantique, il y a plusieurs extensions de RDF qui ont été proposé pour : la vérité, la confiance, la certitude, le temps ect…
 Par exemple : Pour la verité de certaines triplets où le degré de la vérité est entre $0$ et $1$, l’instance “Rome is a big city to degree 0.8” peut être représentée par $(Rome, type,big{\_}city) : 0.8$.
 \subparagraph{}
 De même pour la certitude un autre forme a été proposé :
@@ -130,7 +142,7 @@ $(Max,hasSupervisor : (0.9,2003),William)$ à la forme générale suivante $(s, 
 La certitude $x$ est représentée sous forme d'un pourcentage, 90\% pour cet exemple.
 \subsubsection*{L'annotation temporelle}
 \paragraph{}
-La nécessité de l’annotation temporelle sur les documents web a été évoqué dans des nombreux travaux de recherche. La première approche formelle au problème de modélisation et d’interrogation temporelle en RDF a été introduite par Gutierrez et al~\cite{gutierrez2005}.
+La nécessité de l’annotation temporelle sur les documents Web a été évoqué dans des nombreux travaux de recherche. La première approche formelle au problème de modélisation et d’interrogation temporelle en RDF a été introduite par Gutierrez et al~\cite{gutierrez2005}.
 \subparagraph{}
 Ensuite, Udrea et al~\cite{udrea2006} ont remis en question la notion d'annoter temporellement les graphes RDF et depuis plusieurs travaux de recherche ont évoqué cette problèmatique. 
 Ces derniers définissent le triplet annoté de la forme suivante $(s,p:t,o)$, $t$ est une étiquette temporelle.
@@ -150,34 +162,30 @@ D'après Andrea et al~\cite{pugliese2008} l’annotation tRDF peut être exprim�
 \item $($s$, $p$ : <$n$ : $T$>, $v$)$, ce triplet présente une relation entre $s$, $p$ et $v$ qui dure au moins n point de temps différents dans $T$.
 \item ($s$, $p$ : [$n$ : $T$], $v$), ce triplet présente une relation entre $s$, $p$ et $v$ qui dure au plus $n$ points de temps différents dans $T$. 
 \end{enumerate}
-\subsection*{Une autre Approche Annotation avec des faits}
+\subsection*{Une autre approche d'annotation avec des faits}
 \paragraph{}
-\gls{lod}\footnote{http://linkeddata.org/}, c'est un moyen de publier des données structurées sur le web où les données contenues dans des bases de données sont sont exposées sur le web avec leur sémantique, ce qui donne la possibilité au métadonnées d'être connectées et enrichies d'une manière solide, permet d'avoir plusieurs représentations d'un même contenu et fait des rapprochements entre des ressources connexes. 
+\gls{lod}\footnote{http://linkeddata.org/}, c'est un moyen de publier des données structurées sur le Web où les données contenues dans des bases de données sont sont exposées sur le Web avec leur sémantique, ce qui donne la possibilité au métadonnées d'être connectées et enrichies d'une manière solide, permet d'avoir plusieurs représentations d'un même contenu et fait des rapprochements entre des ressources connexes. 
 \subparagraph{}
-Au cours des dernières années, le web de donnée a développé dans une grande fusion de divers ensemble de données provenant de plusieurs domaines.
-\subparagraph{}
-Ce dernier décrit les ressources identifiées par des URI en représentant leurs propriétés et des liens vers d’autres ressources. L'ensemble des données fournit des connaissances du monde réel.
-\subparagraph{}
-Les informations sur un intervalle temporel de validité pour les évènements décrits par des triplets RDF jouent un rôle important dans un grand nombre d'applications.
+Au cours des dernières années, le Web de donnée a développé dans une grande fusion de divers ensemble de données provenant de plusieurs domaines. Ce dernier décrit les ressources identifiées par des URI en représentant leurs propriétés et des liens vers d’autres ressources. L'ensemble des données fournit des connaissances du monde réel. Les informations sur un intervalle temporel de validité pour les évènements décrits par des triplets RDF jouent un rôle important dans un grand nombre d'applications.
 \subparagraph{}
 Un grand nombre de triplets dans LOD ne sont valides que dans un certain intervalle de temps qu'ils l'appellent la protée de leurs temps.
-Par exemple dans DBpedia ils indiquent que "Mario Balotelli joue pour les équipes AC Lumezzane et le Milan AC". Lorsqu'on modélise les connaissances du monde réel, Mario Balotelli ne peut pas jouer au même temps avec AC Lumezzane et le Milan AC.
+Par exemple dans DBpedia ils indiquent que "Mario Balotelli joue pour les équipes AC Lumezzane et le Milan AC". Lorsqu'on modélise des connaissances du monde réel, Mario Balotelli ne peut pas jouer au même temps avec AC Lumezzane et le Milan AC.
 \subparagraph{}
 Les logiques temporelles d'informations ont besoin d'avoir de la protée temporelle des faits tels que “Mario Balotelli joue pour l'équipe AC Milan”.
 Une approche a été proposée pour détecter la portée des évènements visés par des triplets RDF par Rule et al~\cite{rula2013}, elle se compose de quatre étapes principales~:
 \begin{itemize}
-\item Les données du document web sont normalisées pour tenir compte de l’importance des dates figurants dans les documents.
+\item Les données du document Web sont normalisées pour tenir compte de l’importance des dates figurants dans les documents.
 \item La sortie de la phrase est comparée avec un ensemble d’intervalles de temps pertinents pour obtenir des notes de significations pour chaque intervalle.
 \item Un ensemble d’intervalles plus importants est sélectionné.
 \item Les intervalles sélectionnés sont fusionnés lorsque c’est possible.
 \end{itemize}
 \subparagraph{}
-La plateforme DeFacto(Deep Fact Validation)~\cite{lehmann2012} a été utilisée pour la validation des états on cherchant des sources qu'elle confirme sur le web.
+La plateforme DeFacto(Deep Fact Validation)~\cite{lehmann2012} a été utilisée pour la validation des états on cherchant des sources qu'elle confirme sur le Web.
 \subparagraph{}
 Les triplets sont représentés par des faits et peuvent être associé à un contexte temporelle.
 Par exemple, $<Balotelli, team, AC Milan>$ se réfère à un événement de $2003-2009$, une annotation temporelle est rattachée au fait comme suit $<f, [ti,tj]>$.
 \subparagraph{}
-Cette approche combine deux types d'informations~: les informations temporelles recueillies dans des documents web et les informations temporelles contenues dans les bases de connaissances, pour associer des intervalles de temps au triplets RDF.
+Cette approche combine deux types d'informations~: les informations temporelles recueillies dans des documents Web et les informations temporelles contenues dans les bases de connaissances, pour associer des intervalles de temps au triplets RDF.
 \subsection*{Temps valide des triplets dans les données géospatiales liées}
 \paragraph{}
 Bereta et al~\cite{bereta2013} introduisent la composante temporelle des données du modèle stRDF et le langage de requêtes stSPARQL, récemment proposés pour la présentation et l’interrogation des données géospatiales liées qui changement dans le temps.
@@ -191,7 +199,7 @@ Les trois types distincts de temps qui ont été  étudiées~:
 \item Le délail de transaction qui est le moment où un fait est en cours dans la base de données (l’heure système qui présente l’heure exact quand John est un professeur "$2001-2012$" est en cours dans la base de données).
 \end{itemize}
 \paragraph{}
-Bereta et al~\cite{bereta2013} introduisent également le concept de horodatages anonymes dans les graphes RDF, par exemple le quads(quadruplet) de la forme $(s, p, o)[t]$, où $t$ est une horloge ou un timestamp $x$ anonyme déclarant que le triplet est valable dans un certain point de temps inconnue $t$.
+Bereta et al~\cite{bereta2013} présentent également le concept de horodatages anonymes dans les graphes RDF, par exemple le quadruplet(quad) de la forme $(s, p, o)[t]$, où $t$ est une horloge ou un timestamp $x$ anonyme déclarant que le triplet est valable dans un certain point de temps inconnue.
 \subparagraph{}
 L’idée principale est d’intégrer les informations géospatiales pour le modèle de graphe RDF temporel. Le langage d’interrogation \gls{stsparql}\footnote{http://www.strabon.di.uoa.gr/stSPARQL}, ajoute deux nouveaux types de variables spatiales et temporelles, aux variables SPARQL standards.
 \subsection*{Base de données temporelles}
@@ -204,11 +212,11 @@ Le \textit{temps-transaction} est la période de temps pendant laquelle un fait 
 Dans le contexte de l'annotation temporelle des graphes RDF, les besoins se résume comme suit~:
 \begin{itemize}
 \item L'accès à des différents versions d’une ontologie.
-\item Récupération des informations passées sur les sites web.
+\item Récupération des informations passées sur les sites Web.
 \item La distribution des mise à jour des journaux.
 \end{itemize}
 \subparagraph{}
-En vertu des travaux de Antoniou et al~\cite{antoniou2004} présentent une ontologie du service web, pour monter qu'une ontologie peut passer par plusieurs états, ainsi que d'autres recherches dont l'objectif d'analyser et justifier les besoins cités auparavant.
+En vertu des travaux de Antoniou et al~\cite{antoniou2004} présentent une ontologie du service Web, pour monter qu'une ontologie peut passer par plusieurs états, ainsi que d'autres recherches dont l'objectif d'analyser et justifier les besoins cités auparavant.
 \paragraph{}
 Une base de données temporelle peut être exprimé comme un répertoire d'informations temporelles.
 Gutiérrez et al~\cite{gutierrez2007}, montrent qu'il y aura deux manières pour ajouter des dimensions temporelles dans un graphe RDF intemporel~:
@@ -246,7 +254,7 @@ Plusieurs travaux de recherches on été mis au point pour résoudre le problèm
 \subsection*{Extraction des données}
 \subsubsection*{Introduction}
 \paragraph{}
-L'extraction, la fouille de données, ou encore la fouille des connaissance à partir de données, ont pour  objet l'extraction d'un savoir, d'une connaissaince, ou dans notre cas une connaissance mise en relation temporelle à partir de grandes quantité de données par des méthodes automatiques.
+L'extraction, la fouille de données, ou encore la fouille des connaissances à partir de données, ont pour  objet l'extraction d'un savoir, d'une connaissaince, ou dans notre cas une connaissance mise en relation temporelle à partir de grandes quantité de données par des méthodes automatiques.
 \subsubsection*{Différentes approches de l'extraction }
 \paragraph{}
 Une approche proposée par Zweigenbaum et Tannier~\cite{zweigenbaum2013} consiste à détecter les relations temporelles entre les évènements et les expressions temporelles à partir des comptes rendu hospitaliers.
@@ -272,7 +280,7 @@ La question c’est d’identifier les situations les plus importantes à traite
 Zweigenbaum et Tannier~\cite{zweigenbaum2013} utilisent une méthode d’apprentissage supervisé avec un ensemble de données et des classifieurs entrainés pour chaque situation. 
 L'évaluation a été appliquée sur un corpus d’apprentissage qui contient 190 échantillons, dont 120 échantillons de test.
 \subparagraph{}
-On peut utiliser cette méthode pour nos documents DBpedia à la place des ces comptes rendus hospitaliers.
+On peut utiliser cette méthode pour les propriétés de DBpedia à la place des ces comptes rendus hospitaliers et chercher à chaque fois d'apprendre à partir d'un motif qui peut être temporel, spacial, ect...
 Au lieu d’une procédure de décision gloutonne ou aléatoire, une relation de décision globale pourrait être implémentée pour étudier toutes les relations temporelles prédites. 
 \paragraph{}
 Le but de Kessler et al~\cite{kessler2013} est d'extraire les dates saillantes (importantes) qui méritent de figurer dans une chronologie événementielle.
@@ -284,6 +292,6 @@ La méthode consiste d'annoter automatiquement les informations événementielle
 L'extraction des informations temporelles est une étape primordial. On pourrait s'inspirer des méthodes présentées précédemment pour répondre aux objectifs fixés au démarrage de cette étude.
 \bibliographystyle{alpha}
 \bibliography{Biblio.bib,w3c.bib}
-\printglossaries
-\glsaddall
+\printglossary[title=Glossaire]
+%\glsaddall
 \end{document}
