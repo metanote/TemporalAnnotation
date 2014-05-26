@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.8.6)  26 MAY 2014 09:02
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.8.6)  26 MAY 2014 18:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -987,12 +987,6 @@ File: dbpedia.png Graphic file (type png)
 Package pdftex.def Info: dbpedia.png used on input line 110.
 (pdftex.def)             Requested size: 195.0pt x 128.49684pt.
 
-Underfull \hbox (badness 3209) in paragraph at lines 106--115
-\T1/lmr/m/n/12 don-nées struc-tu-rées et nor-ma-li-sées au for-mat du Web sé-ma
-n-tique.
- []
-
-
 Underfull \hbox (badness 1824) in paragraph at lines 115--117
 \T1/lmr/m/n/12 der-nière ver-sion de
  []
@@ -1003,8 +997,8 @@ Underfull \hbox (badness 1117) in paragraph at lines 115--117
  []
 
 
-Overfull \hbox (6.12376pt too wide) in paragraph at lines 118--119
-\T1/lmr/m/n/12 connais-sance est écrite
+Overfull \hbox (10.75844pt too wide) in paragraph at lines 118--119
+\T1/lmr/m/n/12 connais-sances est écrite
  []
 
 
@@ -1024,9 +1018,9 @@ File: yago.png Graphic file (type png)
 Package pdftex.def Info: yago.png used on input line 132.
 (pdftex.def)             Requested size: 312.9803pt x 283.47443pt.
  [5 <./yago.png>]
-Overfull \hbox (45.0373pt too wide) in paragraph at lines 142--146
- [] \T1/lmr/m/n/12 De même pour la cer-ti-tude un autre forme a été pro-posé : 
-$\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 Max; hasSupervisor \OT1/lmr/m/n/12 :
+Overfull \hbox (53.52458pt too wide) in paragraph at lines 142--146
+ [] \T1/lmr/m/n/12 De même pour la cer-ti-tude, une autre forme a été pro-posé 
+: $\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 Max; hasSupervisor \OT1/lmr/m/n/12 :
  []
 
 [6] [7] [8] [9] [10] [11]
@@ -1063,7 +1057,7 @@ ype1/public/lm/lmr10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public
 /lm/lmr12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr8.pf
 b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/lo
 cal/texlive/2013/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on Etat_de_l'art.pdf (16 pages, 928079 bytes).
+Output written on Etat_de_l'art.pdf (16 pages, 928214 bytes).
 PDF statistics:
  104 PDF objects out of 1000 (max. 8388607)
  70 compressed objects within 1 object stream
