@@ -1,15 +1,10 @@
 \newcommand{\etalchar}[1]{$^{#1}$}
 \begin{thebibliography}{LGMN12}
 
-\bibitem[{Ani}]{rula2013}
-{Anisa Rula and Matteo Palmonari and Axel-Cyrille Ngonga and Daniel Gerber and
-  Jens Lehmann and Lorenz Buhmann}.
-\newblock {Hybrid Acquisition of Temporal Scopes for RDF Data}.
-
 \bibitem[AvH04]{antoniou2004}
-G.~Antoniou and F.~van Harme.
-\newblock A semantic web prime.
-\newblock {\em {Semantic Web Primer. MIT Press}}, 2004.
+Giorgis Antoniou and Frank van Harmelen.
+\newblock A semantic web primer.
+\newblock {\em {MIT Press}}, 2004.
 
 \bibitem[BLHL01]{Berners-lee2001}
 T.~Berners-Lee, J.~Hendler, and O.~Lassila.
@@ -20,19 +15,26 @@ T.~Berners-Lee, J.~Hendler, and O.~Lassila.
 Konstantina Bereta, Panayiotis Smeros, and Manolis Koubarakis.
 \newblock {Representation and Querying of Valid Time of Triples in Linked
   Geospatial Data}.
-\newblock {\em {ESWC}}, pages 1,15, 2013.
+\newblock {\em {ESWC}}, pages 1--15, 2013.
 
 \bibitem[GHV05]{gutierrez2005}
 C.~Gutierrez, C.~Hurtado, and A.~Vaisman.
-\newblock Temporal rdf.
-\newblock {\em Second European Semantic Web Conf. (ESWC' 05)}, pages 93, 107,
+\newblock {Temporal RDF}.
+\newblock {\em Second European Semantic Web Conf. (ESWC' 05)}, pages 93--107,
   2005.
 
 \bibitem[GHV07]{gutierrez2007}
 Claudio Gutierrez, Carlos Hurtado, and Alejandro Vaisman.
 \newblock {Introducing Time into RDF}.
 \newblock {\em {IEEE Transactions on Knowledge and Data Engineering}}, pages
-  207,218, 2007.
+  207--218, 2007.
+
+\bibitem[Gru95]{gruber1995}
+Thomas Gruber.
+\newblock {Toward principles for the design of ontologies used for knowledge
+  sharing}.
+\newblock {\em {Toward principles for the design of ontologies used for
+  knowledge sharing}}, pages 907--928, 1995.
 
 \bibitem[KTH{\etalchar{+}}13]{kessler2013}
 Remy Kessler, Xavier Tannier, Caroline Hagege, Veronique Moriceau, and Andre
@@ -42,7 +44,7 @@ Remy Kessler, Xavier Tannier, Caroline Hagege, Veronique Moriceau, and Andre
   le traitement automatique des informations temporelles et spatiales}, 2013.
 
 \bibitem[LGMN12]{lehmann2012}
-J.~Lehmann, D.~Gerber, M.~Morsey, and A.-C. Ngonga.
+Jens Lehmann, Daniel Gerber, Mohamed Morsey, and Axel-Cyrille. Ngonga.
 \newblock {Defacto - deep fact validation.}
 \newblock {\em {ISWC}}, 2012.
 
@@ -50,7 +52,13 @@ J.~Lehmann, D.~Gerber, M.~Morsey, and A.-C. Ngonga.
 Andrea Pugliese, Octavian Udrea, and V.S Subrahmanian.
 \newblock {Scaling RDF with time}.
 \newblock {\em Proc. of the 17th International Conference on World Wide Web
-  (WWW 2008)}, pages 605,614, 2008.
+  (WWW 2008)}, pages 605--614, 2008.
+
+\bibitem[RPN{\etalchar{+}}14]{rula2014}
+Anisa Rula, Matteo Palmonari, Axel-Cyrille Ngonga, Daniel Gerber, Jens Lehmann,
+  and Lorenz Buhmann.
+\newblock {Hybrid Acquisition of Temporal Scopes for RDF Data}.
+\newblock {\em {Extended Semantic Web Conference}}, 2014.
 
 \bibitem[URS06]{udrea2006}
 Octavian Udrea, Diego~Reforgiato Recupero, and V.~S. Subrahmanian.
@@ -62,10 +70,10 @@ Octavian Udrea, Diego~Reforgiato Recupero, and V.~S. Subrahmanian.
 Verhagen, Sauri, Caselli, and Pustejovsky.
 \newblock {Semeval-2010 task 13 : Tempeval-2}.
 \newblock {\em {Proceedings of the 5th International Workshop on Semantic
-  Evaluation}}, pages 57,62, 2010.
+  Evaluation}}, pages 57--62, 2010.
 
 \bibitem[ZT13]{zweigenbaum2013}
-Pierre Zweigenbaum and Xavier TANNIER.
+Pierre Zweigenbaum and Xavier Tannier.
 \newblock {Extraction des relations temporelles}.
 \newblock {\em {TALN-RECITAL}}, 2013.
 
