@@ -35,18 +35,23 @@
 \chapter{Première Partie}
 \section{État de l'art}
 \paragraph{}
-Les bases de connaissances jouent un rôle de plus en plus important dans le Web de données, Web sémantique, dans l'intelligence du Web et dans la recherche, ainsi que de favoriser l'intégration de l'information. La plupart des bases de connaissances contiennent des informations relatives à des actions dans le temps qui ne possèdent pas la bonne structure qui relie directement l'action au temps de l'action.
-Ces bases de connaissance ne portent que sur des domaines spécifiques(les entreprises, les films, la musique, les livres, les plublications scientifiques etc..), sont créées par des ingénieurs de connaissance. Dans ce contexte, Wikipédia est devenue l'une des sources de connaissances centrale de l'humanité. Cette encyclopédie libre est entretenue par des milliers de contributeurs.
+Les bases de connaissances jouent un rôle de plus en plus important dans l'intelligence du Web et dans la recherche, ainsi qu'elles favorisent l'intégration de l'information. La plupart des bases de connaissances contiennent des informations relatives à des actions dans le temps qui ne possèdent pas la bonne structure capable de relier directement l'événement au temps ou la période associer à cette événement.
+Ces bases de connaissance ne portent que sur des domaines spécifiques (les entreprises, les films, la musique, les livres, les plublications scientifiques etc..), sont créées par des ingénieurs de connaissance. Dans ce contexte, Wikipédia est devenue l'une des sources de connaissances centrale de l'humanité. Cette encyclopédie libre est entretenue par des milliers de contributeurs.
 \subparagraph{}
 Notre étude s'appuie sur DBpedia cette source gigantesque de connaissances par l'extraction des informations structurées à partir de Wikipédia pour rendre ces informations utiles et accessibles sur le Web. La base de connaissance DBpedia à plusieurs avantages sur les bases de connaissances existante : elle couvre plusieurs domaines, elle évolue automatiquement avec les changements de Wikipédia, elle est multilingue et accessible sur le Web. 
 \subparagraph{}
-Comme DBpedia couvre un large éventail de domaines et contient environ 4,8 milliards de triplets RDF qui couvrent des domaines divers un nombre croissant d'éditeurs de données ont commencé à mettre des liens RDF à partir de leurs sources de données à DBpedia.
+Comme DBpedia couvre un large éventail de domaines et contient environ 4,8 milliards de triplets RDF qui couvrent des domaines divers, un nombre croissant d'éditeurs de données ont commencé à mettre des liens RDF à partir de leurs sources de données à DBpedia.
+\subparagraph{}
+Durant cette étude, nous avons travaillé sur les bases de connaissances pour annoter temporellement leurs contenus. Nous avons choisi praticulièrement DBpedia et nous avons développé un système automatique d'extraction d'informations qui convertit le contenu de DBpedia dans une riche et plus structuré base de données que nous avons appelé SPOTbase.
+\subparagraph{}
+SPOTbase est une base de connaissance, regroupe des triplets annotés générer automatiquement à l'aide d'une procédure de `` mapping `` que nous avons implémenté à partir de DBpedia.
+Nous avons réussi à former envirant 300 quadruplets et beaucoup plus dans certains cas pour un seul couple qui valide bien notre hypothèse.
 \subparagraph{}
 Dans ce chapitre, nous introduisons les différentes, modèles, paradigmes et technologies que nous allons utiliser dans notre étude ainsi que les travaux de recherche liés à cette problématique ; tout en essayant d'analyser les différentes approches. Ceci est dans le but de mettre en place la solution que nous avons proposée.
 \subsection{Positionnement}
 \paragraph{}
 Notre étude a la particularité d’englober le domaine de la fouille de données et du Web sémantique. 
-En effet, nous utilisons les techniques de la fouille pour l'extraction des données depuis les différentes sources d'informations; et le Web sémantique afin de donner aux métadonnées une structure plus lisible par la machine. Notre travail vise à enrechir la sémantique des triplets RDF dans les bases de connaissances avec des annotations temporelles permettant de donner aux triplets une sémantique valide dans le temps.
+En effet, nous utilisons les techniques de la fouille pour l'extraction des données depuis les différentes sources d'informations; et le Web sémantique afin de donner aux métadonnées une nouvelle structure plus lisible par la machine. Notre travail vise à enrechir la sémantique des triplets RDF dans les bases de connaissances avec des annotations temporelles permettant de donner aux triplets une sémantique valide dans le temps.
 \subparagraph{}
 Dans cette section on présente les technologies du Web sémantique que nous avons utilisées, puis nous effectuerons une étude autour des travaux de recherche qui précèdent notre étude tout en introduisant les concepts à développer et la problématique de notre sujet.
 \subsection{Technologies du Web sémantique}
@@ -78,11 +83,15 @@ Rapellons que la plus petite structure de description en RDF est le triplet.
 Un triplet décrit une ressource, l’associe à une propriété et à une valeur de cette propriété qui peut être une nouvelle ressource liée. 
 \newline
 Par exemple, “Moncef a écrit une page QuadsRDF.html à propos des quadruplets RDF” peut être décomposée en deux triplets ayant comme sujet “QuadsRDF.html”: <QuadsRDF.html, auteur, Moncef> et <QuadsRDF.html, thème, quadruplets RDF>.
-Par conséquent, les suivants <Sujet,Prédicat,Objet>, c'est à dire les suivants triplets RDF peuvent être exprimés :
-\begin{itemize}
-\item <http://www.w3.org/TR/2014/REC-n-quads/>,<http://www.w3.org/2014/N-QuadsReports/index.html\#author>, ''Moncef''.
-\item <http://www.w3.org/TR/2014/REC-n-quads/>,<http://www.w3.org/2014/N-QuadsReports/index.html\#topic>,<http://www.w3.org/2013/N-Quads\#RDFquad>
-\end{itemize}
+\newline
+Par conséquent, les suivants <Sujet,Prédicat,Objet>, c'est-à-dire les suivants triplets RDF peuvent être exprimés :
+\begin{description}
+\item[\ \ \textbullet]  <http://www.w3.org/TR/2014/REC-n-quads/>, <http://www.w3.org/
+2014/N-QuadsReports/index.html\#author>, ``Moncef``.
+\item[\ \ \textbullet]  <http://www.w3.org/TR/2014/REC-n-quads/>, <http://www.w3.org/
+2014/N-QuadsReports/index.html\#topic>, <http://www.w3.org/2014/
+N-Quads\#RDFquad>
+\end{description}
 On peut schématiser cela de la manière suivante :
 \begin{figure}[H]
 \centering
@@ -100,7 +109,7 @@ SPARQL est un langage d'interrogation de graphes RDF dont l'énoncé de base est
 Poser une question en SPARQL consiste à écrire un graphe requête pour lequel on cherche des occurences dans le graphe cible.
 \subsubsection{N-Quads}
 \paragraph{}
-N-Triples est une simple syntaxe de ligne délimitée( line-delimited) pour les graphes RDF. N-Quads\footnote{http://sw.deri.org/2008/07/n-quads/}, un format qui s'étend N-Triples\footnote{http://www.w3.org/2001/sw/RDFCore/ntriples/} avec le contexte. Chaque triplet dans un document N-Quads peut avoir une valeur de contexte en option :
+N-Quads\footnote{http://sw.deri.org/2008/07/n-quads/}, un format qui s'étend N-Triples\footnote{http://www.w3.org/2001/sw/RDFCore/ntriples/} (une simple syntaxe de ligne délimitée ``line-delimited`` pour les graphes RDF) avec le contexte. Chaque triplet dans un document N-Quads peut avoir une valeur de contexte en option :
 <subjet> <prédicat> <objet> <contexte>.
 \subparagraph{}
 La notion de provenance est essentielle lors de l'intégration des données provenant de différentes sources ou du Web. Le contexte indique généralement la provenance d'une déclaration donnée.
@@ -108,11 +117,11 @@ La notion de provenance est essentielle lors de l'intégration des données prov
 \paragraph{}
 \textbf{Ontologie} La définition de référence d’une ontologie provient de Gruber~\cite{gruber1995}  :  {\it `` Une ontologie est la spécification d’une conceptualisation. [...] Une conceptualisation est une vue abstraite et simplifiée du monde que l’on veut représenter. ``} Le terme vocabulaire est aussi utilisé en tant que synonyme d’ontologie.
 \paragraph{}
-\textbf{Exemple de vocabulaire RDF} On considère les relations suivantes : \textit{dc:title}, \textit{dc:author} et \textit{foaf:knows}. Celles-ci ont été définies dans les vocabulaires Dublin Core et FOAF. Un vocabulaire modélise un domaine particulier : concepts, relations. Par exemple FOAF modélise les personnes et leurs relations entre elles. Il identifie les classes Person, Agent, Organisation, ... et les relations \textit{firstName}, \textit{familyName}, \textit{knows}, \textit{birthday}, etc... Le vocabulaire structure ensuite ces  éléments : \textit{Person} est une sous-classe de \textit{Agent}, \textit{familyName} a pour domaine la classe \textit{Person}, etc...
+\textbf{Exemple de vocabulaire RDF} On considère les relations suivantes : \textit{dc:title}, \textit{dc:author} et \textit{foaf:knows}. Celles-ci ont été définies dans les vocabulaires Dublin Core et FOAF. Un vocabulaire modélise un domaine particulier : concepts, relations. Par exemple FOAF modélise les personnes et leurs relations entre elles. Il identifie les classes Person, Agent, Organisation, etc... et les relations \textit{firstName}, \textit{familyName}, \textit{knows}, \textit{birthday}, etc... Le vocabulaire structure ensuite ces  éléments : \textit{Person} est une sous-classe de \textit{Agent}, \textit{familyName} a pour domaine la classe \textit{Person}, etc...
 \paragraph{}
 \textbf{RDF Schema, ou RDFS}, est le langage de description de vocabulaire historiquement associé à RDF. Il s'agit en effet du premier des langages de description de vocabulaire développés pour le Web de données. RDFS permet de spécifier des ontologies dites légères, c'est-à-dire de nommer des classes et des propriétés, de donner la signature de ces propriétés et de définir une organisation hiérarchique de ces classes et propriétés.
 \paragraph{}
-\gls{owl}, est un langage de définition d'ontologie pour le Web sémantique. Il est beaucoup plus expressif que RDF Schema. OWL permet d'exprimer les notions d'équivalence de classes ou de propriétés, d'égalité de ressources, de différence, de contrainte... OWL 1 est une recommandation du W3C depuis 2004.
+\textbf{\gls{owl}}, est un langage de définition d'ontologie pour le Web sémantique. Il est beaucoup plus expressif que RDF Schema. OWL permet d'exprimer les notions d'équivalence de classes ou de propriétés, d'égalité de ressources, de différence, de contrainte... OWL 1 est une recommandation du W3C depuis 2004.
 \newpage
 \subsection{Bases de Connaissances}
 \paragraph{}
@@ -175,12 +184,12 @@ La nécessité de l’annotation temporelle sur les documents Web a été évoqu
 Ensuite, Udrea et al~\cite{udrea2006} ont travaillé sur la notion d'annoter temporellement les graphes RDF et depuis plusieurs travaux de recherche ont évoqué cette problématique.
 Ces derniers définissent que le triplet annoté de la forme suivante $(s,p:t,o)$ où $t$ est une étiquette temporelle. De plus ils ont donné des algorithmes pour interroger les données RDF annotées.
 \subparagraph{}	
-Plusieurs études de recherche ont défini des modèles de représentation du temps dans les graphes RDF. Nous avons cherché à étudier ces différentes représentations qui n'ont malheureusement pas donné un lien à aucune implémentation et par la suite, nous présenterons notre approche avec une implémentation du modèle que nous avons choisi.  
-\subsection{RDF Temporel ou tRDF}
+Plusieurs études de recherche ont défini des modèles de représentation du temps dans les graphes RDF. Nous avons cherché à étudier ces différentes représentations qui n'ont malheureusement pas donné un lien à aucune implémentation concrète. Par la suite, nous présenterons notre approche et une implémentation du modèle que nous avons proposé.  
+\subsubsection{RDF Temporel ou tRDF}
 \paragraph{}
 Pour introduire \gls{trdf}, on commence par les exemples suivants:
 \newline
-Il y a des triplets comme par exemple : `` Mary est toujours la mère de John `` qui n'ont pas une caractéristique temporelle explicite parce qu’ils sont toujours valide. Mais il y a aussi des triplets ayant une valeur vrai que dans une plage temporelle bien précise, par exemple : `` Bill Clinton est le président de Etats-Unis ``, n'est valide que dans l'intervalle $[1993-2001]$.
+Il y a des triplets comme par exemple : ``Mary est toujours la mère de John`` qui n'ont pas une caractéristique temporelle explicite parce qu’ils sont toujours valide. Mais il y a aussi des triplets ayant une valeur vrai que dans une plage temporelle bien précise, par exemple : ``Bill Clinton est le président de Etats-Unis``, n'est valide que dans l'intervalle $[1993-2001]$.
 \subparagraph{}
 Donc il y a des triplets qui ne peuvent être reconnus que dans des périodes temporelles précises.
 \paragraph{}
@@ -202,9 +211,9 @@ Au cours des dernières années, le Web de données a développé dans une grand
 \paragraph{}
 Les informations sur un intervalle temporel de validité pour les évènements décrits par des triplets RDF, jouent un rôle important dans plusieurs d'applications.
 Un grand nombre de triplets dans LOD ne sont valides que dans un certain intervalle de temps qu'ils appellent la portée de leurs temps.
-Par exemple dans DBpedia ils indiquent que `` Mario Balotelli joue pour les équipes AC Lumezzane et le Milan AC ``. Lorsqu'on modélise des connaissances du monde réel, Mario Balotelli ne peut pas jouer en même temps avec AC Lumezzane et le Milan AC.
+Par exemple dans DBpedia ils indiquent que ``Mario Balotelli joue pour les équipes AC Lumezzane et le Milan AC``. Lorsqu'on modélise des connaissances du monde réel, Mario Balotelli ne peut pas jouer en même temps avec AC Lumezzane et le Milan AC.
 \subparagraph{}
-Les logiques temporelles d'informations ont besoin d'avoir de la protée temporelle des faits tels que ``Mario Balotelli joue pour l'équipe AC Milan ``.
+Les logiques temporelles d'informations ont besoin d'avoir de la protée temporelle des faits tels que ``Mario Balotelli joue pour l'équipe AC Milan``.
 Une approche a été proposée pour détecter la portée des évènements visés par des triplets RDF par Rule et al~\cite{rula2014} est composé de quatre étapes principales~:
 \begin{itemize}
 \item Les données du document Web sont normalisées pour tenir compte de l’importance des dates figurants dans les documents.
@@ -216,7 +225,7 @@ Une approche a été proposée pour détecter la portée des évènements visés
 La plateforme DeFacto (Deep Fact Validation)~\cite{lehmann2012} a été utilisée pour la validation des états en cherchant des sources qu'elle confirme sur le Web.
 \subparagraph{}
 Les triplets sont représentés par des faits et peuvent être associés à un contexte temporel.
-Par exemple, $<Balotelli, team, AC Milan>$ se réfère à un événement de $2003-2009$, une annotation temporelle est rattachée au fait comme suit $<f, [ti,tj]>$.
+Par exemple, $<Balotelli, team, AC Milan>$ se réfère à un événement de [$2003-2009$], une annotation temporelle est rattachée au fait comme suit $<f, [ti,tj]>$.
 \subparagraph{}
 Cette approche combine deux types d'informations~: les informations temporelles recueillies dans des documents Web et les informations temporelles contenues dans les bases de connaissances, pour associer des intervalles de temps aux triplets RDF.
 \subsection{Temps valide des triplets dans les données géospatiales liées}
@@ -228,8 +237,8 @@ L’introduction du temps dans les modèles de données et les langages de requ�
 Les trois types distincts de temps qui ont été étudiées~:
 \begin{itemize}
 \item L'action temporelle indépendante, par exemple ($01/12/1954$ c’est l’anniversaire de John).
-\item Le temps d’évènement ou un fait vrai dans l’application (entre $2001-2012$ John a été professeur).
-\item Le délais de transaction est le moment où un fait est en cours dans la base de données (l’heure système $h$ présente l’heure exact quand John est un professeur $2001-2012$).
+\item Le temps d’évènement ou un fait vrai dans l’application ( John a été professeur entre [$2001-2012$]).
+\item Le délais de transaction est le moment où un fait est en cours dans la base de données (l’heure système $h$ présente l’heure exact quand John est un professeur [$2001-2012$]).
 \end{itemize}
 \paragraph{}
 Bereta et al~\cite{bereta2013} présentent également le concept de horodatages anonymes dans les graphes RDF, par exemple le quadruplet(quad) de la forme $(s, p, o)[t]$, où $t$ est une horloge ou un timestamp $x$ anonyme déclarant que le triplet est valable dans un certain point de temps inconnu.

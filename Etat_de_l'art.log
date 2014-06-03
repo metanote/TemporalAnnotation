@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.8.6)  3 JUN 2014 12:11
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.8.6)  3 JUN 2014 17:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -940,118 +940,118 @@ Chapitre 1.
 
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 58.
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/lm/ot1lmr.fd
+[2]
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 63.
+ (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 58.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 63.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 58.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 63.
 
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 58.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 63.
 
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 58.
+(Font)              <12> on input line 63.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 58.
+(Font)              <8> on input line 63.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 58.
- [2]
-Underfull \hbox (badness 10000) in paragraph at lines 61--63
+(Font)              <6> on input line 63.
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--68
 
  []
 
 <tripletrdf.png, id=11, 445.665pt x 67.25125pt>
 File: tripletrdf.png Graphic file (type png)
  <use tripletrdf.png>
-Package pdftex.def Info: tripletrdf.png used on input line 73.
+Package pdftex.def Info: tripletrdf.png used on input line 78.
 (pdftex.def)             Requested size: 227.62204pt x 34.34795pt.
+ [3]
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 89.
 
-Overfull \hbox (20.10204pt too wide) in paragraph at lines 78--82
-\T1/lmr/m/n/12 thème, qua-dru-plets RDF>. Par consé-quent, les sui-vants <Su-je
-t,Prédicat,Objet>,
- []
-
-[3 <./tripletrdf.png>]
-Overfull \hbox (61.61307pt too wide) in paragraph at lines 83--84
-[]\T1/lmr/m/n/12 <http ://www.w3.org/TR/2014/REC-n-quads/>,<http ://www.w3.org/
-2014/N-
- []
-
-
-Overfull \hbox (61.61307pt too wide) in paragraph at lines 84--85
-[]\T1/lmr/m/n/12 <http ://www.w3.org/TR/2014/REC-n-quads/>,<http ://www.w3.org/
-2014/N-
+(/usr/local/texlive/2013/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Overfull \hbox (12.25104pt too wide) in paragraph at lines 89--91
+[]\T1/lmr/m/n/12 <http ://www.w3.org/TR/2014/REC-n-quads/>, <http ://www.w3.org
+/
  []
 
 
-Overfull \hbox (88.01888pt too wide) in paragraph at lines 84--85
-\T1/lmr/m/n/12 QuadsReports/index.html#topic>,<http ://www.w3.org/2013/N-Quads#
-RDFquad> 
+Overfull \hbox (12.25104pt too wide) in paragraph at lines 91--94
+[]\T1/lmr/m/n/12 <http ://www.w3.org/TR/2014/REC-n-quads/>, <http ://www.w3.org
+/
  []
 
-<Diag.png, id=20, 304.13625pt x 136.51pt>
+
+Overfull \hbox (17.94907pt too wide) in paragraph at lines 91--94
+\T1/lmr/m/n/12 2014/N-QuadsReports/index.html#topic>, <http ://www.w3.org/2014/
+
+ []
+
+<Diag.png, id=18, 304.13625pt x 136.51pt>
 File: Diag.png Graphic file (type png)
  <use Diag.png>
-Package pdftex.def Info: Diag.png used on input line 90.
+Package pdftex.def Info: Diag.png used on input line 99.
 (pdftex.def)             Requested size: 227.62204pt x 102.16977pt.
- [4 <./Diag.png>]
-[5] [6] <dbpedia.png, id=32, 1003.75pt x 661.47125pt>
+ [4 <./tripletrdf.png> <./Diag.png>] [5] [6] <dbpedia.png, id=33, 1003.75pt x 6
+61.47125pt>
 File: dbpedia.png Graphic file (type png)
- <use dbpedia.png>
-Package pdftex.def Info: dbpedia.png used on input line 128.
+
+<use dbpedia.png>
+Package pdftex.def Info: dbpedia.png used on input line 137.
 (pdftex.def)             Requested size: 195.0pt x 128.49684pt.
 
-Underfull \hbox (badness 1824) in paragraph at lines 133--135
+Underfull \hbox (badness 1824) in paragraph at lines 142--144
 \T1/lmr/m/n/12 der-nière ver-sion de
  []
 
 
-Underfull \hbox (badness 1117) in paragraph at lines 133--135
+Underfull \hbox (badness 1117) in paragraph at lines 142--144
 \T1/lmr/m/n/12 DB-pe-dia da-tant de
  []
 
 
-Overfull \hbox (10.75844pt too wide) in paragraph at lines 136--138
+Overfull \hbox (10.75844pt too wide) in paragraph at lines 145--147
 \T1/lmr/m/n/12 connais-sances est écrite
  []
 
 
-Underfull \hbox (badness 5417) in paragraph at lines 136--138
+Underfull \hbox (badness 5417) in paragraph at lines 145--147
 \T1/lmr/m/n/12 adopte les normes
  []
 
 
-Underfull \hbox (badness 3536) in paragraph at lines 136--138
+Underfull \hbox (badness 3536) in paragraph at lines 145--147
 \T1/lmr/m/n/12 et du ré-seau Lin-
  []
 
-[7 <./dbpedia.png>] <yago.png, id=38, 404.51125pt x 366.36874pt>
+[7 <./dbpedia.png>] <yago.png, id=39, 404.51125pt x 366.36874pt>
 File: yago.png Graphic file (type png)
 
 <use yago.png>
-Package pdftex.def Info: yago.png used on input line 150.
+Package pdftex.def Info: yago.png used on input line 159.
 (pdftex.def)             Requested size: 284.52756pt x 257.703pt.
- <wikidatawikipedia.png, id=39, 220.33537pt x 198.7425pt>
+ <wikidatawikipedia.png, id=40, 220.33537pt x 198.7425pt>
 File: wikidatawikipedia.png Graphic file (type png)
 
 <use wikidatawikipedia.png>
-Package pdftex.def Info: wikidatawikipedia.png used on input line 158.
+Package pdftex.def Info: wikidatawikipedia.png used on input line 167.
 (pdftex.def)             Requested size: 341.43306pt x 308.00218pt.
  [8 <./yago.png>] [9 <./wikidatawikipedia.png>]
-Overfull \hbox (53.52458pt too wide) in paragraph at lines 167--171
+Overfull \hbox (53.52458pt too wide) in paragraph at lines 176--180
  [] \T1/lmr/m/n/12 De même pour la cer-ti-tude, une autre forme a été pro-posé 
 : $\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 Max; hasSupervisor \OT1/lmr/m/n/12 :
  []
@@ -1066,28 +1066,29 @@ Overfull \hbox (53.52458pt too wide) in paragraph at lines 167--171
 
 ] (./Etat_de_l'art.aux (./bu.aux)) ) 
 Here is how much of TeX's memory you used:
- 9915 strings out of 493315
- 144814 string characters out of 6137905
- 253374 words of memory out of 5000000
- 13110 multiletter control sequences out of 15000+600000
- 55774 words of font info for 39 fonts, out of 8000000 for 9000
+ 9946 strings out of 493315
+ 145648 string characters out of 6137905
+ 254374 words of memory out of 5000000
+ 13137 multiletter control sequences out of 15000+600000
+ 56150 words of font info for 40 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  53i,7n,92p,1463b,360s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/e
 nc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/lm/lm
 -mathsy.enc}{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/lm/lm-mathit.en
-c}{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/
-texlive/2013/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/20
-13/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2013/texmf-
-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2013/texmf-dist/fonts
-/type1/public/lm/lmr10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publ
-ic/lm/lmr12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr8.
-pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/
-local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on Etat_de_l'art.pdf (20 pages, 1015243 bytes).
+c}{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
+texlive/2013/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2013/
+texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2013/texmf-dist
+/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
+pe1/public/lm/lmmi12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public
+/lm/lmr10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr12.p
+fb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/loc
+al/texlive/2013/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive
+/2013/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
+Output written on Etat_de_l'art.pdf (20 pages, 1016261 bytes).
 PDF statistics:
- 119 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
+ 122 PDF objects out of 1000 (max. 8388607)
+ 82 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
