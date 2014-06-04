@@ -138,7 +138,7 @@ C'est un projet universitaire et communautaire d’extraction et d’exploitatio
 \end{wrapfigure}
 DBpedia 3.9 est la dernière version de DBpedia datant de Juin 2013.
 \subparagraph{}
-Cette base de connaissances est écrite en Scala et Java. Elle adopte les normes du Web sémantique et du réseau Linked Open Data. Pour chaque document encyclopédique, il existe une page de ressources contenant toutes les données et leur description sous forme de triplets RDF. Ces triplets peuvent représenter une information telle que Obama est le président des État-Unis, (Obama, PresidentOf, US).
+Cette base de connaissances est écrite en Scala et Java. Elle adopte les normes du Web sémantique et du réseau Linked Open Data. Pour chaque document encyclopédique, il existe une page de ressources contenant toutes les données et leur description sous forme de triplets RDF. Ces triplets peuvent représenter une information telle que Obama est le président des État-Unis, ($Obama$, $PresidentOf$, $US$).
 DBpedia est conçu par ces auteurs comme l'un des noyaux du Web émergent sous le nom de Web de données. Les triplets dans cette base de connaissance représentent des faits du monde réel qui doivent avoir une sémantique correcte et valide.
 
 \newpage
@@ -273,12 +273,13 @@ Ces derniers ont proposé un vocabulaire pour affirmer les moments où les tripl
 \subsection{Graphe Temporel}
 \paragraph{}
 L'idée générale de Pugliese et al~\cite{pugliese2008} est d'annoter RDF avec un interval de temps.
-Ces derniers ont proposé un graphe temporel d'indexation ``tGRIN``. C'est une structure d’indexation qui construit un index spécialisé pour RDF temporels. Les graphe seront stockés dans une base de données relationnelle.
+Ils ont proposé un graphe temporel d'indexation ``tGRIN``. C'est une structure d’indexation qui construit un index spécialisé pour RDF temporels. Les graphe seront stockés dans une base de données relationnelle.
 \subparagraph{}
-D'autes index temporels sont implémentés (R+ trees, SR-trees, ST-index, and MAP21) mais l'index tGRIN présentent des performances supérieures selon les expérimentations faites dans~\cite{pugliese2008}, cet index identifie même les très petits sous graphes contenant une réponse à la requête.
+D'autes index temporels sont implémentés (R+ trees, SR-trees, ST-index, and MAP21) mais l'index $tGRIN$ présentent des performances supérieures selon les expérimentations faites dans~\cite{pugliese2008}, cet index identifie même les très petits sous graphes contenant une réponse à la requête.
 \subsection{Synthèse}
 \paragraph{}
-Plusieurs travaux de recherche ont été mis au point pour résoudre le problème des données qui présentent une sémantique temporelle dans les graphes RDF. Nous avons étudié ces travaux afin d'avoir une vision globale sur la problématique, pour voir ce qui est déjà fait dans ce domaine et les modèles de représentations proposés. On s'inspire de ces travaux pour proposer une nouvelle approche qui soit satisfaisante pour annoter temporellement les métadonnées de Wikipédia.
+Plusieurs travaux de recherche ont été mis au point pour résoudre le problème des données qui présentent une sémantique temporelle dans les graphes RDF. Nous avons étudié ces travaux afin d'avoir une vision globale sur la problématique, pour voir ce qui est déjà fait dans ce domaine et les modèles de représentations proposés. On s'inspire de ces travaux pour proposer une nouvelle approche qui soit satisfaisante pour annoter temporellement les métadonnées.
+\newpage
 \section{Extraction des faits temporels}
 \paragraph{}
 L'extraction, la fouille de données, ou encore l'extraction de connaissances à partir de données, ont pour objet l'extraction d'un savoir, d'une connaissance, ou dans notre cas une connaissance mise en relation temporelle à partir de grandes quantités de données par des méthodes automatiques.
@@ -310,7 +311,7 @@ L'évaluation a été appliquée sur un corpus d’apprentissage qui contient $1
 On peut utiliser cette méthode pour les propriétés de DBpedia à la place des comptes-rendus hospitaliers et chercher à chaque fois à apprendre à partir d'un motif qui peut être temporel, spatial, etc...
 Au lieu d’une procédure de décision gloutonne ou aléatoire, une relation de décision globale pourrait être implémentée pour étudier toutes les relations temporelles prédites.
 \paragraph{}
-Le but de Kessler et al~\cite{kessler2013} est d'extraire les dates saillantes (importantes) qui méritent de figurer dans une chronologie événementielle.
+Par ailleurs, le but de Kessler et al~\cite{kessler2013} est d'extraire les dates saillantes (importantes) qui méritent de figurer dans une chronologie événementielle.
 Ces derniers ont utilisé une approche d’apprentissage pour extraire les dates saillantes concernant un thème donné.
 \subparagraph{}
 La méthode consiste à annoter automatiquement les informations événementielles. C’est-à-dire, à  repérer et à baliser les occurrences d’événements au sens TimeML\footnote{http://timeml.org/site/index.html}(Time Markup language est un langage d'annotation pour les événements et les expression temporelles) et de les classifier selon l’ontologie définie par le schéma d’annotation.
