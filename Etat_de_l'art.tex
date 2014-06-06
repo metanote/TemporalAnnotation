@@ -76,12 +76,12 @@ Rapellons que la plus petite structure de description en RDF est le triplet.
 \subparagraph{}
 Un triplet décrit une ressource, l’associe à une propriété et à une valeur de cette propriété qui peut être une nouvelle ressource liée. 
 \newline
-Par exemple, “Moncef a écrit une page QuadsRDF.html à propos des quadruplets RDF” peut être décomposée en deux triplets ayant comme sujet “QuadsRDF.html”: <QuadsRDF.html, auteur, Moncef> et <QuadsRDF.html, thème, quadruplets RDF>.
+Par exemple, ``Moncef a écrit une page QuadsRDF.html à propos des quadruplets RDF” peut être décomposée en deux triplets ayant comme sujet ``QuadsRDF.html”: <QuadsRDF.html, auteur, Moncef> et <QuadsRDF.html, thème, quadruplets RDF>.
 \newline
 Par conséquent, les suivants <Sujet,Prédicat,Objet>, c'est-à-dire les suivants triplets RDF peuvent être exprimés :
 \begin{description}
 \item[\ \ \textbullet]  <http://www.w3.org/TR/2014/REC-n-quads/>, <http://www.w3.org/
-2014/N-QuadsReports/index.html\#author>, ``Moncef``.
+2014/N-QuadsReports/index.html\#author>, ``Moncef''.
 \item[\ \ \textbullet]  <http://www.w3.org/TR/2014/REC-n-quads/>, <http://www.w3.org/
 2014/N-QuadsReports/index.html\#topic>, <http://www.w3.org/2014/
 N-Quads\#RDFquad>
@@ -109,7 +109,7 @@ N-Quads\footnote{http://sw.deri.org/2008/07/n-quads/}, un format qui s'étend N-
 La notion de provenance est essentielle lors de l'intégration des données provenant de différentes sources ou du Web. Le contexte indique généralement la provenance d'une déclaration donnée.
 \subsection{Ontologies}
 \paragraph{}
-La définition de référence d’une ontologie provient de Gruber~\cite{gruber1995}  :  {\it `` Une ontologie est la spécification d’une conceptualisation. [...] Une conceptualisation est une vue abstraite et simplifiée du monde que l’on veut représenter.``} Le terme vocabulaire est aussi utilisé en tant que synonyme d’ontologie.
+La définition de référence d’une ontologie provient de Gruber~\cite{gruber1995}  :  {\it Une ontologie est la spécification d’une conceptualisation. [...] Une conceptualisation est une vue abstraite et simplifiée du monde que l’on veut représenter.} Le terme vocabulaire est aussi utilisé en tant que synonyme d’ontologie.
 \subparagraph{}
 \textbf{Exemple de vocabulaire RDF} On considère les relations suivantes : \textit{dc:title}, \textit{dc:author} et \textit{foaf:knows}. Celles-ci ont été définies dans les vocabulaires Dublin Core et FOAF. Un vocabulaire modélise un domaine particulier : concepts, relations. Par exemple FOAF modélise les personnes et leurs relations entre elles. Il identifie les classes Person, Agent, Organisation, etc... et les relations \textit{firstName}, \textit{familyName}, \textit{knows}, \textit{birthday}, etc... Le vocabulaire structure ensuite ces  éléments : \textit{Person} est une sous-classe de \textit{Agent}, \textit{familyName} a pour domaine la classe \textit{Person}, etc...
 \subparagraph{}
@@ -183,7 +183,7 @@ Plusieurs études de recherche ont défini des modèles de représentation du te
 \paragraph{}
 Pour introduire \gls{trdf}, on commence par les exemples suivants:
 \newline
-Il y a des triplets comme par exemple : ``Mary est toujours la mère de John`` qui n'ont pas une caractéristique temporelle explicite parce qu’ils sont toujours valide. Mais il y a aussi des triplets ayant une valeur vrai que dans une plage temporelle bien précise, par exemple : ``Bill Clinton est le président de Etats-Unis``, n'est valide que dans l'intervalle $[1993-2001]$.
+Il y a des triplets comme par exemple : ``Mary est toujours la mère de John'' qui n'ont pas une caractéristique temporelle explicite parce qu’ils sont toujours valide. Mais il y a aussi des triplets ayant une valeur vrai que dans une plage temporelle bien précise, par exemple : ``Bill Clinton est le président de Etats-Unis", n'est valide que dans l'intervalle $[1993-2001]$.
 \subparagraph{}
 Donc il y a des triplets qui ne peuvent être reconnus que dans des périodes temporelles précises.
 \paragraph{}
@@ -205,9 +205,9 @@ Au cours des dernières années, le Web de données a développé dans une grand
 \paragraph{}
 Les informations sur un intervalle temporel de validité pour les évènements décrits par des triplets RDF, jouent un rôle important dans plusieurs d'applications.
 Un grand nombre de triplets dans LOD ne sont valides que dans un certain intervalle de temps qu'ils appellent la portée de leurs temps.
-Par exemple dans DBpedia ils indiquent que ``Mario Balotelli joue pour les équipes AC Lumezzane et le Milan AC``. Lorsqu'on modélise des connaissances du monde réel, Mario Balotelli ne peut pas jouer en même temps avec AC Lumezzane et le Milan AC.
+Par exemple dans DBpedia ils indiquent que ``Mario Balotelli joue pour les équipes AC Lumezzane et le Milan AC''. Lorsqu'on modélise des connaissances du monde réel, Mario Balotelli ne peut pas jouer en même temps avec AC Lumezzane et le Milan AC.
 \subparagraph{}
-Les logiques temporelles d'informations ont besoin d'avoir de la protée temporelle des faits tels que ``Mario Balotelli joue pour l'équipe AC Milan``.
+Les logiques temporelles d'informations ont besoin d'avoir de la protée temporelle des faits tels que ``Mario Balotelli joue pour l'équipe AC Milan''.
 Une approche a été proposée pour détecter la portée des évènements visés par des triplets RDF par Rule et al~\cite{rula2014} est composé de quatre étapes principales~:
 \begin{itemize}
 \item Les données du document Web sont normalisées pour tenir compte de l’importance des dates figurants dans les documents.
@@ -271,7 +271,7 @@ Ces derniers ont proposé un vocabulaire pour affirmer les moments où les tripl
 \subsection{Graphe Temporel}
 \paragraph{}
 L'idée générale de Pugliese et al~\cite{pugliese2008} est d'annoter RDF avec un interval de temps.
-Ils ont proposé un graphe temporel d'indexation ``tGRIN``. C'est une structure d’indexation qui construit un index spécialisé pour RDF temporels. Les graphe seront stockés dans une base de données relationnelle.
+Ils ont proposé un graphe temporel d'indexation ``tGRIN''. C'est une structure d’indexation qui construit un index spécialisé pour RDF temporels. Les graphe seront stockés dans une base de données relationnelle.
 \subparagraph{}
 D'autes index temporels sont implémentés (R+ trees, SR-trees, ST-index, and MAP21) mais l'index $tGRIN$ présentent des performances supérieures selon les expérimentations faites dans~\cite{pugliese2008}, cet index identifie même les très petits sous graphes contenant une réponse à la requête.
 \subsection{Synthèse}
@@ -287,7 +287,7 @@ Une approche proposée par Zweigenbaum et Tannier~\cite{zweigenbaum2013} consist
 \subparagraph{}
 La détection des relations temporelles entre les événements dans un texte fournit de bonnes informations pour l’extraction.
 \newline
-Dans TempEval Verhagen et al~\cite{verhagen2010} ont abordé le temps dans un “domaine ouvert” et cherchant à détecter en TempEval2 cinq types de relations temporelles :
+Dans TempEval Verhagen et al~\cite{verhagen2010} ont abordé le temps dans un ``domaine ouvert” et cherchant à détecter en TempEval2 cinq types de relations temporelles :
 \newline
 $(Before, After, Overlap, Before\_or\_Overlap, Overlap\_or\_Before)$
 Pour identifier les relations temporelles décrivant la chronologie du séjour hospitalier.
