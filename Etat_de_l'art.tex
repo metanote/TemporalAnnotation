@@ -1,21 +1,3 @@
-\documentclass[12pt,a4]{report}
-\usepackage[frenchb]{babel}
-
-\usepackage[usenames,dvipsnames]{color}
-\usepackage[utf8]{inputenc}
-\usepackage{textcomp}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}	
-\usepackage{bibunits}
-\usepackage{graphicx}
-\usepackage{wrapfig}
-\usepackage{glossaries}
-\makeglossaries
-\usepackage{float}
-\usepackage{cite}
-\usepackage{caption}
-\usepackage{amsmath,mathtools}
-\usepackage{subcaption}
 \newacronym{w3c}{W3C}{World Wide Web Consortium}
 \newacronym{rdf}{RDF}{Resource Description Framework}
 \newacronym{trdf}{tRDF}{Temporal RDF}
@@ -27,7 +9,6 @@
 \newacronym{uri}{URI}{Uniform Resource Identifier}
 \newacronym{iri}{IRI}{Internationalized Resource Identifier }
 \newacronym{sql}{SQL}{Structured Query Language}
-\begin{document}
 \chapter{État de l'art}
 \section{Introduction}
 \paragraph{}
@@ -99,7 +80,7 @@ On peut schématiser cela de la manière suivante :
 Si RDF fournit un modèle universel de représentation de métadonnées, d'autres niveaux de traitements ont été standardisés au-dessus de lui et notamment l'interrogation de ces métadonnées. 
 \gls{sparql} fournit le langage d'interrogation du Web sémantique, et il est à RDF ce que \gls{sql} est aux bases de données relationnelles.
 \subparagraph{}
-SPARQL est un langage d'interrogation de graphes RDF dont l'énoncé de base est lui aussi un triplet (ressource, propriété, valeur) il est une recommandation du W3C depuis juillet 2008.
+SPARQL est un langage d'interrogation de graphes RDF dont l'énoncé de base est lui aussi un triplet (ressource, propriété, valeur). Il est une recommandation du W3C depuis juillet 2008.
 Poser une question en SPARQL consiste à écrire un graphe requête pour lequel on cherche des occurences dans le graphe cible.
 \subsection{N-Quads}
 \paragraph{}
@@ -120,7 +101,6 @@ La définition de référence d’une ontologie provient de Gruber~\cite{gruber1
 \subsection{Bases de Connaissances}
 \paragraph{}
 Une base de connaissances regroupe des informations spécifiques à un domaine donné, sous un format exploitable par un ordinateur. Elle peut contenir des régles, des faits ou d'autres représentations. Les bases de connaissances regroupent des informations structurées. C’est dans ce contexte que nous cherchons à exploiter ces informations pour les mettre dans une nouvelle structure qui englobe le temps.
-
 \subsubsection{DBpedia}
 \paragraph{}
 C'est un projet universitaire et communautaire d’extraction et d’exploitation automatiques des données à partir de wikipedia. C’est également un ensemble de données structurées et normalisées au format du Web sémantique.
@@ -136,8 +116,7 @@ C'est un projet universitaire et communautaire d’extraction et d’exploitatio
 DBpedia 3.9 est la dernière version de DBpedia datant de Juin 2013.
 \subparagraph{}
 Elle adopte les normes du Web sémantique et du réseau Linked Open Data. Pour chaque document encyclopédique, il existe une page de ressources contenant toutes les données et leur description sous forme de triplets RDF. Ces triplets peuvent représenter une information telle que Obama est le président des État-Unis, ($Obama$, $PresidentOf$, $US$).
-DBpedia est conçu par ces auteurs comme l'un des noyaux du Web émergent sous le nom de Web de données. Les triplets dans cette base de connaissance représentent des faits du monde réel qui doivent avoir une sémantique correcte et valide. Cette base de connaissances est écrite en Scala et Java.
-
+DBpedia est conçu par ces auteurs comme l'un des noyaux du Web émergent sous le nom de Web de données. Les triplets dans cette base de connaissance représentent des faits du monde réel qui doivent avoir une sémantique correcte et valide. DBpédia est une base de connaissances open source écrite en Scala et Java.
 \newpage
 \subsubsection{YAGO}
 YAGO\footnote{http://www.mpi-inf.mpg.de/yago-naga/yago/} est une large base de connaissances sémantiques, délivrée de Wikipedia, WordNet et GeoNames. Actuellement elle contient plus de 10 millions d’entités (personnes, organisations, villes, etc...) et plus de 120 millions de faits au sujet de ces entités.
@@ -152,6 +131,7 @@ Les caractéristiques principales de YAGO :
 \includegraphics[width=10cm]{yago.png}
 \caption{YAGO}
 \end{figure}
+\newpage
 \subsubsection{Wikidata}
 \paragraph{}
 C'est un projet d'une base de données éditée d'une manière collaborative cela pour aider à la mise à jour des données de Wikipédia. Ce projet est lancé par Wikimedia Deutschland. Wikidata est déstiné à fournir une source commune de données objectives ou factuelles telles que les dates de naissances ou bien le PIB des pays, qui pourront être utilisées dans tous les articles des différentes versions linguistiques de wikipédia, une mise à jour de wikidata  pouvant être alors répercutée automatiquement sur l'ensemble des wikipédias en différentes langues.   
@@ -168,7 +148,7 @@ Par exemple : pour la verité de certains triplets on rajoute une valeur qui est
 \subparagraph{}
 De même pour la certitude, une autre forme a été proposé :
 \newline
-$(Max,hasSupervisor : (0.9,2003),William)$ à la forme générale suivante $(s, p : (x,t),o)$
+$(Max,hasSupervisor : (0.9,2003),William)$ à la forme générale suivante $(s, p : (x,t),o)$.
 \newline
 Dans ce dernier exemple, on remarque que l'annotation est sous forme de couple $(x, t)$ où $x$, la certitude, est représentée sous forme d'un pourcentage 90\% et $t$ le temps sous forme d'une année $2003$.
 \subsection{L'annotation temporelle}
@@ -201,9 +181,9 @@ L'ouverture des données permet en effet de construire des applications innovant
 \paragraph{}
 {\bf Données liées}, le Web des données (Linked data ou Web of Data en anglais) désigne non seulement la mise sur le Web de données mais surtout leur mise en relation pour constituer un réseau globalde données où, à partir d'une donnée, on accède aux autre données liées du Web. La clé de voûte du Web de données est le Standard URI qui désigne tout objet ou concept décrit. Dans le Web de données les relations sont entre URI. C'est ce qui assure le partage de ces descriptions entre machines et leur interrogation automatique.
 \paragraph{}
-L'appellation ``données ouvertes liées'', met l'accent sur l'opportunité qui nous est offerte d''exploiter les différentes sources du Web de données en les liant entre elles. 
+L'appellation ``données ouvertes liées'', met l'accent sur l'opportunité qui nous est offerte d'exploiter les différentes sources du Web de données en les liant entre elles. 
 \subparagraph{}
-\gls{lod}\footnote{http://linkeddata.org/}, est un moyen de publier des données structurées sur le Web où les données contenues dans des bases de données sont exposées avec leur sémantique, ce qui donne la possibilité aux métadonnées d'être connectées et enrichies d'une manière solide, et permet également d'avoir plusieurs représentations d'un même contenu et de faire des rapprochements entre des ressources connexes.DBpédia fait partie du LOD et les données portent sur plusieurs domaine (Media, Géographie, Gouvernement, Publications, etc...).
+{\bf\gls{lod}}\footnote{http://linkeddata.org/}, est un moyen de publier des données structurées sur le Web où les données contenues dans des bases de données sont exposées avec leur sémantique, ce qui donne la possibilité aux métadonnées d'être connectées et enrichies d'une manière solide, et permet également d'avoir plusieurs représentations d'un même contenu et de faire des rapprochements entre des ressources connexes. DBpédia fait partie du LOD et les données portent sur plusieurs domaine (Media, Géographie, Gouvernement, Publications, etc...).
 \subparagraph{}
 Au cours des dernières années, le Web de données a développé dans une grande fusion, de divers ensembles de données provenant de plusieurs domaines. Ce dernier décrit les ressources identifiées par des \gls{uri} en représentant leurs propriétés et des liens vers d’autres ressources. L'ensemble des données fournit des connaissances du monde réel.
 \subsubsection{Relation entre l'annotation temporelle et LOD}
@@ -270,9 +250,7 @@ Gutiérrez et al~\cite{gutierrez2007} montrent qu'il y aura deux manières pour 
 \end{itemize}
 \end{itemize}
 \paragraph{}
-Gutiérrez et al~\cite{gutierrez2007} ont travaillé sur le domaine temporel à base de points et ils ont aussi codé les points du temps en intervalle.
-\subparagraph{}
-Ces derniers ont proposé un vocabulaire pour affirmer les moments où les triplets sont valables dans un graphe RDF.
+Gutiérrez et al~\cite{gutierrez2007} ont travaillé sur le domaine temporel à base de points et ils ont aussi codé les points du temps en intervalle. Ces derniers ont proposé un vocabulaire pour affirmer les moments où les triplets sont valables dans un graphe RDF.
 \subsection{Graphe Temporel}
 \paragraph{}
 L'idée générale de Pugliese et al~\cite{pugliese2008} est d'annoter RDF avec un interval de temps.
@@ -320,10 +298,6 @@ Ces derniers ont utilisé une approche d’apprentissage pour extraire les dates
 La méthode consiste à annoter automatiquement les informations événementielles. C’est-à-dire, à  repérer et à baliser les occurrences d’événements au sens TimeML\footnote{http://timeml.org/site/index.html}(Time Markup language est un langage d'annotation pour les événements et les expression temporelles) et de les classifier selon l’ontologie définie par le schéma d’annotation.
 \subsection{Synthèse}
 \paragraph{}
-L'extraction des informations temporelles est une étape primordiale. Plusieurs méthodes d'extraction ont été présentées précédemment pour répondre à des objectifs plus au moins similaire à notre besoin. Nous avons étudié ces différentes approches possibles et nous avons implémenté un algorithme d'extraction qu'on vous présente dans la prochaine section.
-\bibliographystyle{alpha}
-\bibliography{Biblio.bib,w3c.bib}
-\printglossary[title=Glossaire]
-%\glsaddall
-\end{document}
+L'extraction des informations temporelles est une étape primordiale. Plusieurs méthodes d'extraction ont été proposées pour répondre à des objectifs plus au moins similaire à notre besoin.
+
 

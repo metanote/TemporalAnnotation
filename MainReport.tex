@@ -1,4 +1,4 @@
-\documentclass[12pt,a4	]{report}
+\documentclass[12pt,a4paper,oneside]{book}
 \usepackage[french]{babel}
 \usepackage[usenames,dvipsnames]{color}
 \usepackage[utf8]{inputenc}
@@ -8,20 +8,30 @@
 \usepackage{bibunits} 
 \usepackage{graphicx}
 \usepackage{wrapfig}
+\usepackage{glossaries}
+\makeglossaries
 \usepackage{float}
 \usepackage{cite}
 \usepackage{caption}
+\usepackage{subcaption}
 \usepackage{amsmath,mathtools}
 \usepackage{subcaption}
 \begin{document} 
 \author{Moncef BEN RAJEB} 
 \title{Annotation Temporelle Des Données DBpedia} 
 \date{Mars 2014} 
-\maketitle
+\frontmatter 
+\tableofcontents  
+\listoffigures
+\printglossary[title=Glossaire]
+\makeglossaries
+\include{Remerciement}
 \include{Introduction_gen}
-\include{Etat}
-\include{pointdedepart}
-\include{Proposition}
+\include{portee}
+\mainmatter 
+\include{Etat_de_l'art}
+\include{contribution}
+\include{Perspectives}
 \bibliographystyle{alpha}
-\bibliography{Biblio.bib,w3c.bib}
+\bibliography{Biblio.bib}
 \end{document}

@@ -9,7 +9,7 @@ Giorgis Antoniou and Frank van Harmelen.
 \bibitem[BLHL01]{Berners-lee2001}
 T.~Berners-Lee, J.~Hendler, and O.~Lassila.
 \newblock {The semantic web}.
-\newblock {\em {Scientific American}}, pages 284--289, 2001.
+\newblock {\em {Scientific American}}, 43:284--289, 2001.
 
 \bibitem[BSK13]{bereta2013}
 Konstantina Bereta, Panayiotis Smeros, and Manolis Koubarakis.
@@ -33,8 +33,8 @@ Claudio Gutierrez, Carlos Hurtado, and Alejandro Vaisman.
 Thomas Gruber.
 \newblock {Toward principles for the design of ontologies used for knowledge
   sharing}.
-\newblock {\em {Toward principles for the design of ontologies used for
-  knowledge sharing}}, pages 907--928, 1995.
+\newblock {\em {International Journal Of Human Computer Studies}}, pages
+  907--928, 1995.
 
 \bibitem[KTH{\etalchar{+}}13]{kessler2013}
 Remy Kessler, Xavier Tannier, Caroline Hagege, Veronique Moriceau, and Andre
@@ -46,7 +46,7 @@ Remy Kessler, Xavier Tannier, Caroline Hagege, Veronique Moriceau, and Andre
 \bibitem[LGMN12]{lehmann2012}
 Jens Lehmann, Daniel Gerber, Mohamed Morsey, and Axel-Cyrille. Ngonga.
 \newblock {Defacto - deep fact validation.}
-\newblock {\em {ISWC}}, 2012.
+\newblock {\em {International Semantic Web Conference}}, 2012.
 
 \bibitem[PUS08]{pugliese2008}
 Andrea Pugliese, Octavian Udrea, and V.S Subrahmanian.
@@ -58,7 +58,7 @@ Andrea Pugliese, Octavian Udrea, and V.S Subrahmanian.
 Anisa Rula, Matteo Palmonari, Axel-Cyrille Ngonga, Daniel Gerber, Jens Lehmann,
   and Lorenz Buhmann.
 \newblock {Hybrid Acquisition of Temporal Scopes for RDF Data}.
-\newblock {\em {Extended Semantic Web Conference}}, 2014.
+\newblock 2014.
 
 \bibitem[URS06]{udrea2006}
 Octavian Udrea, Diego~Reforgiato Recupero, and V.~S. Subrahmanian.
@@ -75,6 +75,8 @@ Verhagen, Sauri, Caselli, and Pustejovsky.
 \bibitem[ZT13]{zweigenbaum2013}
 Pierre Zweigenbaum and Xavier Tannier.
 \newblock {Extraction des relations temporelles}.
-\newblock {\em {TALN-RECITAL}}, 2013.
+\newblock {\em {Traitement Automatique du Langage Naturel - Rencontre des
+  Étudiants Chercheurs en Informatique pour le Traitement Automatique des
+  Langues TALN-RECITAL}}, 2013.
 
 \end{thebibliography}

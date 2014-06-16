@@ -1,28 +1,10 @@
-\documentclass[12pt,a4	]{report}
-\usepackage[frenchb]{babel}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage[utf8]{inputenc}
-\usepackage{textcomp}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}	
-\usepackage{bibunits}
-\usepackage{graphicx}
-\usepackage{wrapfig}
-\usepackage{glossaries}
-\usepackage{float}
-\usepackage{cite}
-\usepackage{caption}
-\usepackage{amsmath,mathtools}
-\usepackage{subcaption}
-
-\begin{document}
 \chapter{Contribution}
 \section{Ouverture}
 \paragraph{}
 Les articles de Wikipédia sont constitués généralement d'un texte, mais aussi de certaines informations structurées (infobox, images, liens externes, redirections entre les pages etc...) présentes sous la forme de balises Wiki. 
 Le projet DBpedia extrait des informations structurées de Wikipédia et les transforme dans une base de connaissances riche sous forme d'un graphe avec des entités reliées.
 \subparagraph{}
-Dans ce chapitre, nous allons vous donné une vue d'ensemble sur l'annotation des métadonnées, une analyse des besoins, la procédure d'extraction de DBpedia et les pistes de travail possibles. Puis nous présenterons l'architecture globale de notre système ainsi que notre hypothèse et la structure de l'application que nous avons développée pour concrétiser notre hypothèse. La dernière partie de cette section porte sur les résulats de cette étude.
+Dans ce chapitre, nous allons vous donné une vue d'ensemble sur l'annotation des métadonnées, une analyse des besoins, la procédure d'extraction de DBpedia et les pistes de travail possibles. Puis nous présenterons l'architecture globale de notre système ainsi que notre hypothèse et la structure de l'application que nous avons développée pour concrétiser cette hypothèse. La dernière partie de cette section porte sur les résulats de cette étude.
 \section{Utilité des annotations}
 \paragraph{}
 En générale, l'annotation, c'est une étiquette qu'on ajoute à une ressource Web. Depuis la création du Web, plusieurs systèmes d'annotation sont apparus (ThirdVoice, PageSeeder, HyperNews, Nestor, etc...).
@@ -108,9 +90,7 @@ Mais dans ce type de traitement, il y a des problèmes qui peuvent apparaître e
 
 \subsection{Ambiguïtés temporelles}
 \paragraph{}
-C'est la propriété d'un mot ou d'une suite de mots (comme notre cas) qui peuvent avoir un ou plusieurs sens d'analyses grammaticales possibles. Dans une phrase simple ou composée, l'indicateur temporel peut avoir plusieurs sens tout dépend du contexte de la phrase.
-\newline
-Les informations temporelles peuvent avoir des représentations différentes~: 
+C'est la propriété d'un mot ou d'une suite de mots (comme dans notre cas) qui peuvent avoir un ou plusieurs sens d'analyses grammaticales possibles. Dans une phrase simple ou composée, l'indicateur temporel peut avoir plusieurs sens tout dépend du contexte de la phrase. Les informations temporelles peuvent avoir des représentations différentes~: 
 \begin{itemize}
 \item Un évènement ``Je vous propose un rendez-vous $demain$ pour parler de ma plateforme PiSharing''. \item Une connaissance ``Jacques Chirac est le président de la république Française'' \textbf{ mais quand ?}.
 \end{itemize}
@@ -118,11 +98,10 @@ Les informations temporelles peuvent avoir des représentations différentes~:
 \subparagraph{} 
 Le présent par exemple peut avoir plusieurs sens ou contextes : présent de narration, présent de généralité, présent qui réfère au futur proche, etc...
 Les signaux temporels sont ambigus par exemple dans ces expressions : il court pour rattraper le temps, tu tournes après la rivière, etc… On remarque qu'il y a des indicateurs temporels, mais ce n'est pas le temps qui est relatif à un événement qui peut nous intéresser.
-La plupart des expressions sont floues comme: il y a deux ans, chaque deux semaines, j’arrive dans deux secondes, etc... En effet, il n'y a pas une logique descriptive qui peut nous aider à mettre un le lien entre l'événement et la période temporelle.
 \paragraph{}
-L’analyse du temps s’inscrit dans la compréhension globale des textes, et des évènements auxquels on fait référence dans ce texte non pas en analysant une phrase comme suit. 
+La plupart des expressions sont floues comme: il y a deux ans, chaque deux semaines, j’arrive dans deux secondes, etc... En effet, il n'y a pas une logique descriptive qui peut nous aider à mettre un le lien entre l'événement et la période temporelle. L’analyse du temps s’inscrit dans la compréhension globale des textes, et des évènements auxquels on fait référence dans ce texte non pas en analysant une phrase comme suit. 
 \newline
-Modalité~: ``l’équipe de France voulait gagner la coupe du monde en 2006.'' 
+Modalité~: ``l’équipe de France voulait gagner la coupe du monde en 2014.'' 
 \newline
 Anaphore~:  ``..., cela pourrait avoir lieu dans les éditions suivantes.''
 \subparagraph{}
@@ -152,10 +131,10 @@ Nous souhaitons, si c’est possible, extraire ces informations temporelles et l
 La figure ci-dessus montre l'architecture du système d'extraction des connaissances dans DBpedia.
 D'apres Morsey et al~\cite{morsey2012} les principaux éléments du système sont les suivants : $PageCollections$ est une abstraction des ressources locales ou distantes des articles de Wikipédia, $Collections$ stokent ou sérialisent les triplets RDF extraites, $Extractors$ qui transforme un type spécifique de la syntaxe wiki en triplet, $Parsers$ soutiennent les $Extractors$ en déterminant les types de données, convertit les valeurs entre différentes unités et fractionne les marqueurs dans des listes. L'$Extraction$ $Job$ regroupe une collection de pages, extracteurs et destination dans le flux de travail $workflow$.
 Le noyau de ce système est l'$Extraction$ $Manager$ qui gère le processus  d'adoption des articles de Wikipédia sur les $Extractors$ et donne les résultats à la destination.
-Le gestionnaire d'extraction $Extraction$ $Manager$ gère également la gestion des URI et résout les redirections entre les articles : ce système se compose de $11$ extracteurs qui traitent les types des contenus de Wikipédia ($Labels$, $Abstracts$, $Interlanguage$ $links$, $Images$, $Redirects$, $Disambiguation$,
-$External$ $Links$, $Pagelinks$, $Homepages$, $Categories$, $Geo-coordinates$).
-Ce framework d'extraction DBpedia est mise en place pour réaliser deux flux : extraction à partir des sources de données ($DataBaseWikipedia$ $page$ $collections$) et une procédure d'extraction directe
-($LiveWikipedia$ $page$ $collections$ $with$ $the$ $OAI-PMH$ $protocol$) pour obtenir la version courante des articles.
+Le gestionnaire d'extraction $Extraction$ $Manager$ gère également la gestion des URI et résout les redirections entre les articles : ce système se compose de $11$ extracteurs qui traitent les types des contenus de Wikipédia {\tt(Labels, Abstracts, Interlanguage links, Images, Redirects, Disambiguation,
+External Links, Pagelinks, Homepages, Categories, Geo-coordinates)}.
+Ce framework d'extraction DBpedia est mise en place pour réaliser deux flux : extraction à partir des sources de données {\tt(DataBaseWikipedia page collections)} et une procédure d'extraction directe
+{\tt(LiveWikipedia page collections with the OAI-PMH protocol)} pour obtenir la version courante des articles.
 \subsection{Notre proposition}
 \paragraph{}
 En analysant les $dumps$ DBpedia et en observant l'architecture de cette base de connaissance, nous avons remarqué que pour annoter temporellement les triplets RDF de DBpedia il est plus intéressant d'extraire l'ensemble des propriétés dans DBpedia, puis de trouver des faits qui ont un trait avec le temps, donner une liste de couples à partir de laquelle un expert choisit un couple et valide les résultats de notre algorithme. Par la suite, nous allons présenter en détail notre proposition.
@@ -250,9 +229,9 @@ SELECT CONCAT(?label1, relatedProp , ?label2, ' : ', ?date)
 \subparagraph{}
 L'objectif de cette procédure est de permettre à l'expert de valider ou ne pas valider la logique de la représentation des quadruplets. Enfin, la validation des résultats permet de stocker l'ensemble des résultats (triplets annotés) dans un fichier portant les labels du couple et un autre fichier ``allQuadsFile'' contenant tous les quadruplets validés. Par la suite, notre algorithme fait automatiquement l'appel à un fichier CSV d'historique qui a forme suivante 
 \newline
-{\tt (attribute,tempAttribute,boolean,date\_Exploration,keep,file)} 
+{\tt (attribute,tempAttribute,boolean,exploration\_Date,keep,file)} 
 \newline
-Où $attribute$ et $tempAttribute$ représentent le couple de propriétés DBpédia, $boolean$ peut être $0$ ou $1$ qui désignent respectivement la volonté de l'expert de valider ou ne pas validé les résultats, $date\_Exploration$ est la date de l'exploration. $keep$ représente le nombre de quadruplets que nous avons formé à partir du triplet et $file$ est le nom de fichier dans lequel nous avons stocké les résultats.
+Où $attribute$ et $tempAttribute$ représentent le couple de propriétés DBpédia, $boolean$ peut être $0$ ou $1$ qui désignent respectivement la volonté de l'expert de valider ou ne pas validé les résultats, $exploration\_Date$ est la date de l'exploration. $keep$ représente le nombre de quadruplets que nous avons formé à partir d'un couple de propriétés et $file$ est le nom de fichier dans lequel nous avons stocké les résultats (Quads).
 Ce fichier nous permet d'avoir une vision globale sur les résultats de notre étude.
 L'ensemble de fichiers seront stockés dans un dossier forment une base de données de sortie que nous avons appelé SPOTBase.
 \subsection{Analyse et discussion}
@@ -267,7 +246,6 @@ Avec certains couples, nous avons eu des très bons résultats, par exemple avec
 \end{figure}
 \subparagraph{}
 Il se trouve aussi qu'il y a des couples qui valident notre hypothèse mais qui ne donnent pas de résultats. Il se peut que les deux triplets ne partagent pas le même sujet comme \{(wineRegion, wineYear),(whaDraft, whaDraftYear),(areaCode, areaDate), etc...\}
-\newpage
 \section{Outils}
 \subsection{Application Java}
 \paragraph{}
@@ -292,5 +270,3 @@ Dans cette section, nous avons présenté notre approche à travers un système 
 Par la suite, nous avons proposé une solution que nous avons implémenté sous forme d'un prototype fonctionnel.
 \subparagraph{}
 Dans la prochaine section, nous présenterons les perspectives et les pistes d'amélioration possibles. On conclut ce travail avec un récapitulatif qui résume la richesse de cette étude et son apport considérable dans le domaine de l'ingénierie et la recherche.  
-\bibliography{Biblio.bib}
-\end{document}

@@ -22,10 +22,10 @@ Ensuite, les mettre dans un ensemble de fichiers comme le montre le schéma ci-d
 Certes, on peut créer des “patterns” partons ou motifs à travers les faits temporels dans la base de connaissances mais on cherche ici à extraire les informations des textes et des données semi-structurée afin de leur trouver une autre structure plus adéquate (tel un triplet annoter ou bien un quadrupet).
 \subsection*{Démarche}
 \paragraph{}
-Au début, nous avons commencé par une procédure d’extraction classique avec un parseur avec l'API SAX pour extraire des données temporelles des dumps xml de wikipédia. Nous avons réussi à extraire plusieurs informations temporelles mais nous avons rencontré des problèmes relatives à la taille du dumps wikipédia/wikidata et au fait de relier ces informations temporelles au bon contexte du triplet qu’on veut annoté.
+Au début, nous avons commencé par une procédure d’extraction des faits dans les sources d'information XML de wikipédia. Nous avons réussi à extraire des fais mais nous avons rencontré des problèmes relatives à la taille du dumps wikipédia/wikidata et au fait de relier ces informations temporelles au bon contexte du triplet qu’on veut annoté.
 \subparagraph{}
 Ce fait nous a amené à chercher une autre solution que celle choisi au départ.
-Nous avons trouvé une solution plus intelligente pour former les quads ou des triplets annotés à partir des dumps DBpedia.
+Nous avons trouvé une solution plus intelligente pour former les quads ou des triplets annotés à partir des sources de données DBpédia.
 \subparagraph{}
 Sur le site de DBpedia, nous avons étudié les deux formats du dumps JSON et CSV afin de voir la structure des informations.
 Suite à nos observations nous avons décidé de manipuler les fichiers CSV pour voir la logique et la structure de ces informations.
