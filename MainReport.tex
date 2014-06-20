@@ -14,9 +14,9 @@
 \newacronym{trdf}{tRDF}{Temporal RDF}
 \newacronym{strdf}{stRDF}{spatial and temporal Resource Description Framework}
 \newacronym{lod}{LOD}{Linked Open Data}
-\newacronym{sparql}{SPARQL}{Protocol and RDF Query Language}
+\newacronym{sparql}{SPARQL}{SPARQL Protocol and RDF Query Language}
 \newacronym{owl}{OWL}{Web Ontology Language}
-\newacronym{stsparql}{stSPARQL}{spatial and temporal Protocol and RDF Query Language}
+\newacronym{stsparql}{stSPARQL}{spatial and temporal SPARQL Protocol and RDF Query Language}
 \newacronym{uri}{URI}{Uniform Resource Identifier}
 \newacronym{iri}{IRI}{Internationalized Resource Identifier }
 \newacronym{sql}{SQL}{Structured Query Language}
@@ -30,12 +30,9 @@
 \begin{document} 
 \author{Moncef BEN RAJEB} 
 \title{Annotation Temporelle Des Données DBpedia} 
-\date{Mars 2014} 
-\frontmatter 
-\tableofcontents  
-\listoffigures
-\printglossary[title=Glossaire]
-\makeglossaries
+\date{Juin 2014} 
+\maketitle 
+\tableofcontents 
 \include{Remerciement}
 \include{Introduction_gen}
 \include{portee}
@@ -44,5 +41,9 @@
 \include{contribution}
 \include{Perspectives}
 \bibliographystyle{alpha}
-\bibliography{Biblio.bib}
+\bibliography{Biblio.bib} 
+
+\addcontentsline{toc}{chapter}{Bibliographie}
+\printglossary[title=Glossaire]
+\makeglossaries
 \end{document}
