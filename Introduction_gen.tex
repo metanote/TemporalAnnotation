@@ -1,20 +1,22 @@
-\chapter{Introduction générale}
+\chapter*{Introduction générale}
 \paragraph{}
 Depuis la création du Web il y a de cela vingt-cinq ans déjà, ce monde virtuel a vécu une évolution constante. Il offre une multitude de services aux utilisateurs individuels, aux entreprises, mais aussi à la société. Au fil des années, plusieurs versions du Web ont vu le jour : le Web documentaire, le Web applicatif, le Web social, le Web mobile, etc...
 \subparagraph{}
 Dans le contexte de l’évolution du Web une nouvelle version dite le Web sémantique et social qui vise à propager nos modèles et leurs logiques s’apprête à avoir le jour. Il y a plusieurs facettes du Web, et le Web sémantique offre un élément de réponse à l’intégration de chacune de ces facettes. Il propose d’utiliser des métadonnées pour annoter les ressources du Web, et d’exploiter la sémantique des schémas de ces annotations pour les traiter avec intelligence.
 \subparagraph{}
-Le domaine du Web sémantique est un objet de recherche sur les métadonnées du Web. L'objectif principal du Web sémantique est d’avoir une nouvelle version du Web bien structurée qui soit capable d’assurer le contrôle efficace des métadonnées. 
-\subparagraph{}
-Dans ce contexte, le cadre de description de ressource ({\itshape Resource Description Framework ou RDF}) est le premier des standards de la Web sémantique et se trouve être un modèle à plusieurs syntaxes (RDF/XML, Turtle etc...). Aussi, DBpedia\footnote{http://www.dbpedia.org/About} est une base de donnée structurée qui contient des informations extraites de Wikipedia\footnote{http://www.wikipedia.org} et rend ces informations disponibles sur le Web. Toutes les informations de DBpedia sont exprimées en RDF.
-\subparagraph{}
-Ce langage de modélisation permet à quiconque de décrire des ressources sur le Web et aussi des ressources du Web. Dans ce modèle connu comme étant la {\itshape lingua franca} du Web, tout est exprimé sous forme de triplets $(subject, predicate, object)$ où chaque triplet contribue à une description du monde.
+Le domaine du Web sémantique est un objet de recherche sur les métadonnées du Web. L'objectif principal du Web sémantique est d’avoir une nouvelle version du Web bien structurée qui soit capable d’assurer le contrôle efficace des métadonnées. Dans ce contexte, le cadre de description de ressource ({\itshape Resource Description Framework ou RDF}) est le premier des standards de la Web sémantique et se trouve être un modèle à plusieurs syntaxes (RDF/XML, Turtle etc.). Aussi, DBpedia\footnote{http://www.dbpedia.org/About} est une base de donnée structurée qui contient des informations extraites de Wikipedia\footnote{http://www.wikipedia.org} et rend ces informations disponibles sur le Web. Toutes les informations de DBpedia sont exprimées en RDF. Ce langage de modélisation permet à quiconque de décrire des ressources sur le Web et aussi des ressources du Web. Dans ce modèle connu comme étant la {\itshape lingua franca} du Web, tout est exprimé sous forme de triplets <$subject$, $predicate$, $object$> où chaque triplet contribue à une description du monde.
 \paragraph{}
 Néanmoins, des faits tels que ceux donnés dans DBpedia sont en mesure d’être adaptés au changement perpétuel du monde.
-RDF n’est pas bien équipé pour exprimer d’une manière cohérente la validité temporelle des états, tels que “Obama est le président des États-Unis depuis 2008”. 
-\subparagraph{}
-Pour surmonter ce problème avec une modélisation RDF adéquate, plusieurs travaux de recherches ont proposé d’attacher à ces triplets des annotations temporelles. Ceci revient à une formalisation de ces états avec des contraintes temporelles comme des quadruplets de la manière suivante $(subject, perdicate, object, time)$ à la place du formalisme de triplet habituel.
+RDF n’est pas bien équipé pour exprimer d’une manière cohérente la validité temporelle des états, tels que “Obama est le président des États-Unis depuis 2008”. Pour surmonter ce problème avec une modélisation RDF adéquate, plusieurs travaux de recherche ont proposé d’attacher à ces triplets des annotations temporelles. Ceci revient à une formalisation de ces états avec des contraintes temporelles comme des quadruplets de la manière suivante <$subject$, $perdicate$, $object$, $time$> à la place du formalisme de triplet habituel.
 \subparagraph{}
 La théorie derrière un modèle de données basé sur des quadruplets évolue autour des termes de représentation, de connaissance, de raisonnement mais aussi d’interrogation. Or, le problème est qu’ils ne donnent aucune indication sur la façon dont les annotations temporelles sont créées.
 \paragraph{}
 De ce fait, l’objectif de ce stage est d’une part, l’extraction des faits temporelles de DBpédia en utilisant des techniques d'extraction et d’autre part, d’annoter des triplets dans cette base de connaissances afin de les mettre sous forme de quadruplets structurés.
+\section*{Portée du document}
+\paragraph{}
+Ce mémoire de master résume les recherches, réflexions, modélisations, propositions et développements réalisés durant ce stage. Il conclut la seconde année de master Web Intelligence. Le contenu est organisé de la manière suivante :
+\begin{itemize}
+\item Une première partie présente l’état de l’art réalisé sur l’annotation temporelle des triplets RDF dans les bases de connaissances.
+\item La deuxième partie englobe les diverses propositions pour répondre aux besoins identifiés et développe l’aspect technique de la mise en \oe{}uvre.
+\item La troisième partie ouvre des perspectives et conclut le travail réalisé dans cette étude.
+\end{itemize}
