@@ -72,8 +72,8 @@ if (x tempProp t) and (x relatedProp z) then
 \end{verbatim}
 
 \begin{itemize}
-\item $tempProp$ est une propriété DBpedia dont le nom contient un préfixe temporel ($Year$, $Date$).
-\item $relatedProp$ est une propriété DBpedia avec un nom qui a le même suffixe.
+\item $tempProp$ est une propriété DBpedia dont le nom contient un suffixe temporel ($Year$, $Date$).
+\item $relatedProp$ est une propriété DBpedia avec un nom qui a un préfixe $tempProp$ sans le suffixe temporel ($Year$, $Date$).
 \end{itemize}
 $t$ est l'annotation temporelle du triplet ($x$,$relatedProp$,$z$).
 \subparagraph{}
@@ -109,9 +109,6 @@ SELECT CONCAT(?label1, relatedProp , ?label2, ' : ', ?date)
 					?O 		rdfs:label ?label2.
 					FILTER(lang(?label1)='en' && lang(?label2)='en'}
 \end{verbatim}
-{\it - tempProp est une propriété temporelle proposée.}
-\newline
-{\it - relatedProp est une propriété reliée à tempProp partage avec elle un même suffixe.}
 \subparagraph{}
 L'objectif de cette procédure est de permettre à l'expert de valider ou ne pas valider la logique de la représentation des quadruplets. Enfin, la validation des résultats permet de stocker l'ensemble des résultats (triplets annotés) dans un fichier portant les labels du couple et dans un autre fichier ``allQuadsFile'' contenant tous les quadruplets validés. Par la suite, un sauvegarde de l'historique de cette procédure se fait automatiquement dans le fichier CSV. Ce fichier nous permet d'avoir une vision globale sur les résultats de notre étude. $historic.csv$ a la forme suivante :
 \newline
@@ -126,7 +123,7 @@ L'objectif de cette procédure est de permettre à l'expert de valider ou ne pas
 \newpage
 \subsection{Analyse et discussion}
 \paragraph{}
-Nous avons réussi à former $305$ couples de propriétés. Dans notre méthode, nous avons choisi d'extraire même les couples ($tempProp$, $relatedProp$) qui contiennent un motif similaire de la forme suivante (tempProp, ***suffixeTempProp***) et non pas seulement qui sont identiques au suffixe d'une propriété temporelle. Cela a été dans la mesure d'augmenter le nombre des couples de propriétés de test pour avoir une vision globale sur l'efficacité de notre système, d'avoir plus de possibilités et d'analyser par la suite les différents résultats. 
+Nous avons réussi à former $305$ couples de propriétés. Dans notre méthode, nous avons choisi d'extraire même les couples ($tempProp$, $relatedProp$) qui contiennent un motif similaire de la forme suivante (tempProp, ***préfixeTempProp***) et non pas seulement qui sont identiques au préfixe d'une propriété temporelle. Cela a été dans la mesure d'augmenter le nombre des couples de propriétés de test pour avoir une vision globale sur l'efficacité de notre système, d'avoir plus de possibilités et d'analyser par la suite les différents résultats. 
 Avec certains couples, nous avons eu de très bons résultats, par exemple avec le couple ($deathCause$,$deathYear$) nous avons réussi à formé $2766$ quadruplets. La figure ci-dessous montre le format de la sortie de notre algorithme.
  \begin{figure}[H]
         \centering
